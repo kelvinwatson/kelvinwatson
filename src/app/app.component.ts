@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Kelvin Watson';
+  careerTimeline: FirebaseListObservable<any[]>;
+  technologies: FirebaseListObservable<any[]>;
+  projects: FirebaseListObservable<any[]>;
+
+  constructor(db: AngularFireDatabase) {
+    this.careerTimeline = db.list('/careerTimeline');
+    this.technologies = db.list('/technologies');
+    this.projects = db.list('/projects');
+  }
 }

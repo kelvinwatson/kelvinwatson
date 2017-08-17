@@ -1,0 +1,85 @@
+{
+  "careerTimeline": [
+     {
+      "label": "BSc(Pharm)",
+      "milestone": "Graduated from University of British Columbia with Bachelor of Science in Pharmaceutical Sciences",
+      "start": 2003,
+      "end": 2007
+    },
+    {
+     "label": "Hospital Pharmacist",
+     "milestone": "",
+     "start": 2007,
+     "end": 2012
+    },
+    {
+     "label": "Hospital Pharmacy Dispensary Supervisor",
+     "milestone": "",
+     "start": 2012,
+     "end": 2013
+    },
+    {
+      "label": "BCompSci",
+      "milestone": "Graduated with Bachelor of Science in Computer Science from Oregon State University",
+      "start": 2014,
+      "end": 2016
+    },
+    {
+      "label": "eBay",
+      "milestone": "Android developer at eBay",
+      "start": 2016,
+      "end": 2017
+    }
+  ],
+  "projects": {
+    "BearForce": {
+      "name": "BearForce",
+      "details": "One to many live streaming",
+      "technologies": [
+        "Firebase",
+        "Polymer",
+        "WebRTC"
+      ]
+    },
+    "Watson Logic Parallax": {
+      "name": "Watson Logic Parallax",
+      "details": "Resuable parallax scrolling effect web component made with Polymer 2.0.",
+      "technologies": [
+        "Polymer 2.0"
+      ],
+      "url": "https://www.webcomponents.org/element/watsonlogic-software/watsonlogic-parallax",
+      "github": "https://github.com/watsonlogic-software/watsonlogic-parallax"
+    },
+    "Converge LGBT": {
+      "name": "Converge LGBT",
+      "details": "Write articles and enable quick donations to LGBT causes/crises",
+      "technologies": [
+        "Firebase",
+        "Google AMP pages for articles"
+      ],
+      "url": "https://convergelgbt.com"
+    }
+  },
+  "technologies": {
+    "Angular": {
+      "category": "Web",
+      "name": "Angular",
+      "proficiency": 1
+    },
+    "Polymer": {
+      "category": "Web",
+      "name": "Polymer",
+      "proficiency": 5
+    },
+    "Firebase":{
+      "category": "Web",
+      "name": "Firebase",
+      "proficiency": 5
+    },
+    "Cordova":{
+      "category": "Mobile",
+      "name": "Cordova",
+      "proficiency": 3
+    }
+  }
+}
