@@ -23,7 +23,7 @@ body {}
   font-family: 'Abel', sans-serif;
   color: white;
   background: linear-gradient( rgba(0, 0, 0, .5), rgba(10, 10, 10, .5)), /*url(/assets/images/light.jpeg);*/
-  url(/assets/images/bulb.jpg);
+  url(/assets/images/nightview.jpg);
   font-size: 0;
   overflow: hidden;
   white-space: nowrap;
@@ -37,7 +37,7 @@ body {}
   bottom: 0;
   left: 0;
   background: linear-gradient( rgba(0, 0, 0, .5), rgba(10, 10, 10, .5)), /*url(/assets/images/light.jpeg);*/
-  url(/assets/images/bulb.jpg);
+  url(/assets/images/nightview.jpg);
   background-size: cover;
   background-position: center;
   opacity: .6;
@@ -154,28 +154,43 @@ body {}
   -webkit-animation-delay: .4s;
 }
 @-webkit-keyframes l1 {
-  0%    { height: 304px; background: #909090; }
-  100%  { height: 10000px; background: #909090; }
+  0%    { height: 0; background: #909090; }
+  100%  { height: 100vh; background: #909090; }
 }
 
 @-webkit-keyframes l2 {
-  0%    { width: 317px; background: #909090; }
-  100%  { width: 10000px; background: #909090; }
+  0%    { width: 0; background: #909090; }
+  100%  { width: 371px; background: #909090; }
 }
 
 @-webkit-keyframes l3 {
-  0%    { height: 304px; background: #909090; }
-  100%  { height: 10000px; background: #909090; }
+  0%    { height: 0; background: #909090; }
+  100%  { height: 70vh; background: #909090; }
 }
 
 @-webkit-keyframes l4 {
-  0%    { width: 371px; background: #909090; }
-  100%  { width: 10000px; background: #909090; }
+  0%    { width: 0; background: #909090; }
+  100%  { width: 371px; background: #909090; }
 }
 
-
-nav {
+nav.header {
   background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  top: 0;
+  text-align: right;
+  position: fixed;
+  right: 0;
+  z-index: 1;
+}
+
+.social-icon{
+  height: 30px;
+  width:30px;
+}
+
+nav.footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 12px;
   width: 100%;
   bottom: 0;
   text-align: right;
@@ -184,18 +199,36 @@ nav {
   z-index: 1;
 }
 
+nav.footer ul{
+  padding:0;
+}
+nav.header ul {
+  cursor:pointer;
+  color: white;
+  display: inline;
+  margin-right: 16px;
+}
+
+nav.header {
+  padding-top:16px;
+}
+
+nav.header ul li {
+  padding-right: 4px;
+}
+
 nav ul {
   text-decoration: none;
 }
 
 nav ul li {
   cursor:pointer;
-  padding: 16px;
   color: white;
   display: inline;
 }
 
-nav ul li a {
+nav.footer ul li a {
+  padding: 16px;
   font-family: 'Abel', sans-serif;
   color: white;
   text-decoration: none;
