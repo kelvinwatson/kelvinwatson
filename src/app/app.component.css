@@ -1,7 +1,16 @@
-nav{
+
+.parent{
+  font-size:0;
+  overflow: hidden;
+  white-space: nowrap;
+
+}
+
+  nav{
   position: fixed;
   bottom:0;
   right: 0;
+  z-index: 1;
 }
 
 nav ul{
@@ -11,7 +20,45 @@ nav ul{
 nav ul li{
   display: inline;
 }
-.full{
-  width:100vh;
+
+.full {
+  font-size: 16px;
+  display: inline-block;
+  width:100%;
   height:100vh;
+  vertical-align: top;
+  -webkit-transform: translateZ( 0 );
+  transform: translateZ( 0 );
+  -webkit-transition: -webkit-transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+a[ id= "topSection" ]:target ~ .full {
+  -webkit-transform: translateX( 0px );
+  transform: translateX( 0px );
+}
+
+a[ id= "careerTimelineSection" ]:target  ~ .full{
+  -webkit-transform: translateX( -100vw );
+  transform: translateX( -100vw );
+}
+
+a[ id= "technologiesSection" ]:target  ~ .full{
+  -webkit-transform: translateX( -200vw );
+  transform: translateX( -200vw );
+}
+
+a[ id= "projectsSection" ]:target  ~ .full{
+  -webkit-transform: translateX( -300vw );
+  transform: translateX( -300vw );
+}
+.pink{
+  background-color: pink;
+}
+.orange{
+  background-color: orange;
+}
+.green {
+  background-color: green;
 }
