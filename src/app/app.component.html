@@ -1,36 +1,51 @@
-<div>
+<nav>
+  <ul>
+    <li><a href="#topSection">Top</a></li>
+    <li><a href="#careerTimelineSection">Career</a></li>
+    <li><a href="#technologiesSection">Technologies</a></li>
+    <li><a href="#projectsSection">Projects</a></li>
+  </ul>
+</nav>
+
+<section id="topSection" class="full">
   <h1>{{title}}</h1>
-</div>
+</section>
 
-<h2>Career Timeline</h2>
-<ul>
-  <li *ngFor="let career of careerTimeline | async">
-    {{career.label}}
-    {{career.start}} - {{career.end}}:
-    {{career.milestone}}
-  </li>
-</ul>
+<section id="careerTimelineSection" class="full">
+  <h2>Career Timeline</h2>
+  <ul>
+    <li *ngFor="let career of careerTimeline | async">
+      {{career.label}}
+      {{career.start}} - {{career.end}}:
+      {{career.milestone}}
+    </li>
+  </ul>
+</section>
 
-<h2>Technologies</h2>
-<ul>
-  <li *ngFor="let technology of technologies | async">
-    {{technology.name}}
-  </li>
-</ul>
+<section id="technologiesSection" class="full">
+  <h2>Technologies</h2>
+  <ul>
+    <li *ngFor="let technology of technologies | async">
+      {{technology.name}}: {{technology.proficiency}}
+    </li>
+  </ul>
+</section>
 
-<h2>Projects</h2>
-<ul>
-  <li *ngFor="let project of projects | async">
-    <a href="{{project.url}}">{{project.name}}</a>
-    <div>{{project.details}}</div>
-    <div *ngIf="project.github">
-      {{project.github}}
-    </div>
-    <ul *ngIf="project.technologies">
-      <h3>Technologies</h3>
-      <li *ngFor="let technology of project.technologies">
-        {{technology}}
-      </li>
-    </ul>
-  </li>
-</ul>
+<section id="projectsSection" class="full">
+  <h2>Projects</h2>
+  <ul>
+    <li *ngFor="let project of projects | async">
+      <a href="{{project.url}}">{{project.name}}</a>
+      <div>{{project.details}}</div>
+      <div *ngIf="project.github">
+        {{project.github}}
+      </div>
+      <ul *ngIf="project.technologies">
+        <h3>Technologies</h3>
+        <li *ngFor="let technology of project.technologies">
+          {{technology}}
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>

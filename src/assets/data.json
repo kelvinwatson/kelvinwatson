@@ -61,10 +61,35 @@
     }
   },
   "technologies": {
+    "Android": {
+      "category": "Mobile",
+      "name": "Android Development",
+      "proficiency": 5
+    },
     "Angular": {
       "category": "Web",
       "name": "Angular",
       "proficiency": 1
+    },
+    "Cordova":{
+      "category": "Mobile",
+      "name": "Cordova",
+      "proficiency": 3
+    },
+    "CSS": {
+      "category": "Web",
+      "name": "CSS",
+      "proficiency": 5
+    },
+    "Espresso": {
+      "category": "Test Automation",
+      "name": "Espresso testing (Android)",
+      "proficiency": 5
+    },
+    "HTML5": {
+      "category": "Web",
+      "name": "HTML5",
+      "proficiency": 5
     },
     "Polymer": {
       "category": "Web",
@@ -76,10 +101,25 @@
       "name": "Firebase",
       "proficiency": 5
     },
-    "Cordova":{
-      "category": "Mobile",
-      "name": "Cordova",
-      "proficiency": 3
+    "Javascript": {
+      "category": "Web",
+      "name": "Javascript",
+      "proficiency": 5
+    },
+    "JUnit": {
+      "category": "Test Automation",
+      "name": "JUnit",
+      "proficiency": 4
+    },
+    "JMockit": {
+      "category": "Test Automation",
+      "name": "JMockit",
+      "proficiency": 5
+    },
+    "Robolectric": {
+      "category": "Test Automation",
+      "name": "Robolectric",
+      "proficiency": 4
     }
   }
 }

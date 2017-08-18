@@ -1,0 +1,17 @@
+nav{
+  position: fixed;
+  bottom:0;
+  right: 0;
+}
+
+nav ul{
+  text-decoration: none;
+}
+
+nav ul li{
+  display: inline;
+}
+.full{
+  width:100vh;
+  height:100vh;
+}
