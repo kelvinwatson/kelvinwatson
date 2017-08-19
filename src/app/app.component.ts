@@ -1,9 +1,13 @@
+
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 import { DataService } from './service/data.service';
+
+declare var jquery:any;
+declare var $ :any;
 
 @Component({
   selector: 'app-root',
@@ -13,6 +17,10 @@ import { DataService } from './service/data.service';
 
 export class AppComponent implements OnInit {
   title = 'Kelvin Watson';
+  homeActive = false;
+  careerTimelineActive = false;
+  projectsActive = false;
+  hireActive = false;
   careerTimeline: FirebaseListObservable<any[]>;
   technologies: FirebaseListObservable<any[]>;
   projects: FirebaseListObservable<any[]>;
@@ -28,6 +36,10 @@ export class AppComponent implements OnInit {
    */
   ngOnInit():void {
     this.getData();
+  }
+
+  ngAfterViewInit() {
+    this.initScrollSpy();
   }
 
   /**
@@ -49,5 +61,30 @@ export class AppComponent implements OnInit {
 
   getProjects():void {
     this.dataService.getProjects().then(projects => this.projects = projects);
+  }
+
+  initScrollSpy(){
+    var self = this;
+    (function() {
+      console.log('in initScrollSpy');
+
+      var section = document.querySelectorAll("section");
+      var sections = {};
+      var i = 0;
+
+      Array.prototype.forEach.call(section, function(e) {
+        sections[e.id] = e.offsetTop;
+      });
+
+      console.log('sections',sections);
+
+      window.onscroll = function() {
+        var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+        self.homeActive = scrollPosition >= sections['topSection'];
+        self.careerTimelineActive = scrollPosition >= sections['careerTimelineSection'];
+        self.projectsActive = scrollPosition >= sections['projectsSection'];
+        self.hireActive = scrollPosition >= sections['hireSection'];
+      };
+    })();
   }
 }

@@ -1,17 +1,6 @@
 
-<nav class="footer">
-  <ul>
-    <li>
-      <!-- <span class="button"></span> -->
-      <a href="#topSection" target="_self">HOME</a>
-    </li>
-    <li><a href="#careerTimelineSection" target="_self">CAREER</a></li>
-    <li><a href="#technologiesSection" target="_self">TECH STACK</a></li>
-    <li><a href="#projectsSection" target="_self">PROJECTS</a></li>
-  </ul>
-</nav>
 
-<nav class="header">
+<!-- <nav class="header">
   <ul>
     <li>
       <a href="#" target="_self"><img class="social-icon" src="assets/images/facebook.png"></a>
@@ -20,28 +9,107 @@
       <a href="#" target="_self"><img class="social-icon" src="assets/images/linkedin.png"></a>
     </li>
   </ul>
-</nav>
+</nav> -->
+
+<div class="m1 menu">
+  <div id="menu-center">
+    <ul>
+      <li><a class="menu-anchor menu-anchor--{{homeActive}}" href="#topSection">Home</a>
+
+      </li>
+      <li><a class="menu-anchor menu-anchor--{{careerTimelineActive}}" href="#careerTimelineSection">Career</a>
+
+      </li>
+      <li><a class="menu-anchor menu-anchor--{{projectsActive}}" href="#projectsSection">Projects</a>
+
+      </li>
+      <li><a class="menu-anchor menu-anchor--{{hireActive}}" href="#hireSection">Hire</a>
+
+      </li>
+    </ul>
+  </div>
+</div>
 
 <div class="parent">
 
-  <a id="topSection"></a>
-  <a id="careerTimelineSection"></a>
-  <a id="technologiesSection"></a>
-  <a id="projectsSection"></a>
+  <!-- TOP SECTION -->
+  <section id="topSection" class="full slanted">
+    <div class="flex-container">
+      <section class="flex-left">
+        <nav class="large-nav">
+          <ul class="square-grid">
+            <li class="square-grid-item">
+              <div class="border-animation-container">
+                <!-- <span class="l1"></span>
+                <span class="l2"></span>
+                <span class="l3"></span> -->
+                <!-- <span class="l4"></span> -->
+                <a class="nav-link table" href="#careerTimelineSection" target="_self">
+                  <div class="table-cell table-cell-career">
+                    <div class="title">CAREER</div>
+                  </div>
+                </a>
+              </div>
+            </li>
 
-  <section id="topSection" class="full">
+            <li class="square-grid-item">
+              <div class="border-animation-container">
+                <!-- <span class="l1"></span>
+                <span class="l2"></span>
+                <span class="l3"></span>
+                <span class="l4"></span> -->
+                <a class="nav-link table" href="#technologiesSection" target="_self">
+                  <div class="table-cell table-cell-tech-stack">
+                    <div class="title">TECH STACK</div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="square-grid-item">
+              <div class="border-animation-container">
+                <!-- <span class="l1"></span>
+                <span class="l2"></span>
+                <span class="l3"></span>
+                <span class="l4"></span> -->
+                <a class="nav-link table" href="#projectsSection" target="_self">
+                  <div class="table-cell table-cell-projects">
+                    <div class="title">PROJECTS</div>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="square-grid-item">
+              <div class="border-animation-container">
+                <!-- <span class="l1"></span>
+                <span class="l2"></span>
+                <span class="l3"></span> -->
+                <!-- <span class="l4"></span> -->
+                <a class="nav-link table" href="#hireSection" target="_self">
 
+                  <div class="table-cell table-cell-hire">
+                    <div class="title">HIRE</div>
+                  </div>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </section>
+      <section class="flex-right">
+        <img src="assets/images/avatar2.jpg" class="avatar">
+        <h1>{{title}} &nbsp;<span class="cursor">&nbsp;</span></h1>
+        <small>BCompSci, BSc(Pharm)</small>
+        <p>Android Developer, Web Developer</p>
+      </section>
+    </div>
 
-    <div class="square">
+    <!-- <div class="square">
       <span class="l1"></span>
        <span class="l2"></span>
        <span class="l3"></span>
        <span class="l4"></span>
-      <h1>{{title}} &nbsp;<span class="cursor">&nbsp;</span></h1>
-      <small>BCompSci, BSc(Pharm)</small>
-      <p>Android Developer, Web Developer</p>
-      <img src="assets/images/avatar2.jpg" class="avatar">
-    </div>
+     </div> -->
+
   </section>
 
   <section id="careerTimelineSection" class="full orange">
@@ -81,5 +149,10 @@
         </ul>
       </li>
     </ul>
+  </section>
+
+  <section id="hireSection" class="full green">
+    <h2>Hire</h2>
+
   </section>
 </div>
