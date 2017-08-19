@@ -1,34 +1,28 @@
-
-
-<!-- <nav class="header">
+<div id="scrollspy-menu">
   <ul>
     <li>
-      <a href="#" target="_self"><img class="social-icon" src="assets/images/facebook.png"></a>
+      <div class="scrollspy-menu__anchor scrollspy-menu__anchor--{{homeActive}}" href="#topSection">
+        <a href="#topSection"></a>
+      </div>
     </li>
     <li>
-      <a href="#" target="_self"><img class="social-icon" src="assets/images/linkedin.png"></a>
+      <div class="scrollspy-menu__anchor scrollspy-menu__anchor--{{careerTimelineActive}}" href="#careerTimelineSection">
+        <a href="#careerTimelineSection"></a>
+      </div>
+    </li>
+    <li>
+      <div class="scrollspy-menu__anchor scrollspy-menu__anchor--{{projectsActive}}">
+        <a href="#projectsSection"></a>
+      </div>
+    </li>
+    <li>
+      <div class="scrollspy-menu__anchor scrollspy-menu__anchor--{{hireActive}}">
+        <a href="#hireSection"></a>
+      </div>
     </li>
   </ul>
-</nav> -->
-
-<div class="m1 menu">
-  <div id="menu-center">
-    <ul>
-      <li><a class="menu-anchor menu-anchor--{{homeActive}}" href="#topSection">Home</a>
-
-      </li>
-      <li><a class="menu-anchor menu-anchor--{{careerTimelineActive}}" href="#careerTimelineSection">Career</a>
-
-      </li>
-      <li><a class="menu-anchor menu-anchor--{{projectsActive}}" href="#projectsSection">Projects</a>
-
-      </li>
-      <li><a class="menu-anchor menu-anchor--{{hireActive}}" href="#hireSection">Hire</a>
-
-      </li>
-    </ul>
-  </div>
 </div>
+
 
 <div class="parent">
 
@@ -37,13 +31,9 @@
     <div class="flex-container">
       <section class="flex-left">
         <nav class="large-nav">
-          <ul class="square-grid">
+          <!-- <ul class="square-grid">
             <li class="square-grid-item">
               <div class="border-animation-container">
-                <!-- <span class="l1"></span>
-                <span class="l2"></span>
-                <span class="l3"></span> -->
-                <!-- <span class="l4"></span> -->
                 <a class="nav-link table" href="#careerTimelineSection" target="_self">
                   <div class="table-cell table-cell-career">
                     <div class="title">CAREER</div>
@@ -54,10 +44,6 @@
 
             <li class="square-grid-item">
               <div class="border-animation-container">
-                <!-- <span class="l1"></span>
-                <span class="l2"></span>
-                <span class="l3"></span>
-                <span class="l4"></span> -->
                 <a class="nav-link table" href="#technologiesSection" target="_self">
                   <div class="table-cell table-cell-tech-stack">
                     <div class="title">TECH STACK</div>
@@ -67,10 +53,6 @@
             </li>
             <li class="square-grid-item">
               <div class="border-animation-container">
-                <!-- <span class="l1"></span>
-                <span class="l2"></span>
-                <span class="l3"></span>
-                <span class="l4"></span> -->
                 <a class="nav-link table" href="#projectsSection" target="_self">
                   <div class="table-cell table-cell-projects">
                     <div class="title">PROJECTS</div>
@@ -80,19 +62,30 @@
             </li>
             <li class="square-grid-item">
               <div class="border-animation-container">
-                <!-- <span class="l1"></span>
-                <span class="l2"></span>
-                <span class="l3"></span> -->
-                <!-- <span class="l4"></span> -->
                 <a class="nav-link table" href="#hireSection" target="_self">
-
                   <div class="table-cell table-cell-hire">
                     <div class="title">HIRE</div>
                   </div>
                 </a>
               </div>
             </li>
-          </ul>
+          </ul> -->
+          <div class="ring">
+            <div class="led-container">
+              <div class="led"></div>
+            </div>
+
+
+
+
+            <div class="inner-glow"></div>
+            <div class="face"></div>
+            
+            <div id="led-overlay">
+              <div id="nav-hover-title">MY TITLE</div>
+            </div>
+          </div>
+
         </nav>
       </section>
       <section class="flex-right">
@@ -130,6 +123,8 @@
         {{technology.name}}: {{technology.proficiency}}
       </li>
     </ul>
+
+
   </section>
 
   <section id="projectsSection" class="full green">

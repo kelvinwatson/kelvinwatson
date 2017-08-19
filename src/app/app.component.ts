@@ -65,26 +65,23 @@ export class AppComponent implements OnInit {
 
   initScrollSpy(){
     var self = this;
-    (function() {
-      console.log('in initScrollSpy');
 
-      var section = document.querySelectorAll("section");
-      var sections = {};
-      var i = 0;
+    var section = document.querySelectorAll("section");
+    var sections = {};
+    var i = 0;
 
-      Array.prototype.forEach.call(section, function(e) {
-        sections[e.id] = e.offsetTop;
-      });
+    Array.prototype.forEach.call(section, function(e) {
+      sections[e.id] = e.offsetTop;
+    });
 
-      console.log('sections',sections);
+    console.log('sections',sections);
 
-      window.onscroll = function() {
-        var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
-        self.homeActive = scrollPosition >= sections['topSection'];
-        self.careerTimelineActive = scrollPosition >= sections['careerTimelineSection'];
-        self.projectsActive = scrollPosition >= sections['projectsSection'];
-        self.hireActive = scrollPosition >= sections['hireSection'];
-      };
-    })();
+    window.onscroll = function() {
+      var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+      self.homeActive = scrollPosition >= sections['topSection'];
+      self.careerTimelineActive = scrollPosition >= sections['careerTimelineSection'];
+      self.projectsActive = scrollPosition >= sections['projectsSection'];
+      self.hireActive = scrollPosition >= sections['hireSection'];
+    };
   }
 }
