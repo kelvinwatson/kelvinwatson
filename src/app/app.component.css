@@ -494,10 +494,38 @@ body {
   background-color: black;
   color: white;
   z-index:1000;
+  text-shadow: 0 0 10px rgba(215, 198, 212,1) , 0 0 20px rgba(215, 198, 212,1) , 0 0 30px rgba(215, 198, 212,1) , 0 0 40px rgba(215, 198, 212,1) , 0 0 70px rgba(215, 198, 212,1) , 0 0 80px rgba(215, 198, 212,1) , 0 0 100px rgba(215, 198, 212,1);
   /*display:none;*/
   display:block;
+  -moz-animation: ontheblink 5s 1;
+  -ms-animation: ontheblink 5s 1;
+  -webkit-animation: ontheblink 5s 1;
+  -moz-animation: ontheblink 5s 1;
+  -ms-animation: ontheblink 5s 1;
+  -webkit-animation: ontheblink 5s 1;
+
 }
 
 #led-overlay:hover  .ring {
 z-index:-5;
+}
+
+@-webkit-keyframes ontheblink {
+  21%,
+  39%,
+  45%,
+  47%,
+  53% {
+    color: #fff;
+    text-shadow: none;
+  }
+  26%,
+  38%,
+  40%,
+  44%,
+  46%,
+  48% {
+    color: #fff;
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff0, 0 0 30px #ff0;
+  }
 }
