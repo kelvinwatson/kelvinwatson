@@ -1,6 +1,5 @@
 
-import { Component } from '@angular/core';
-import { OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
@@ -52,7 +51,8 @@ export class AppComponent implements OnInit {
   }
 
   getCareerTimeline():void {
-    this.dataService.getCareerTimeline().then(careerTimeline => this.careerTimeline = careerTimeline);
+    this.dataService.getCareerTimeline().then(careerTimeline =>
+      this.careerTimeline = careerTimeline);
   }
 
   getTechnologies():void {
@@ -84,4 +84,5 @@ export class AppComponent implements OnInit {
       self.hireActive = scrollPosition >= sections['hireSection'];
     };
   }
+
 }

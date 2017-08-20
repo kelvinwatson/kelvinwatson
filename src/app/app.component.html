@@ -77,8 +77,8 @@
         <img src="assets/images/avatar2.jpg" class="avatar">
         <h1>{{title}} &nbsp;<span class="cursor">&nbsp;</span></h1>
         <div>
-          <small>BCompSci, BSc(Pharm)</small>
-          <p>Android Developer, Web Developer</p>
+          <small class="career-designation">BCompSci, BSc(Pharm)</small>
+          <p class="career-title">Android Developer, Web Developer</p>
         </div>
       </section>
     </div>
@@ -101,6 +101,50 @@
         {{career.milestone}}
       </li>
     </ul>
+
+
+    <section id="timeline">
+      <div class="tl-item" *ngFor="let career of careerTimeline | async">
+        <div class="tl-bg" style="background-image: url(https://placeimg.com/801/801/nature)"></div>
+        <div class="tl-year">
+          <p class="f2 heading--sanSerif">{{career.start}}</p>
+        </div>
+        <div class="tl-content">
+          <h1>{{career.label}}</h1>
+          <p>{{career.milestone}}</p>
+        </div>
+      </div>
+      <!-- <div class="tl-item">
+        <div class="tl-bg" style="background-image: url(https://placeimg.com/802/802/nature)"></div>
+        <div class="tl-year">
+          <p class="f2 heading--sanSerif">2013</p>
+        </div>
+        <div class="tl-content">
+          <h1 class="f3 text--accent ttu">Vestibulum laoreet lorem</h1>
+          <p>Suspendisse potenti. Sed sollicitudin eros lorem, eget accumsan risus dictum id. Maecenas dignissim ipsum vel mi rutrum egestas. Donec mauris nibh, facilisis ut hendrerit vel, fringilla sed felis. Morbi sed nisl et arcu.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-bg" style="background-image: url(https://placeimg.com/803/803/nature)"></div>
+        <div class="tl-year">
+          <p class="f2 heading--sanSerif">2014</p>
+        </div>
+        <div class="tl-content">
+          <h1 class="f3 text--accent ttu">Phasellus mauris elit</h1>
+          <p>Mauris cursus magna at libero lobortis tempor. Suspendisse potenti. Aliquam interdum vulputate neque sit amet varius. Maecenas ac pulvinar nisi. Fusce vitae nunc ultrices, tristique dolor at, porttitor dolor. Etiam id cursus arcu, in dapibus nibh. Pellentesque non porta leo. Nulla eros odio, egestas quis efficitur vel, pretium sed.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-bg" style="background-image: url(https://placeimg.com/800/800/nature)"></div>
+        <div class="tl-year">
+          <p class="f2 heading--sanSerif">2016</p>
+        </div>
+        <div class="tl-content">
+          <h1 class="f3 text--accent ttu">Mauris vitae nunc elem</h1>
+          <p>Suspendisse ac mi at dolor sodales faucibus. Nunc sagittis ornare purus non euismod. Donec vestibulum efficitur tortor, eget efficitur enim facilisis consequat. Vivamus laoreet laoreet elit. Ut ut varius metus, bibendum imperdiet ex. Curabitur diam quam, blandit at risus nec, pulvinar porttitor lorem. Pellentesque dolor elit.</p>
+        </div>
+      </div> -->
+    </section>
   </section>
 
   <section id="technologiesSection" class="full pink">
