@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import SocialIcons from './SocialIcons';
-import Toolbar from './Toolbar';
+import Social from '../Social/Social';
+import Toolbar from '../Toolbar/Toolbar';
 
 class Header extends Component {
   render(){
@@ -8,7 +8,7 @@ class Header extends Component {
       <div>
         <h1>I am a Header</h1>
         <Toolbar />
-        <SocialIcons />
+        <Social />
       </div>
     );
   }

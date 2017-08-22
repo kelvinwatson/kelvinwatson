@@ -3,8 +3,6 @@ import HireForm from './HireForm';
 
 class Hire extends Component {
 
-
-
   render(){
     return (
       <div>

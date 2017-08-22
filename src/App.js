@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
-import Header from './components/Header'
-import Introduction from './components/Introduction'
-import Projects from './components/Projects'
-import Technologies from './components/Technologies'
-import Hire from './components/Hire'
-import Footer from './components/Footer'
+import Header from './components/Header/Header'
+import Introduction from './components/Introduction/Introduction'
+import Projects from './components/Projects/Projects'
+import Technologies from './components/Technologies/Technologies'
+import Hire from './components/Hire/Hire'
+import Footer from './components/Footer/Footer'
 import './App.css';
 
 import * as firebase from 'firebase';
@@ -52,7 +51,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        {/* <Header /> */}
         <Introduction />
         <Projects projects={this.state.projects}/>
         <Technologies technologies={this.state.technologies}/>
