@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './Projects.css'
 
 function Projects(props){
-  console.log(props);
-
   let projectsList = props && props.projects
   if (projectsList){
     projectsList = projectsList.map((project) =>

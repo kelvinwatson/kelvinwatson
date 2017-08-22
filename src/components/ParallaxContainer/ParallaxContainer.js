@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
-import './'
+import './ParallaxContainer.css'
 
 class ParallaxContainer extends Component {
 
   render(){
+
+    console.log('props', this.props.backgroundClass);
+
+    let className = 'background ' + this.props.backgroundClass;
     return (
-      <section className="background">
+      <section className={className}>
         <div className="content-wrapper">
           <p className="content-title">Full Page Parallax Effect</p>
           <p className="content-subtitle">Scroll down and up to see the effect!</p>
