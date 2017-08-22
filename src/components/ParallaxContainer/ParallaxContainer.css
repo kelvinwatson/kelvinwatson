@@ -20,11 +20,14 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 .background:first-child {
-  background-image: url(https://s8.postimg.org/lf2udl5np/4_Aihmii.jpg);
+  background-image: url(../../images/background-white.jpg);
   transform: translateY(-15vh);
+}
+.background-override {
+  background-image: url(../../images/background-black.jpg);
 }
 .background:first-child .content-wrapper {
   transform: translateY(15vh);
