@@ -48,7 +48,7 @@ class App extends Component {
   /**
    * Adapted from https://codepen.io/anon/pen/OjZYgw?editors=0010
    */
-  parallaxScroll(evt){
+  parallaxScroll(evt, isSimulateDownScroll, isSimulateUpScroll){
     var delta;
     if (this.state.isFirefox) {
       //Set delta for Firefox
@@ -166,14 +166,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
-        <ScrollSpyBar
-          isFirstScrollSpyItemActive={this.state.isFirstScrollSpyItemActive}
-          isSecondScrollSpyItemActive={this.state.isSecondScrollSpyItemActive}/>
-
         {/* <Header /> */}
         {/*<ParallaxContainer ref="parallaxContainer0" backgroundClass={this.state.parallaxContainer0}/>*/}
         <IntroductionParallaxContainer ref="parallaxContainer0" scrollBackgroundClass={this.state.parallaxContainer0}/>
+
+        <ScrollSpyBar
+          isFirstScrollSpyItemActive={this.state.isFirstScrollSpyItemActive}
+          isSecondScrollSpyItemActive={this.state.isSecondScrollSpyItemActive}
+          simulateUpScroll={this.state.simulateUpScroll}
+          simulateDownScroll={this.state.simulateDownScroll}/>
 
         <StaticParallaxContainer ref="parallaxContainer1" scrollBackgroundClass={this.state.parallaxContainer1}/>
         {/*
