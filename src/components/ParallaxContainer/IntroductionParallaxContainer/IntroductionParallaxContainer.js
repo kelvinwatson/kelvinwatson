@@ -8,55 +8,48 @@ class IntroductionParallaxContainer extends Component {
     super(props);
     this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
     this.state = {
-      backgroundClass: this.props.backgroundClass
+      backgroundClass: props.backgroundClass
     }
   }
 
+  componentWillReceiveProps(nextProps) {    //ensures child stays inSync with parent
+    console.log('nextProps', nextProps);
+    this.setState({ backgroundClass: nextProps.backgroundClass });
+  }
+
   handleCheckboxChange(e){
-    console.log('this.state.backgroundClass', this.state.backgroundClass);
-    if (e.target.checked){ //set background to black;
-      this.setBackgroundClass('background-black');
-    } else {
-      this.setBackgroundClass('background-white');
-    }
+    console.log('e',e.target.checked);
+
+    this.setBackgroundClass(e.target.checked? 'background-black' : 'background-white');
   }
 
   setBackgroundClass(bgClass){
     console.log('bgClass', bgClass);
+    var backgroundClass;
     if (bgClass === 'background-black') {
-      //replace white with black
-      var backgroundClass = this._replace(this.state.backgroundClass, 'background-white', bgClass);
-
-      this.setState({
-        backgroundClass: backgroundClass
-      });
-
+      backgroundClass = this._replaceIfExists(this.state.backgroundClass, 'background-white', bgClass);
     } else if (bgClass === 'background-white'){
-      var backgroundClass = this._replace(this.state.backgroundClass, 'background-black', bgClass);
-
-      this.setState({
-        backgroundClass: backgroundClass
-      });
-
+      backgroundClass = this._replaceIfExists(this.state.backgroundClass, 'background-black', bgClass);
     }
+
+    this.setState({
+      backgroundClass: backgroundClass
+    });
   }
 
-  _replace(str, find, replacement){
-    var newString = str && str.slice() || '';
+  _replaceIfExists(str, find, replacement){
+  var newString = str && str.slice() || '';
 
-    if (newString.includes(find)){
-      console.log('includes!');
-      return newString.replace(new RegExp(find, 'g'), replacement);
-    } else {
-      console.log('not includes!');
-      return replacement;
-    }
+  if (newString.includes(find)){
+    console.log('includes!');
+    return newString.replace(new RegExp(find, 'g'), replacement);
+  } else {
+    console.log('not includes!');
+    return replacement;
   }
+}
 
   render(){
-
-    // let className this.props.backgroundClass;
-
     return (
       <ParallaxContainer backgroundClass={this.state.backgroundClass}>
 
