@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ParallaxContainer from '../ParallaxContainer';
+import AnimatedParallaxContainer from '../AnimatedParallaxContainer';
 import NavigationDial from '../../NavigationDial/NavigationDial';
 import Toolbar from '../../Toolbar/Toolbar';
 import './IntroductionParallaxContainer.css';
@@ -53,13 +53,13 @@ class IntroductionParallaxContainer extends Component {
 
   render(){
     return (
-      <ParallaxContainer backgroundClass={this.state.backgroundClass}>
+      <AnimatedParallaxContainer backgroundClass={this.state.backgroundClass}>
         <div className="parallax-flex-parent">
           <Toolbar onCheckboxChecked={this.handleCheckboxChange}/>
           <NavigationDial />
           <div className="kelvin-watson-logo">KELVIN WATSON</div>
         </div>
-      </ParallaxContainer>
+      </AnimatedParallaxContainer>
     );
   }
 }

@@ -6,7 +6,7 @@ import Technologies from './components/Technologies/Technologies'
 import Hire from './components/Hire/Hire'
 import Footer from './components/Footer/Footer'
 
-import ParallaxContainer from './components/ParallaxContainer/ParallaxContainer'
+import StaticParallaxContainer from './components/ParallaxContainer/StaticParallaxContainer'
 import IntroductionParallaxContainer from './components/ParallaxContainer/IntroductionParallaxContainer/IntroductionParallaxContainer'
 
 import './App.css';
@@ -163,7 +163,7 @@ class App extends Component {
         {/*<ParallaxContainer ref="parallaxContainer0" backgroundClass={this.state.parallaxContainer0}/>*/}
         <IntroductionParallaxContainer ref="parallaxContainer0" backgroundClass={this.state.parallaxContainer0}/>
 
-        <ParallaxContainer ref="parallaxContainer1" backgroundClass={this.state.parallaxContainer1}/>
+        <StaticParallaxContainer ref="parallaxContainer1" backgroundClass={this.state.parallaxContainer1}/>
         {/*
           <Introduction />
           <Projects projects={this.state.projects}/>

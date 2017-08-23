@@ -1,0 +1,32 @@
+.toolbar-flex-parent{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 64px;
+}
+
+.toolbar-flex-item.info{
+  height: 2em;
+  width: 2em;
+  line-height: 2em;
+  text-transform: lowercase;
+  font-size: 1.5em;
+  font-style: italic;
+}
+
+.exclamation {
+}
+
+
+.info-black{
+  color: black;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.info-white{
+  color: white;
+  border: 1px solid white;
+  border-radius: 50%;
+}
