@@ -3,16 +3,8 @@ import './InformationOverlay.css'
 
 class InformationOverlay extends Component {
   render(){
-    let overlayClassName = 'information-overlay-container';
-    if (this.props.isOpenOverlay){
-      overlayClassName += ' information-overlay-container-open';
-    } else if (overlayClassName.includes('information-overlay-container-open')){
-      overlayClassName.replace('information-overlay-container-open','');
-      overlayClassName = overlayClassName.trim();
-    }
-
     return (
-      <div className={overlayClassName}>
+      <div className={`information-overlay-container ${this.props.isOpenOverlay ? 'information-overlay-container-open' : ''}`}>
         <div onClick={this.props.onCloseInfoOverlayClicked}> X </div>
         <h1>I am InformationOverlay!!!</h1>
       </div>

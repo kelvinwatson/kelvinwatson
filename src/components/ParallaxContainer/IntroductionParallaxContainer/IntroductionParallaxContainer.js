@@ -99,18 +99,14 @@ class IntroductionParallaxContainer extends Component {
   }
 
   render(){
-
-    let contentClassName = 'parallax-flex-parent';
-    if (this.state.isOpenOverlay){
-      contentClassName += ' parallax-flex-parent-slide-off';
-    }
     return (
         <AnimatedParallaxContainer backgroundClass={this.state.backgroundClass}>
         <InformationOverlay isOpenOverlay={this.state.isOpenOverlay} onCloseInfoOverlayClicked={this.handleCloseInfoOverlayClicked}/>
-          <div className={contentClassName}>
+          <div className={`parallax-flex-parent ${this.state.isOpenOverlay ? 'parallax-flex-parent-slide-off' : ''}`}>
             <Toolbar infoClass={this.state.infoClass} onCheckboxChecked={this.handleCheckboxChange} onInfoClicked={this.handleInfoClicked}/>
             <NavigationDial />
             <div className="kelvin-watson-logo">KELVIN WATSON</div>
+            <div className="designation">Software Engineer  |  Web/Mobile Developer</div>
           </div>
         </AnimatedParallaxContainer>
     );

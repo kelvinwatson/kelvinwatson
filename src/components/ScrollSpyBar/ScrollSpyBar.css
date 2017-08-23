@@ -1,3 +1,19 @@
+@keyframes moveUpAndDown {
+  0% {
+    transform: translateY(0%);
+  }
+  45% {
+    transform: translateY(100%);
+  }
+  50% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+
 /* For scrollspy */
 #scrollspy-menu {
   position: fixed;
@@ -33,6 +49,14 @@
 
 #scrollspy-menu ul {
   list-style: none;
+
+  animation-name: moveUpAndDown;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+
+  -webkit-animation-timing-function: linear;
 }
 
 #scrollspy-menu ul li {

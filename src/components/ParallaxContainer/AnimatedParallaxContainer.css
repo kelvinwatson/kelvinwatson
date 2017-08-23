@@ -1,12 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
 @-webkit-keyframes animate {
     from { transform: translate(0, 0); }
     to { transform: translate(-250px, -250px); }
 }
-/*
-@-webkit-keyframes animate {
-	from {background-position: 0 0;}
-	to {background-position: -100px 0;}
-}*/
 
 .background {
   overflow: hidden;
@@ -17,21 +14,13 @@
   width: 100%;
   transform: translateY(30vh);
 
-
   opacity: 1;
 
   transform: translate3D(0,0,0); /* default position, on screen */
   -moz-transform: translate3D(0,0,0);
   -webkit-transform: translate3D(0,0,0);
 
-  transition: all 0.8s cubic-bezier(0.22, 0.44, 0, 1);
-
-  /*transition: -moz-transform .25s ease-in-out;
-  -moz-transition: -moz-transform .25s ease-in-out;
-  -webkit-transition: -webkit-transform .25s ease-in-out;
-
-  -moz-transition: all .8s ease;
-  -webkit-transition: all .8s ease;*/
+  transition: all 0.7s cubic-bezier(0.22, 0.44, 0, 1);
 }
 .background:before {
   content: "";
@@ -64,7 +53,7 @@
   color: white;
 }
 .background-black:before {
-  transition: all 0.8s cubic-bezier(0.22, 0.44, 0, 1);
+  transition: all 0.1s ease;
   background-image: url(../../images/background-black.jpg);
 }
 .background-white{
@@ -72,7 +61,7 @@
 }
 .background-white:before {
   /*color: black;*/
-  transition: all 0.8s cubic-bezier(0.22, 0.44, 0, 1);
+  transition: all 0.1s ease;
   background-image: url(../../images/background-white.jpg);
 }
 .background:first-child .content-wrapper {
@@ -105,12 +94,10 @@
   justify-content: center;
   text-align: center;
   flex-flow: column nowrap;
-  font-family: Montserrat;
-  text-transform: uppercase;
   transform: translateY(40vh);
   will-change: transform;
   backface-visibility: hidden;
-  transition: all 1.7s cubic-bezier(0.22, 0.44, 0, 1);
+  transition: all 0.1s linear;
 }
 .content-title {
   font-size: 12vh;
@@ -141,4 +128,8 @@
 }
 .background.down-scroll + .background:not(.down-scroll) .content-wrapper {
   transform: translateY(15vh);
+}
+.designation{
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.17em;
 }
