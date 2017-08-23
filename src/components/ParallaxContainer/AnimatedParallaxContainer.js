@@ -7,6 +7,15 @@ class AnimatedParallaxContainer extends Component {
       (this.props.backgroundClass || '') +
       ' ' +
       (this.props.scrollBackgroundClass || '');
+
+    if (this.props.isOpenOverlay){
+      // should slide out and fade out
+      backgroundClassName += ' background-slide-off-screen';
+    } else if (backgroundClassName.includes('background-slide-off-screen')){
+      backgroundClassName.replace('background-slide-off-screen', '');
+      backgroundClassName = backgroundClassName.trim();
+    }
+    
     return (
       <section className={backgroundClassName}>
 

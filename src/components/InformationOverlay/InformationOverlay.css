@@ -1,0 +1,21 @@
+.information-overlay-container {
+  background-color: pink;
+  width: 0;
+  height: 100%;
+  z-index: 10;
+  overflow: auto;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+
+  -webkit-transition: all .8s ease; /* close overlay */
+}
+
+.information-overlay-container-open {
+  opacity: 1;
+  -webkit-transition: all .8s ease;
+  -webkit-transform: translate3d(0, 0, 0); /* open overlay */
+}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AnimatedParallaxContainer from '../AnimatedParallaxContainer';
+import InformationOverlay from '../../InformationOverlay/InformationOverlay';
 import NavigationDial from '../../NavigationDial/NavigationDial';
 import Toolbar from '../../Toolbar/Toolbar';
 import './IntroductionParallaxContainer.css';
@@ -9,11 +10,27 @@ class IntroductionParallaxContainer extends Component {
   constructor(props){
     super(props);
     this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
+    this.handleInfoClicked = this.handleInfoClicked.bind(this);
+    this.handleCloseInfoOverlayClicked = this.handleCloseInfoOverlayClicked.bind(this);
     console.log('constructor', props);
     this.state = {
       backgroundClass: (props.backgroundClass || '') + ' ' + (props.scrollBackgroundClass || ''),
-      infoClass: 'info-black'
+      infoClass: 'info-black',
+      isOpenOverlay: false
     }
+  }
+
+  handleInfoClicked(e){
+    this.setState({
+      isOpenOverlay: true
+    });
+  }
+
+  handleCloseInfoOverlayClicked(e){
+    console.log('wel hi');
+    this.setState({
+      isOpenOverlay: false
+    });
   }
 
   componentWillReceiveProps(nextProps) {    //ensures child stays inSync with parent
@@ -82,14 +99,20 @@ class IntroductionParallaxContainer extends Component {
   }
 
   render(){
+
+    let contentClassName = 'parallax-flex-parent';
+    if (this.state.isOpenOverlay){
+      contentClassName += ' parallax-flex-parent-slide-off';
+    } 
     return (
-      <AnimatedParallaxContainer backgroundClass={this.state.backgroundClass}>
-        <div className="parallax-flex-parent">
-          <Toolbar infoClass={this.state.infoClass} onCheckboxChecked={this.handleCheckboxChange}/>
-          <NavigationDial />
-          <div className="kelvin-watson-logo">KELVIN WATSON</div>
-        </div>
-      </AnimatedParallaxContainer>
+        <AnimatedParallaxContainer backgroundClass={this.state.backgroundClass}>
+        <InformationOverlay isOpenOverlay={this.state.isOpenOverlay} onCloseInfoOverlayClicked={this.handleCloseInfoOverlayClicked}/>
+          <div className={contentClassName}>
+            <Toolbar infoClass={this.state.infoClass} onCheckboxChecked={this.handleCheckboxChange} onInfoClicked={this.handleInfoClicked}/>
+            <NavigationDial />
+            <div className="kelvin-watson-logo">KELVIN WATSON</div>
+          </div>
+        </AnimatedParallaxContainer>
     );
   }
 }

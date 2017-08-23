@@ -16,7 +16,22 @@
   position: fixed;
   width: 100%;
   transform: translateY(30vh);
+
+
+  opacity: 1;
+
+  transform: translate3D(0,0,0); /* default position, on screen */
+  -moz-transform: translate3D(0,0,0);
+  -webkit-transform: translate3D(0,0,0);
+
   transition: all 0.8s cubic-bezier(0.22, 0.44, 0, 1);
+
+  /*transition: -moz-transform .25s ease-in-out;
+  -moz-transition: -moz-transform .25s ease-in-out;
+  -webkit-transition: -webkit-transform .25s ease-in-out;
+
+  -moz-transition: all .8s ease;
+  -webkit-transition: all .8s ease;*/
 }
 .background:before {
   content: "";
