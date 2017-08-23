@@ -4,6 +4,7 @@
   width: 100%;
   justify-content: space-between;
   padding: 0 64px;
+  position:relative;
 }
 .toolbar-flex-item{
   flex-grow: 0;
@@ -19,9 +20,11 @@
   text-transform: lowercase;
   font-size: 1.5em;
   font-style: italic;
+  position:absolute;
 }
 
 .left-icon{
+  left: 64px;
   margin-right: 8px;
   border: none;
 }
@@ -37,6 +40,7 @@ button.left-icon:focus {
 }*/
 
 .right-icon{
+  left: 64px;
   margin-left: 8px;
   position:relative;
 }
@@ -60,19 +64,19 @@ button.left-icon:focus {
 }
 .share-icons {
   display: none;
+  position:absolute;
 
 }
 .share-icon{
   display:inline-block;
   font-size: 1em;
-  margin: 8px 0 4px 0;
 }
 .facebook{
 
 }
 
 .linkedin{
-
+  margin-top:64px;
 }
 
 
@@ -99,4 +103,19 @@ button.left-icon:focus {
 .info-white:active{
   background-color: rgba(255,255,255,0.8);
   color: black;
+}
+
+.share{
+  border-radius: 50%;
+  padding: 10px;
+  height: 2em;
+  width: 2em;
+}
+.share-black{
+  background-color: rgba(255,255,255,0.5);
+  border: 1px solid black;
+}
+.share-white{
+  background-color: rgba(0,0,0,0.5);
+  border: 1px solid white;
 }

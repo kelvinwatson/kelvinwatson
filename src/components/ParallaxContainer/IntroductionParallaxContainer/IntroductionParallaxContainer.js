@@ -16,7 +16,9 @@ class IntroductionParallaxContainer extends Component {
     this.state = {
       backgroundClass: (props.backgroundClass || '') + ' ' + (props.scrollBackgroundClass || ''),
       infoClass: 'info-black',
-      isOpenOverlay: false
+      isOpenOverlay: false,
+      svgFillColor: 'black',
+      shareIconColor: 'black'
     }
   }
 
@@ -57,32 +59,27 @@ class IntroductionParallaxContainer extends Component {
   }
 
   setBackgroundColorClass(bgColorClass){
-    var infoClass;
+    var infoClass, svgFillColor, shareIconColor;
     var backgroundClass = this.state.backgroundClass;
     if (bgColorClass === 'background-black') {
       //replace white with black
       backgroundClass = this._replaceIfExists(backgroundClass, 'background-white', bgColorClass);
       backgroundClass = this._addIfNotExists(backgroundClass, 'background-black');
       infoClass = 'info-white';
+      svgFillColor = shareIconColor = 'white';
     } else if (bgColorClass === 'background-white'){
       //replace black with white
       backgroundClass = this._replaceIfExists(backgroundClass, 'background-black', bgColorClass);
       backgroundClass = this._addIfNotExists(backgroundClass, 'background-white');
       infoClass = 'info-black';
+      svgFillColor = shareIconColor = 'black';
     }
-
-    // if (/\S/.test(this.state.backgroundClass) &&
-    //   !(this.state.backgroundClass.includes('up-scroll') || this.state.backgroundClass.includes('down-scroll'))){ //not empty and not just whitespace
-    //   backgroundClass = this.state.backgroundClass + ' ' + backgroundClass;
-    // }
-    //
-    // console.log('bgClass', bgClass);
-    // console.log('setting state with backgroundClass', backgroundClass); //color
-    // console.log('setBackgroundClass this.state.backgroundClass', this.state.backgroundClass); //scroll
 
     this.setState({
       backgroundClass: backgroundClass,
-      infoClass: infoClass
+      infoClass: infoClass,
+      svgFillColor: svgFillColor,
+      shareIconColor: shareIconColor
     });
   }
 
@@ -103,7 +100,12 @@ class IntroductionParallaxContainer extends Component {
         <AnimatedParallaxContainer backgroundClass={this.state.backgroundClass}>
         <InformationOverlay isOpenOverlay={this.state.isOpenOverlay} onCloseInfoOverlayClicked={this.handleCloseInfoOverlayClicked}/>
           <div className={`parallax-flex-parent ${this.state.isOpenOverlay ? 'parallax-flex-parent-slide-off' : ''}`}>
-            <Toolbar infoClass={this.state.infoClass} onCheckboxChecked={this.handleCheckboxChange} onInfoClicked={this.handleInfoClicked}/>
+            <Toolbar
+              shareIconColor={this.state.shareIconColor}
+              svgFillColor={this.state.svgFillColor}
+              infoClass={this.state.infoClass}
+              onCheckboxChecked={this.handleCheckboxChange}
+              onInfoClicked={this.handleInfoClicked}/>
             <NavigationDial />
             <div className="kelvin-watson-logo">KELVIN WATSON</div>
             <div className="designation">Software Engineer  |  Web/Mobile Developer</div>
