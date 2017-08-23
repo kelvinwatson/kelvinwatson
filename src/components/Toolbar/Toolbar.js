@@ -3,12 +3,10 @@ import './Toolbar.css'
 
 class Toolbar extends Component {
   render(){
-
-    const infoColor = 'info-black'; //TODO: this.props.infoColor
     return (
       <div className="toolbar-flex-parent">
         <div className="toolbar-flex-item info">
-          <div className={infoColor}>i</div>
+          <div className={this.props.infoClass}>i</div>
         </div>
         <div className="toolbar-flex-item color-toggle">
           <input type="checkbox" onChange={this.props.onCheckboxChecked} />

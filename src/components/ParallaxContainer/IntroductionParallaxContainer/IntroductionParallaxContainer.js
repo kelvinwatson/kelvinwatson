@@ -11,7 +11,8 @@ class IntroductionParallaxContainer extends Component {
     this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
     console.log('constructor', props);
     this.state = {
-      backgroundClass: (props.backgroundClass || '') + ' ' + (props.scrollBackgroundClass || '')
+      backgroundClass: (props.backgroundClass || '') + ' ' + (props.scrollBackgroundClass || ''),
+      infoClass: 'info-black'
     }
   }
 
@@ -38,16 +39,19 @@ class IntroductionParallaxContainer extends Component {
     this.setBackgroundColorClass(e.target.checked ? 'background-black' : 'background-white');
   }
 
-  setBackgroundColorClass(bgClass){
+  setBackgroundColorClass(bgColorClass){
+    var infoClass;
     var backgroundClass = this.state.backgroundClass;
-    if (bgClass === 'background-black') {
+    if (bgColorClass === 'background-black') {
       //replace white with black
-      backgroundClass = this._replaceIfExists(backgroundClass, 'background-white', bgClass);
+      backgroundClass = this._replaceIfExists(backgroundClass, 'background-white', bgColorClass);
       backgroundClass = this._addIfNotExists(backgroundClass, 'background-black');
-    } else if (bgClass === 'background-white'){
+      infoClass = 'info-white';
+    } else if (bgColorClass === 'background-white'){
       //replace black with white
-      backgroundClass = this._replaceIfExists(backgroundClass, 'background-black', bgClass);
+      backgroundClass = this._replaceIfExists(backgroundClass, 'background-black', bgColorClass);
       backgroundClass = this._addIfNotExists(backgroundClass, 'background-white');
+      infoClass = 'info-black';
     }
 
     // if (/\S/.test(this.state.backgroundClass) &&
@@ -60,7 +64,8 @@ class IntroductionParallaxContainer extends Component {
     // console.log('setBackgroundClass this.state.backgroundClass', this.state.backgroundClass); //scroll
 
     this.setState({
-      backgroundClass: backgroundClass
+      backgroundClass: backgroundClass,
+      infoClass: infoClass
     });
   }
 
@@ -80,7 +85,7 @@ class IntroductionParallaxContainer extends Component {
     return (
       <AnimatedParallaxContainer backgroundClass={this.state.backgroundClass}>
         <div className="parallax-flex-parent">
-          <Toolbar onCheckboxChecked={this.handleCheckboxChange}/>
+          <Toolbar infoClass={this.state.infoClass} onCheckboxChecked={this.handleCheckboxChange}/>
           <NavigationDial />
           <div className="kelvin-watson-logo">KELVIN WATSON</div>
         </div>
