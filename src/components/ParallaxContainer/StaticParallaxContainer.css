@@ -46,12 +46,6 @@
 .static-background:first-child .content-wrapper {
   transform: translateY(15vh);
 }
-.static-background:nth-child(2) {
-  background-image: url(https://s8.postimg.org/ow4wgk4px/ugqti_Lg.jpg);
-}
-.static-background:nth-child(3) {
-  background-image: url(https://s8.postimg.org/grwsbtiat/x_ZMOBTj.jpg);
-}
 
 /* Set stacking context of slides */
 .static-background:nth-child(1) {

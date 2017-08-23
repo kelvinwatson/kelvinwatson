@@ -3,7 +3,10 @@ import './AnimatedParallaxContainer.css'
 
 class AnimatedParallaxContainer extends Component {
   render(){
-    let backgroundClassName = 'background ' + this.props.backgroundClass;
+    let backgroundClassName = 'background ' +
+      (this.props.backgroundClass || '') +
+      ' ' +
+      (this.props.scrollBackgroundClass || '');
     return (
       <section className={backgroundClassName}>
 

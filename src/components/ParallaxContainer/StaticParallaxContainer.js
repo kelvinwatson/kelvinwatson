@@ -3,7 +3,10 @@ import './StaticParallaxContainer.css'
 
 class StaticParallaxContainer extends Component {
   render(){
-    let backgroundClassName = 'static-background ' + this.props.backgroundClass;
+    let backgroundClassName = 'static-background ' +
+    (this.props.backgroundClass || '') +
+    ' ' +
+    (this.props.scrollBackgroundClass || '');
     return (
       <section className={backgroundClassName}>
 

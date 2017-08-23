@@ -161,9 +161,9 @@ class App extends Component {
       <div className="App">
         {/* <Header /> */}
         {/*<ParallaxContainer ref="parallaxContainer0" backgroundClass={this.state.parallaxContainer0}/>*/}
-        <IntroductionParallaxContainer ref="parallaxContainer0" backgroundClass={this.state.parallaxContainer0}/>
+        <IntroductionParallaxContainer ref="parallaxContainer0" scrollBackgroundClass={this.state.parallaxContainer0}/>
 
-        <StaticParallaxContainer ref="parallaxContainer1" backgroundClass={this.state.parallaxContainer1}/>
+        <StaticParallaxContainer ref="parallaxContainer1" scrollBackgroundClass={this.state.parallaxContainer1}/>
         {/*
           <Introduction />
           <Projects projects={this.state.projects}/>
