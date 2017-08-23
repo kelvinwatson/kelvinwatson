@@ -8,6 +8,7 @@ class ParallaxContainer extends Component {
       <section className={className}>
         <div className="content-wrapper">
           {this.props.children}
+          
           {/* <p className="content-title">Full Page Parallax Effect</p> */}
           {/* <p className="content-subtitle">Scroll down and up to see the effect!</p> */}
         </div>
