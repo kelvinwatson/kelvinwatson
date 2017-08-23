@@ -53,14 +53,14 @@
 }
 
 .scrollspy-menu__anchor--true {
-  background: #fff;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #E9ECF3 0 -1px 9px, #fff 0 2px 12px;
+  background: #000;
+  /*box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #E9ECF3 0 -1px 9px, #fff 0 2px 12px;*/
 }
 
 .scrollspy-menu__anchor--false {
   width: 12px;
   height: 12px;
-  background: #000;
-  box-shadow: 0 0 4px #1C1C17;
+  background: #fff;
+  /*box-shadow: 0 0 4px #1C1C17;*/
   transition: all .3s ease;
 }

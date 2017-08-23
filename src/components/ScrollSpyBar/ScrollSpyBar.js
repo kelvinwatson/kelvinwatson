@@ -8,13 +8,11 @@ class ScrollSpyBar extends Component {
       <div id="scrollspy-menu">
         <ul>
           <li>
-            <div className={`scrollspy-menu__anchor scrollspy-menu__anchor--${this.props.isFirstScrollSpyItemActive}`}>
-              <a href="#topSection" onClick={this.props.simulateUpScroll}></a>
+            <div onClick={this.props.simulateDownScroll} className={`scrollspy-menu__anchor scrollspy-menu__anchor--${this.props.isFirstScrollSpyItemActive}`}>
             </div>
           </li>
           <li>
-            <div className={`scrollspy-menu__anchor scrollspy-menu__anchor--${this.props.isSecondScrollSpyItemActive}`}>
-              <a href="#bottomSection" onClick={this.props.simulateDownScroll}></a>
+            <div onClick={this.props.simulateUpScroll} className={`scrollspy-menu__anchor scrollspy-menu__anchor--${this.props.isSecondScrollSpyItemActive}`}>
             </div>
           </li>
         </ul>

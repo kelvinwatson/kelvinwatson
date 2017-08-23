@@ -19,6 +19,8 @@ class App extends Component {
   constructor(){
     super();
     this.parallaxScroll = this.parallaxScroll.bind(this);
+    this.simulateUpScroll = this.simulateUpScroll.bind(this);
+    this.simulateDownScroll = this.simulateDownScroll.bind(this);
     this.state = {
       projects: null,
       technologies: null,
@@ -49,20 +51,23 @@ class App extends Component {
    * Adapted from https://codepen.io/anon/pen/OjZYgw?editors=0010
    */
   parallaxScroll(evt, isSimulateDownScroll, isSimulateUpScroll){
+
     var delta;
-    if (this.state.isFirefox) {
-      //Set delta for Firefox
-      delta = evt.detail * (-120);
-    } else if (this.state.isIe) {
-      //Set delta for IE
-      delta = -evt.deltaY;
-    } else {
-      //Set delta for all other browsers
-      delta = evt.wheelDelta;
+    if (!isSimulateUpScroll && !isSimulateDownScroll){ //only perform below if not simulation
+      if (this.state.isFirefox) {
+        //Set delta for Firefox
+        delta = evt.detail * (-120);
+      } else if (this.state.isIe) {
+        //Set delta for IE
+        delta = -evt.deltaY;
+      } else {
+        //Set delta for all other browsers
+        delta = evt.wheelDelta;
+      }
     }
 
     if (this.state.ticking != true) {
-      if (delta <= -this.state.scrollSensitivitySetting) {
+      if (isSimulateDownScroll || delta <= -this.state.scrollSensitivitySetting) {
         //Down scroll
         this.setState({
           ticking: true
@@ -76,7 +81,7 @@ class App extends Component {
         }
         this.slideDurationTimeout(this.state.slideDurationSetting);
       }
-      if (delta >= this.state.scrollSensitivitySetting) {
+      if (isSimulateUpScroll || delta >= this.state.scrollSensitivitySetting) {
         //Up scroll
         this.setState({
           ticking: true
@@ -163,6 +168,18 @@ class App extends Component {
     console.log('formData',formData);
   }
 
+  simulateUpScroll(e){
+    e.preventDefault();
+    console.log("simulateUpScroll");
+    this.parallaxScroll(null, true, false);
+  }
+
+  simulateDownScroll(e){
+    e.preventDefault();
+    console.log("simulateDownScroll");
+    this.parallaxScroll(null, false, true);
+  }
+
   render() {
     return (
       <div className="App">
@@ -173,8 +190,8 @@ class App extends Component {
         <ScrollSpyBar
           isFirstScrollSpyItemActive={this.state.isFirstScrollSpyItemActive}
           isSecondScrollSpyItemActive={this.state.isSecondScrollSpyItemActive}
-          simulateUpScroll={this.state.simulateUpScroll}
-          simulateDownScroll={this.state.simulateDownScroll}/>
+          simulateUpScroll={this.simulateUpScroll}
+          simulateDownScroll={this.simulateDownScroll}/>
 
         <StaticParallaxContainer ref="parallaxContainer1" scrollBackgroundClass={this.state.parallaxContainer1}/>
         {/*
