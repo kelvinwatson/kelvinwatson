@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import ParallaxContainer from '../ParallaxContainer'
-import '../ParallaxContainer.css'
+import ParallaxContainer from '../ParallaxContainer';
+import NavigationDial from '../../NavigationDial/NavigationDial';
+import Toolbar from '../../Toolbar/Toolbar';
+import './IntroductionParallaxContainer.css';
 
 class IntroductionParallaxContainer extends Component {
 
@@ -38,26 +40,25 @@ class IntroductionParallaxContainer extends Component {
   }
 
   _replaceIfExists(str, find, replacement){
-  var newString = str && str.slice() || '';
+    var newString = str && str.slice() || '';
 
-  if (newString.includes(find)){
-    console.log('includes!');
-    return newString.replace(new RegExp(find, 'g'), replacement);
-  } else {
-    console.log('not includes!');
-    return replacement;
+    if (newString.includes(find)){
+      console.log('includes!');
+      return newString.replace(new RegExp(find, 'g'), replacement);
+    } else {
+      console.log('not includes!');
+      return replacement;
+    }
   }
-}
 
   render(){
     return (
       <ParallaxContainer backgroundClass={this.state.backgroundClass}>
-
-        <input type="checkbox" onChange={this.handleCheckboxChange}/>
-        <h1>
-
-          WHY HELLO THERE?
-        </h1>
+        <div className="parallax-flex-parent">
+          <Toolbar onCheckboxChecked={this.handleCheckboxChange}/>
+          <NavigationDial />
+          <div className="kelvin-watson-logo">KELVIN WATSON</div>
+        </div>
       </ParallaxContainer>
     );
   }

@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 class Toolbar extends Component {
   render(){
     return (
-      <h1>I am a Toolbar</h1>
+      <div className="toolbar-flex-parent">
+        <input type="checkbox" onChange={this.props.onCheckboxChecked}/>
+      </div>
     );
   }
 }
