@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './components/Header/Header'
 import Introduction from './components/Introduction/Introduction'
 import Projects from './components/Projects/Projects'
+import ScrollSpyBar from './components/ScrollSpyBar/ScrollSpyBar';
 import Technologies from './components/Technologies/Technologies'
 import Hire from './components/Hire/Hire'
 import Footer from './components/Footer/Footer'
@@ -29,7 +30,9 @@ class App extends Component {
       currentSlideNumber: 0,
       totalSlideNumber: 2,
       parallaxContainer0: '',
-      parallaxContainer1: ''
+      parallaxContainer1: '',
+      isFirstScrollSpyItemActive: true,
+      isSecondScrollSpyItemActive: false
     }
   }
 
@@ -96,7 +99,9 @@ class App extends Component {
     var previousSlideNumber = this.state.currentSlideNumber - 1;
     var previousSlideRef = 'parallaxContainer' + previousSlideNumber;
     this.setState({
-      [previousSlideRef]: 'down-scroll'
+      [previousSlideRef]: 'down-scroll',
+      isFirstScrollSpyItemActive: false,
+      isSecondScrollSpyItemActive: true
     });
   }
 
@@ -105,7 +110,9 @@ class App extends Component {
     var currentSlideNumber = this.state.currentSlideNumber;
     var currentSlideRef = 'parallaxContainer' + currentSlideNumber;
     this.setState({
-      [currentSlideRef]: 'up-scroll'
+      [currentSlideRef]: 'up-scroll',
+      isFirstScrollSpyItemActive: true,
+      isSecondScrollSpyItemActive: false
     });
   }
 
@@ -159,6 +166,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+
+        <ScrollSpyBar
+          isFirstScrollSpyItemActive={this.state.isFirstScrollSpyItemActive}
+          isSecondScrollSpyItemActive={this.state.isSecondScrollSpyItemActive}/>
+
         {/* <Header /> */}
         {/*<ParallaxContainer ref="parallaxContainer0" backgroundClass={this.state.parallaxContainer0}/>*/}
         <IntroductionParallaxContainer ref="parallaxContainer0" scrollBackgroundClass={this.state.parallaxContainer0}/>

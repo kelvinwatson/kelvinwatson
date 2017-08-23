@@ -15,7 +15,7 @@ class AnimatedParallaxContainer extends Component {
       backgroundClassName.replace('background-slide-off-screen', '');
       backgroundClassName = backgroundClassName.trim();
     }
-    
+
     return (
       <section className={backgroundClassName}>
 
@@ -26,20 +26,6 @@ class AnimatedParallaxContainer extends Component {
           {/* <p className="content-subtitle">Scroll down and up to see the effect!</p> */}
         </div>
       </section>
-
-    //   let backgroundClassName = 'background background-absolute ' + this.props.backgroundClass;
-    //   return(
-    //     <section>
-    //
-    //       <div className={backgroundClassName}></div>
-    //
-    //       <div className="content-wrapper">
-    //         {this.props.children}
-    //
-    //         {/* <p className="content-title">Full Page Parallax Effect</p> */}
-    //         {/* <p className="content-subtitle">Scroll down and up to see the effect!</p> */}
-    //       </div>
-    //     </section>
     );
   }
 }

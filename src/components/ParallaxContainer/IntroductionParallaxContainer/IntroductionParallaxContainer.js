@@ -103,7 +103,7 @@ class IntroductionParallaxContainer extends Component {
     let contentClassName = 'parallax-flex-parent';
     if (this.state.isOpenOverlay){
       contentClassName += ' parallax-flex-parent-slide-off';
-    } 
+    }
     return (
         <AnimatedParallaxContainer backgroundClass={this.state.backgroundClass}>
         <InformationOverlay isOpenOverlay={this.state.isOpenOverlay} onCloseInfoOverlayClicked={this.handleCloseInfoOverlayClicked}/>

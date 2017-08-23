@@ -1,6 +1,6 @@
 @-webkit-keyframes animate {
     from { transform: translate(0, 0); }
-    to { transform: translate(-250px, -500px); }
+    to { transform: translate(-250px, -250px); }
 }
 /*
 @-webkit-keyframes animate {
@@ -36,8 +36,8 @@
 .background:before {
   content: "";
   position: absolute;
-  width: 175%;
-  height: 175%;
+  width: 150%;
+  height: 150%;
   top: 0;
   left: 0;
   right: 0;
