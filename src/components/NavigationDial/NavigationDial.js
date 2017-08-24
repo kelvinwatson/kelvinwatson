@@ -5,7 +5,14 @@ class NavigationDial extends Component {
   render(){
     return (
       <nav>
-        <div className="ring">
+
+        <ul id="navigationDial">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        {/*}<div className="ring">
           <div className="led-container-projects">
             <div className="led-projects"></div>
             <a id="led-overlay-projects" href="#projectsSection">
@@ -38,7 +45,7 @@ class NavigationDial extends Component {
           <div className="inner-glow-hire"></div>
 
           <div className="face"></div>
-        </div>
+        </div>*/}
 
       </nav>
     );
