@@ -1,3 +1,10 @@
+.scrollable{
+  background-color: transparent;
+  overflow-y: scroll;
+  height: 100vh;
+  width: 90%;
+}
+
 .static-background {
   overflow: hidden;
   will-change: transform;
@@ -16,7 +23,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background:linear-gradient(0deg,rgba(200,0,50,0.1),rgba(0,50,90,0.7)),
+  background:linear-gradient(0deg,rgba(0,0,0,0.1),rgba(0,0,10,0.7)),
     url(https://static.pexels.com/photos/133576/pexels-photo-133576.jpeg);
   background-size: cover;
   background-repeat: no-repeat;

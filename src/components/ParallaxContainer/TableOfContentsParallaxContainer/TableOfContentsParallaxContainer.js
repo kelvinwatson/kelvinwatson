@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import Progress from '../../Progress/Progress';
+import ScrollUpToolbar from '../../Toolbar/ScrollUpToolbar/ScrollUpToolbar';
 import StaticParallaxContainer from '../StaticParallaxContainer';
-import './ProjectsParallaxContainer.css';
+import './TableOfContentsParallaxContainer.css';
 
-class ProjectsParallaxContainer extends Component {
+class TableOfContentsParallaxContainer extends Component {
 
   //https://codepen.io/kenjiroart/pen/NNgRXj
   render(){
@@ -30,19 +32,18 @@ class ProjectsParallaxContainer extends Component {
 
     return (
         <StaticParallaxContainer>
-          <div className="scrollable">
 
-            <div className="info cancel-icon-container" onClick={this.props.simulateUpScroll}>
-              <div className="info-white cancel-icon"> x </div>
-            </div>
+          <ScrollUpToolbar
+            title="My Work"
+            simulateUpScroll={this.props.simulateUpScroll}/>
 
-            <h1 className="detail-title">ProjectsParallaxContainer</h1>
+
             {/* <ul className="projects-grid">
                {projectsList}
-             </ul>
-            */}
+             </ul> */}
 
-            <section className="cf w-100 pa2-ns">
+
+            {/*}<section className="cf w-100 pa2-ns">
 
               <article className="fl w-100 w-50-m  w-25-ns pa2-ns">
                 <div className="aspect-ratio aspect-ratio--1x1">
@@ -127,10 +128,10 @@ class ProjectsParallaxContainer extends Component {
               </article>
 
             </section>
-          </div>
+          </div> */}
         </StaticParallaxContainer>
     );
   }
 }
 
-export default ProjectsParallaxContainer;
+export default TableOfContentsParallaxContainer;

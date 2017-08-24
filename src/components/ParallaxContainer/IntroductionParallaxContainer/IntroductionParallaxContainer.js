@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import AnimatedParallaxContainer from '../AnimatedParallaxContainer';
 import InformationOverlay from '../../InformationOverlay/InformationOverlay';
 import NavigationDial from '../../NavigationDial/NavigationDial';
-import Toolbar from '../../Toolbar/Toolbar';
+import IntroductionToolbar from '../../Toolbar/IntroductionToolbar/IntroductionToolbar';
 import './IntroductionParallaxContainer.css';
 
 class IntroductionParallaxContainer extends Component {
@@ -98,7 +98,7 @@ class IntroductionParallaxContainer extends Component {
         <AnimatedParallaxContainer backgroundClass={this.state.backgroundClass}>
         <InformationOverlay isOpenOverlay={this.state.isOpenOverlay} onCloseInfoOverlayClicked={this.handleCloseInfoOverlayClicked}/>
           <div className={`parallax-flex-parent ${this.state.isOpenOverlay ? 'parallax-flex-parent-slide-off' : ''}`}>
-            <Toolbar
+            <IntroductionToolbar
               shareIconColor={this.state.shareIconColor}
               svgFillColor={this.state.svgFillColor}
               infoClass={this.state.infoClass}

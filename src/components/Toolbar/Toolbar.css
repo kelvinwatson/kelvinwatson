@@ -1,10 +1,11 @@
 .toolbar-flex-parent {
+  align-items: center;
   display: flex;
   flex-direction: row;
-  width: 100%;
   justify-content: space-between;
   padding: 0 64px;
   position: relative;
+  width: 100%;
 }
 
 .toolbar-flex-item {
@@ -128,4 +129,8 @@ button.left-icon:focus {
 .share-white {
   background-color: rgba(0, 0, 0, 0.5);
   border: 1px solid white;
+}
+
+.title{
+  font-weight:300;
 }

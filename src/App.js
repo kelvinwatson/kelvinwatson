@@ -8,6 +8,7 @@ import Hire from './components/Hire/Hire'
 import Footer from './components/Footer/Footer'
 
 import IntroductionParallaxContainer from './components/ParallaxContainer/IntroductionParallaxContainer/IntroductionParallaxContainer'
+import TableOfContentsParallaxContainer from './components/ParallaxContainer/TableOfContentsParallaxContainer/TableOfContentsParallaxContainer'
 
 import HireParallaxContainer from './components/ParallaxContainer/HireParallaxContainer/HireParallaxContainer'
 import ProjectsParallaxContainer from './components/ParallaxContainer/ProjectsParallaxContainer/ProjectsParallaxContainer';
@@ -30,7 +31,7 @@ class App extends Component {
       ticking: false,
       isFirefox: /Firefox/i.test(navigator.userAgent),
       isIe: (/MSIE/i.test(navigator.userAgent)) || (/Trident.*rv\:11\./i.test(navigator.userAgent)),
-      scrollSensitivitySetting: 1,
+      scrollSensitivitySetting: 0,
       slideDurationSetting: 600,
       currentSlideNumber: 0,
       totalSlideNumber: 2,
@@ -85,7 +86,9 @@ class App extends Component {
         this.slideDurationTimeout(this.state.slideDurationSetting);
       }
       if (isSimulateUpScroll || delta >= this.state.scrollSensitivitySetting) {
+      // if (isSimulateUpScroll) {
         //Up scroll
+        console.log('got here!');
         this.setState({
           ticking: true
         });
@@ -174,15 +177,14 @@ class App extends Component {
     console.log('formData',formData);
   }
 
-  simulateUpScroll(e){
+  simulateDownScroll(e){
     e.preventDefault();
-    console.log("simulateUpScroll");
+    console.log('simulate up scroll');
     this.parallaxScroll(null, true, false);
   }
 
-  simulateDownScroll(e){
+  simulateUpScroll(e){
     e.preventDefault();
-    console.log("simulateDownScroll");
     this.parallaxScroll(null, false, true);
   }
 
@@ -196,13 +198,20 @@ class App extends Component {
         <ScrollSpyBar
           isFirstScrollSpyItemActive={this.state.isFirstScrollSpyItemActive}
           isSecondScrollSpyItemActive={this.state.isSecondScrollSpyItemActive}
-          simulateUpScroll={this.simulateUpScroll}
-          simulateDownScroll={this.simulateDownScroll}/>
+          simulateDownScroll={this.simulateDownScroll}
+          simulateUpScroll={this.simulateUpScroll}/>
 
-        <ProjectsParallaxContainer
+        <TableOfContentsParallaxContainer
           ref="parallaxContainer1"
           scrollBackgroundClass={this.state.parallaxContainer1}
-          data={this.state.projects}/>
+          simulateUpScroll={this.simulateUpScroll}/>
+
+        {/*<ProjectsParallaxContainer
+          ref="parallaxContainer1"
+          scrollBackgroundClass={this.state.parallaxContainer1}
+          simulateUpScroll={this.simulateUpScroll}
+          data={this.state.projects}/>*/}
+
         {/*
           <Introduction />
           <Projects projects={this.state.projects}/>

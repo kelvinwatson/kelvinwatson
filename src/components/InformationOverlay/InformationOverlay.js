@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import './InformationOverlay.css'
+import CancelToolbar from '../Toolbar/CancelToolbar/CancelToolbar';
+import './InformationOverlay.css';
 
 class InformationOverlay extends Component {
   render(){
     return (
       <div className={`information-overlay-container ${this.props.isOpenOverlay ? 'information-overlay-container-open information-overlay-container-animation' : ''}`}>
         <div className="information-overlay-content-wrapper">
-          <div className="info cancel-icon-container" onClick={this.props.onCloseInfoOverlayClicked}>
-            <div className="info-white cancel-icon"> x </div>
-          </div>
 
-          <h1>I am Kelvin Watson</h1>
+          <CancelToolbar
+            title="I am Kelvin Watson"
+            onCloseInfoOverlayClicked={this.props.onCloseInfoOverlayClicked}/>
 
           <div className="information-overlay-text-flex">
             <div className="information-overlay-text-flex-item information-overlay-text-flex-item-left">
