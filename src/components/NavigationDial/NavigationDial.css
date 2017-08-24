@@ -14,24 +14,20 @@ a{
   color: inherit;
 }
 
-
+#navigationDialContainer{
+}
 ul#navigationDial{
-	height: 50%;
-	width: 50%;
-	display: block;
-	margin: 0 auto;
-
   height: 14em;
   width: 14em;
-  position: relative;
   z-index: 0;
-  -moz-border-radius: 7em;
-  -webkit-border-radius: 7em;
   border-radius: 7em;
-  /*background: white;*/
   list-style-type: none;
-  -webkit-margin-before: 20px;
-  -webkit-margin-start: 22px;
+  -webkit-margin-before: 0;
+  -webkit-margin-start: 0;
+  margin-left: 0px;
+  margin-top: 45px;
+  padding-left: 0;
+  position:relative;
 }
 
 #navigationDial li{
@@ -63,48 +59,77 @@ ul#navigationDial{
 }*/
 
 #navigationDial li:first-child{
-	margin-left: -130px;
-	margin-top: -130px;
-	z-index: 2;
-	width: 240px;
-	height: 240px;
-	border-width: 10px;
-	animation: spinBG 5s infinite linear;
+  margin-left: -120px;
+  margin-top: -120px;
+  z-index: 2;
+  width: 240px;
+  height: 240px;
+  border-width: 12px;
+  -webkit-animation: navSpinBG 18s infinite linear;
+  animation: navSpinBG 18s infinite linear;
+  border-left-color: green
+}
+
+#trine1{
+  height: 7em;
+  width: 7em;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#trine2{
+
+}
+
+#trine3{
+
+}
+/*#quadrant:hover #navigationDial li:first-child{
+  transform: rotate(0deg);
+}*/
+
+.rotate-position--technologies{
+  transform: rotate(135deg);
+}
+
+.rotate-position--projects{
+ transform: rotate(270deg);
 }
 
 #navigationDial li:nth-child(2){
-	margin-left: -137px;
-	margin-top: -137px;
+  margin-left: -134px;
+  margin-top: -134px;
 	z-index: 1;
 	width: 270px;
 	height: 270px;
 	border-width: 2px;
 	border-style: dotted;
 	box-shadow: 0px 0px 20px rgba(23,246,251, .5);
-	animation: spinBG2 2s infinite linear;
+	animation: navSpinBG2 25s infinite linear;
 }
 
 #navigationDial li:nth-child(3){
-	margin-left: -150px;
-	margin-top: -150px;
+  margin-left: -148px;
+  margin-top: -148px;
 	z-index: 1;
 	width: 296px;
 	height: 296px;
 	border-width: 2px;
 	box-shadow: inset 0px 0px 25px rgba(23,246,251, .25);
-	animation: spinBG 12s infinite linear;
+	animation: navSpinBG 35s infinite linear;
 }
 
 #navigationDial li:nth-child(4){
-	margin-left: -170px;
-	margin-top: -170px;
+  margin-left: -168px;
+  margin-top: -168px;
 	z-index: 1;
 	width: 330px;
 	height: 330px;
 	border-width: 5px;
 	border-style: solid;
 	box-shadow: inset 0px 0px 25px rgba(23,246,251,1.0);
-	animation: spinBG3 8s infinite linear;
+	animation: navSpinBG3 25s infinite linear;
 }
 
 @keyframes pulseGlow{
@@ -119,12 +144,12 @@ ul#navigationDial{
 	100%{box-shadow: 0px 0px 30px rgba(23,246,251, 0.25);}
 }
 
-@keyframes spinBG{
+@keyframes navSpinBG{
 	0%  {transform: rotate(0deg);}
 	100%{transform: rotate(360deg);}
 }
 
-@keyframes spinBG2{
+@keyframes navSpinBG2{
 	0%{
 		transform: rotate(360deg);
 		box-shadow: 0px 0px 1px rgba(23,246,251, 0.5);
@@ -139,7 +164,7 @@ ul#navigationDial{
 	}
 }
 
-@keyframes spinBG3{
+@keyframes navSpinBG3{
 	0%{
 		transform: rotate(180deg);
 		box-shadow: 0px 0px 1px rgba(23,246,251, 0.1);

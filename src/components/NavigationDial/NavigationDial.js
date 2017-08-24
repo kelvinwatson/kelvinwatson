@@ -11,6 +11,10 @@ class NavigationDial extends Component {
           <li></li>
           <li></li>
           <li></li>
+
+          <div id="trine1"></div>
+          <div id="trine2"></div>
+          <div id="trine3"></div>
         </ul>
         {/*}<div className="ring">
           <div className="led-container-projects">
