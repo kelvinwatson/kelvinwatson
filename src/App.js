@@ -143,12 +143,15 @@ class App extends Component {
     firebase.initializeApp(config);
 
     firebase.database().ref('technologies').once('value').then((snap) => {
+      console.log('technologies', snap.val());
+
       this.setState({
         technologies: Object.values(snap.val())
       });
     });
 
     firebase.database().ref('projects').once('value').then((snap) => {
+      console.log('projects', snap.val());
       this.setState({
         projects: Object.values(snap.val())
       });
@@ -198,7 +201,8 @@ class App extends Component {
 
         <ProjectsParallaxContainer
           ref="parallaxContainer1"
-          scrollBackgroundClass={this.state.parallaxContainer1}/>
+          scrollBackgroundClass={this.state.parallaxContainer1}
+          data={this.state.projects}/>
         {/*
           <Introduction />
           <Projects projects={this.state.projects}/>
