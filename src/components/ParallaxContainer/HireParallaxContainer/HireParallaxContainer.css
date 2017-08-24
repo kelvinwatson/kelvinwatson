@@ -1,0 +1,46 @@
+/*@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');*/
+
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:300');
+
+/*@import url('https://fonts.googleapis.com/css?family=Muli:300');*/
+
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+
+.parallax-flex-parent{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+
+  transform: translate3D(0,0,0); /* doesn't seem necessary but placing here to be explicit */
+  -moz-transform: translate3D(0,0,0); /* doesn't seem necessary but placing here to be explicit */
+  -webkit-transform: translate3D(0,0,0);/* doesn't seem necessary but placing here to be explicit */
+
+  -moz-transition: all 1s ease; /*transition back to opacity 1*/
+  -webkit-transition: all 1s ease;
+}
+
+.parallax-flex-parent-slide-off{
+
+  opacity: 0;
+  transform: translate3D(50%,0,0); /* X value must be same as Nav width */
+  -moz-transform: translate3D(50%,0,0); /* X value must be same as Nav width */
+  -webkit-transform: translate3D(50%,0,0); /* X value must be same as Nav width */
+
+  -moz-transition: all .8s ease;
+  -webkit-transition: all .8s ease;
+}
+
+.detail-title {
+  color: white;
+}
+
+.static-parallax-container{
+  -webkit-transform: translateY(0vh);
+    -ms-transform: translateY(0vh);
+    transform: translateY(0vh)
+}

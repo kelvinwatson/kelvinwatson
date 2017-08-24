@@ -7,8 +7,11 @@ import Technologies from './components/Technologies/Technologies'
 import Hire from './components/Hire/Hire'
 import Footer from './components/Footer/Footer'
 
-import StaticParallaxContainer from './components/ParallaxContainer/StaticParallaxContainer'
 import IntroductionParallaxContainer from './components/ParallaxContainer/IntroductionParallaxContainer/IntroductionParallaxContainer'
+
+import HireParallaxContainer from './components/ParallaxContainer/HireParallaxContainer/HireParallaxContainer'
+import ProjectsParallaxContainer from './components/ParallaxContainer/ProjectsParallaxContainer/ProjectsParallaxContainer';
+import TechnologiesParallaxContainer from './components/ParallaxContainer/TechnologiesParallaxContainer/TechnologiesParallaxContainer'
 
 import './App.css';
 
@@ -193,7 +196,9 @@ class App extends Component {
           simulateUpScroll={this.simulateUpScroll}
           simulateDownScroll={this.simulateDownScroll}/>
 
-        <StaticParallaxContainer ref="parallaxContainer1" scrollBackgroundClass={this.state.parallaxContainer1}/>
+        <ProjectsParallaxContainer
+          ref="parallaxContainer1"
+          scrollBackgroundClass={this.state.parallaxContainer1}/>
         {/*
           <Introduction />
           <Projects projects={this.state.projects}/>

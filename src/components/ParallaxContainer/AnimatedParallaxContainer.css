@@ -31,7 +31,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url(../../images/background-white.jpg);
+  background-image: url(../../images/background-white-min.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -54,7 +54,7 @@
 }
 .background-black:before {
   transition: all 0.1s ease;
-  background-image: url(../../images/background-black.jpg);
+  background-image: url(../../images/background-black-min.jpg);
 }
 .background-white{
   color: black;

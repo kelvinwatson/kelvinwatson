@@ -10,7 +10,7 @@ class StaticParallaxContainer extends Component {
     return (
       <section className={backgroundClassName}>
 
-        <div className="content-wrapper">
+        <div className="content-wrapper content-wrapper-override">
           {this.props.children}
 
           {/* <p className="content-title">Full Page Parallax Effect</p> */}

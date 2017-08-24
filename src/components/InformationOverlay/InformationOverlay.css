@@ -27,7 +27,7 @@ h1{
   width: 0;
   height: 100%;
   z-index: 10;
-  overflow: auto;
+  overflow: hidden;
   position: fixed;
   position:absolute;
   top: 0px;
@@ -38,6 +38,11 @@ h1{
   transform: translateX(-100%);
   -webkit-transform: translateX(-100%);
   -webkit-transition: all .8s ease;
+
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .information-overlay-container:before {
@@ -49,7 +54,8 @@ h1{
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 59%, rgba(0, 0, 0, 0.8) 100%), url(https://static.pexels.com/photos/176851/pexels-photo-176851.jpeg);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 59%, rgba(0, 0, 0, 0.8) 100%),
+    url(../../images/night-min.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: -80px 0px;
@@ -80,10 +86,40 @@ h1{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin: 64px;
+  text-align: left;
 }
 
 .information-overlay-text-flex-item {
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: 50%;
+  line-height: 2em;
+  font-size: 0.9em;
+}
+
+.information-overlay-text-flex-item-left{
+  padding-right: 16px;
+}
+
+.information-overlay-text-flex-item-right{
+  padding-left: 16px;
+}
+
+
+.information-overlay-content-wrapper{
+  -webkit-transform: translateY(4vh);
+  -ms-transform: translateY(40vh);
+  text-align: center;
+}
+
+.cancel-icon-container{
+  position:relative;
+}
+
+.cancel-icon{
+  background: transparent;
+  font-style: normal;
+  font-family: serif;
+  font-style: italic;
 }

@@ -12,7 +12,6 @@ class IntroductionParallaxContainer extends Component {
     this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
     this.handleInfoClicked = this.handleInfoClicked.bind(this);
     this.handleCloseInfoOverlayClicked = this.handleCloseInfoOverlayClicked.bind(this);
-    console.log('constructor', props);
     this.state = {
       backgroundClass: (props.backgroundClass || '') + ' ' + (props.scrollBackgroundClass || ''),
       infoClass: 'info-black',
@@ -29,7 +28,6 @@ class IntroductionParallaxContainer extends Component {
   }
 
   handleCloseInfoOverlayClicked(e){
-    console.log('wel hi');
     this.setState({
       isOpenOverlay: false
     });
