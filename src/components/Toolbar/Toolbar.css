@@ -1,18 +1,19 @@
-.toolbar-flex-parent{
+.toolbar-flex-parent {
   display: flex;
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
   padding: 0 64px;
-  position:relative;
+  position: relative;
 }
-.toolbar-flex-item{
+
+.toolbar-flex-item {
   flex-grow: 0;
   flex-shrink: 0;
   flex-wrap: nowrap;
 }
 
-.info{
+.info {
   display: inline-block;
   height: 2em;
   width: 2em;
@@ -20,14 +21,15 @@
   text-transform: lowercase;
   font-size: 1.5em;
   font-style: italic;
-  position:absolute;
+  position: absolute;
 }
 
-.left-icon{
+.left-icon {
   left: 64px;
   margin-right: 8px;
   border: none;
 }
+
 
 /*button.left-icon{
   font-family: serif;
@@ -39,83 +41,91 @@ button.left-icon:focus {
   outline:0;
 }*/
 
-.right-icon{
+.right-icon {
   left: 64px;
   margin-left: 8px;
-  position:relative;
+  position: relative;
 }
 
 @-webkit-keyframes fadeIn {
-    from { opacity: 0; }
-      to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-      to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.right-icon:hover > .share-icons{
+.right-icon:hover>.share-icons {
   display: block;
-  position:absolute;
-
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s;
+  position: absolute;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
 }
+
 .share-icons {
   display: none;
-  position:absolute;
-
+  position: absolute;
 }
-.share-icon{
-  display:inline-block;
+
+.share-icon {
+  display: inline-block;
   font-size: 1em;
 }
-.facebook{
 
+.facebook {}
+
+.linkedin {
+  margin-top: 64px;
 }
 
-.linkedin{
-  margin-top:64px;
-}
-
-
-.info-black{
-  background-color: rgba(255,255,255,0.5);
+.info-black {
+  background-color: rgba(255, 255, 255, 0.5);
   color: black;
   border: 1px solid black;
   border-radius: 50%;
 }
 
-.info-black:active{
+.info-black:active {
   border: none;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   color: white;
 }
 
-.info-white{
-  background-color: rgba(0,0,0,0.5);
+.info-white {
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border: 1px solid white;
   border-radius: 50%;
 }
 
-.info-white:active{
-  background-color: rgba(255,255,255,0.8);
+.info-white:active {
+  background-color: rgba(255, 255, 255, 0.8);
   color: black;
 }
 
-.share{
+.share {
   border-radius: 50%;
   padding: 10px;
   height: 2em;
   width: 2em;
 }
-.share-black{
-  background-color: rgba(255,255,255,0.5);
+
+.share-black {
+  background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid black;
 }
-.share-white{
-  background-color: rgba(0,0,0,0.5);
+
+.share-white {
+  background-color: rgba(0, 0, 0, 0.5);
   border: 1px solid white;
 }

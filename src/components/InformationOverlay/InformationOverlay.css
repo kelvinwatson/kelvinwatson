@@ -1,21 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+
+@-webkit-keyframes animatedBackground {
+  from {
+    background-position: 0px 0px; }
+
+  to {
+    background-position: -80px 0px; }
+}
+
+h1{
+  font-size: 2em;
+
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 0.25em;
+}
+
 .information-overlay-container {
-  background-color: pink;
+  font-family: 'Roboto', sans-serif;
+  /*background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 59%, rgba(0, 0, 0, 0.8) 100%), url(https://static.pexels.com/photos/176851/pexels-photo-176851.jpeg);*/
+  background-size: cover;
+  color: white;
   width: 0;
   height: 100%;
   z-index: 10;
   overflow: auto;
   position: fixed;
+  position:absolute;
   top: 0px;
   left: 0px;
   width: 100%;
+
+  /* close overlay */
   transform: translateX(-100%);
   -webkit-transform: translateX(-100%);
+  -webkit-transition: all .8s ease;
+}
 
-  -webkit-transition: all .8s ease; /* close overlay */
+.information-overlay-container:before {
+  content: "";
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 59%, rgba(0, 0, 0, 0.8) 100%), url(https://static.pexels.com/photos/176851/pexels-photo-176851.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: -80px 0px;
+}
+
+.information-overlay-container-animation:before{
+  -webkit-animation-name: animatedBackground;
+  -webkit-animation-delay: 1s; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 5s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-iteration-count: 1;
+
+  animation-name: animatedBackground;
+  animation-delay: 1s; /* Safari 4.0 - 8.0 */
+  animation-duration: 5s;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
 }
 
 .information-overlay-container-open {
   opacity: 1;
   -webkit-transition: all .8s ease;
-  -webkit-transform: translate3d(0, 0, 0); /* open overlay */
+  -webkit-transform: translate3d(0, 0, 0);
+  /* open overlay */
+}
+
+.information-overlay-text-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.information-overlay-text-flex-item {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 50%;
 }
