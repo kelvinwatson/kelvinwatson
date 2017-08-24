@@ -37,6 +37,8 @@ class TableOfContentsParallaxContainer extends Component {
             title="My Work"
             simulateUpScroll={this.props.simulateUpScroll}/>
 
+            {/*<Progress/>*/}
+
 
             {/* <ul className="projects-grid">
                {projectsList}

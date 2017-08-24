@@ -1,42 +1,25 @@
-ul.progress{
+/*ul#progress{
 	height: 50%;
 	width: 50%;
 	display: block;
 	margin: 0 auto;
 }
 
-.progress li{
+#progress li{
 	position: absolute;
 	left: 50%;
 	top: 50%;
 	display: block;
 	background: transparent;
-	border: 10px solid rgba(23,246,251, 1.0);
+	border: 10px solid white;
 	border-left-color: transparent;
 	border-right-color: transparent;
 	border-radius: 500px;
 	transition: all 0.5s ease;
 }
 
-.progress li:last-child {
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	z-index: 20;
-	width: 200px;
-	height: 100px;
-	margin-left: -110px;
-	margin-top: -110px;
-	padding: 70px 0px 30px;
-	background-color: rgba(8,8,8,1.0);
-	border: 10px solid rgba(8,8,8,1.0);
-	border-radius: 200px;
-	text-shadow: 2px 2px 0px rgba(0,0,0,1);
-	box-shadow: 0px 0px 30px rgba(23,246,251, 0.5);
-	animation: pulseShadow 5s infinite linear;
-}
 
-.progress li:last-child:after{
+#progress li:last-child:after{
 	content:'';
 	border: 3px dotted rgba(22,42,43,1.0);
 	border-radius: 200px;
@@ -50,7 +33,7 @@ ul.progress{
 	box-shadow: inset 0px 0px 30px rgba(0,0,0,1.0);
 }
 
-.progress li:first-child{
+#progress li:first-child{
 	margin-left: -130px;
 	margin-top: -130px;
 	z-index: 2;
@@ -60,7 +43,7 @@ ul.progress{
 	animation: spinBG 5s infinite linear;
 }
 
-.progress li:nth-child(2){
+#progress li:nth-child(2){
 	margin-left: -137px;
 	margin-top: -137px;
 	z-index: 1;
@@ -72,7 +55,7 @@ ul.progress{
 	animation: spinBG2 2s infinite linear;
 }
 
-.progress li:nth-child(3){
+#progress li:nth-child(3){
 	margin-left: -150px;
 	margin-top: -150px;
 	z-index: 1;
@@ -83,7 +66,7 @@ ul.progress{
 	animation: spinBG 12s infinite linear;
 }
 
-.progress li:nth-child(4){
+#progress li:nth-child(4){
 	margin-left: -170px;
 	margin-top: -170px;
 	z-index: 1;
@@ -95,10 +78,6 @@ ul.progress{
 	animation: spinBG3 8s infinite linear;
 }
 
-
-/*-------------------------------------------
- Animations
--------------------------------------------*/
 @keyframes pulseGlow{
 	0%  {text-shadow: 0px 0px 20px rgba(23,246,251, 0.75);}
 	50% {text-shadow: 0px 0px 40px rgba(23,246,251, 0.5); }
@@ -142,4 +121,4 @@ ul.progress{
 	100%{
 		transform: rotate(-180deg);
 	}
-}
+}*/

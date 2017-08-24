@@ -6,7 +6,7 @@ import './Progress.css';
 
 function Progress(){
   return (
-    <ul className="progress">
+    <ul id="progress">
       <li></li>
       <li></li>
       <li></li>

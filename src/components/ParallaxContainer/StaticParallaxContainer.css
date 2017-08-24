@@ -27,7 +27,7 @@
     url(https://static.pexels.com/photos/133576/pexels-photo-133576.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: rgba(0, 0, 0, 0.1);
+  /*background-color: rgba(0, 0, 0, 0.1);*/
 }
 
 .static-background:first-child {
