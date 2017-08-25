@@ -7,14 +7,19 @@ class NavigationDial extends Component {
       <nav>
 
         <ul id="navigationDial">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
 
-          <div id="trine1"></div>
-          <div id="trine2"></div>
-          <div id="trine3"></div>
+
+          <div className="quadrant" id="quadrant1"></div>
+          <li id="rotator1"></li>
+          <li id="rotator2"></li>
+          <li id="rotator3"></li>
+          <li id="rotator4"></li>
+          {/*<div className="quadrant" id="quadrant1"></div>*/}
+          <div className="quadrant" id="quadrant2"></div>
+          <div className="quadrant" id="quadrant3"></div>
+          <div className="quadrant" id="quadrant4"></div>
+
+
         </ul>
         {/*}<div className="ring">
           <div className="led-container-projects">

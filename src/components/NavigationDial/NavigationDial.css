@@ -14,9 +14,47 @@ a{
   color: inherit;
 }
 
-#navigationDialContainer{
+
+#quadrant1{
+  height: 7em;
+  width: 7em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
 }
+
+
+.quadrant{
+  /*background-color: yellow;*/
+}
+
+
+#quadrant2{
+  height: 7em;
+  width: 7em;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+#quadrant3{
+  height: 7em;
+  width: 7em;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+#quadrant4{
+  height: 7em;
+  width: 7em;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 ul#navigationDial{
+  z-index: -1;
+  background:rgba(0,0,0,0.1);
   height: 14em;
   width: 14em;
   z-index: 0;
@@ -31,6 +69,7 @@ ul#navigationDial{
 }
 
 #navigationDial li{
+  z-index: -1;
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -61,30 +100,32 @@ ul#navigationDial{
 #navigationDial li:first-child{
   margin-left: -120px;
   margin-top: -120px;
-  z-index: 2;
   width: 240px;
   height: 240px;
   border-width: 12px;
   -webkit-animation: navSpinBG 18s infinite linear;
   animation: navSpinBG 18s infinite linear;
-  border-left-color: green
+  border-left-color: green;
+  transform: rotate(0deg)
 }
 
-#trine1{
-  height: 7em;
-  width: 7em;
-  position: absolute;
-  top: 0;
-  right: 0;
+#rotator1{
+  margin-left: -120px;
+  margin-top: -120px;
+  width: 240px;
+  height: 240px;
+  border-width: 12px  !important;
+  /*-webkit-animation: navSpinBG 18s infinite linear;
+  animation: navSpinBG 18s infinite linear;*/
+  border-left-color: green  !important;
+  transform: rotate(0deg)
 }
 
-#trine2{
-
+#quadrant1:hover + #rotator1{
+  transform: rotate(135deg);
+  border-left-color: yellow !important;
 }
 
-#trine3{
-
-}
 /*#quadrant:hover #navigationDial li:first-child{
   transform: rotate(0deg);
 }*/
@@ -97,37 +138,34 @@ ul#navigationDial{
  transform: rotate(270deg);
 }
 
-#navigationDial li:nth-child(2){
+#rotator2{
   margin-left: -134px;
   margin-top: -134px;
-	z-index: 1;
 	width: 270px;
 	height: 270px;
-	border-width: 2px;
-	border-style: dotted;
+	border-width: 2px  !important;
+	border-style: dotted  !important;
 	box-shadow: 0px 0px 20px rgba(23,246,251, .5);
 	animation: navSpinBG2 25s infinite linear;
 }
 
-#navigationDial li:nth-child(3){
+#rotator3{
   margin-left: -148px;
   margin-top: -148px;
-	z-index: 1;
 	width: 296px;
 	height: 296px;
-	border-width: 2px;
+	border-width: 2px !important;
 	box-shadow: inset 0px 0px 25px rgba(23,246,251, .25);
 	animation: navSpinBG 35s infinite linear;
 }
 
-#navigationDial li:nth-child(4){
-  margin-left: -168px;
-  margin-top: -168px;
-	z-index: 1;
+#rotator4{
+  margin-left: -166px;
+      margin-top: -166px;
 	width: 330px;
 	height: 330px;
-	border-width: 5px;
-	border-style: solid;
+	border-width: 5px  !important;
+	border-style: solid  !important;
 	box-shadow: inset 0px 0px 25px rgba(23,246,251,1.0);
 	animation: navSpinBG3 25s infinite linear;
 }
