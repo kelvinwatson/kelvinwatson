@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ThemeToggleBar from '../../ThemeToggleBar/ThemeToggleBar'
 import Toolbar from '../Toolbar'
 import '../Toolbar.css'
 
@@ -33,7 +34,11 @@ class IntroductionToolbar extends Component {
 
         </div>
         <div className="toolbar-flex-item color-toggle">
-          <input type="checkbox" onChange={this.props.onCheckboxChecked} />
+          {/* <input type="checkbox" onChange={this.props.onCheckboxChecked} /> */}
+
+          <ThemeToggleBar
+            toggleThemeWhite={this.props.toggleThemeWhite}
+            toggleThemeBlack={this.props.toggleThemeBlack} />
         </div>
       </Toolbar>
     );

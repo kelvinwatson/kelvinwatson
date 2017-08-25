@@ -9,7 +9,8 @@ class IntroductionParallaxContainer extends Component {
 
   constructor(props){
     super(props);
-    this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
+    this.toggleThemeWhite = this.toggleThemeWhite.bind(this);
+    this.toggleThemeBlack = this.toggleThemeBlack.bind(this);
     this.handleInfoClicked = this.handleInfoClicked.bind(this);
     this.handleCloseInfoOverlayClicked = this.handleCloseInfoOverlayClicked.bind(this);
     this.state = {
@@ -52,13 +53,22 @@ class IntroductionParallaxContainer extends Component {
     return str.includes(test) ? str : str + ' ' + test;
   }
 
-  handleCheckboxChange(e){
-    this.setBackgroundColorClass(e.target.checked ? 'background-black' : 'background-white');
+  // handleCheckboxChange(e){
+  //   this.setBackgroundColorClass(e.target.checked ? 'background-black' : 'background-white');
+  // }
+
+  toggleThemeBlack(){
+    this.setBackgroundColorClass('background-black');
+  }
+
+  toggleThemeWhite(){
+    this.setBackgroundColorClass('background-white');
   }
 
   setBackgroundColorClass(bgColorClass){
-    var infoClass, svgFillColor, shareIconColor;
     var backgroundClass = this.state.backgroundClass;
+    // if (!backgroundClass) return;
+    var infoClass, svgFillColor, shareIconColor;
     if (bgColorClass === 'background-black') {
       //replace white with black
       backgroundClass = this._replaceIfExists(backgroundClass, 'background-white', bgColorClass);
@@ -66,6 +76,8 @@ class IntroductionParallaxContainer extends Component {
       infoClass = 'info-white';
       svgFillColor = shareIconColor = 'white';
     } else if (bgColorClass === 'background-white'){
+      console.log('here', backgroundClass);
+      if (!backgroundClass.trim()) return; //should only occur on the first click of the white button
       //replace black with white
       backgroundClass = this._replaceIfExists(backgroundClass, 'background-black', bgColorClass);
       backgroundClass = this._addIfNotExists(backgroundClass, 'background-white');
@@ -103,7 +115,9 @@ class IntroductionParallaxContainer extends Component {
               svgFillColor={this.state.svgFillColor}
               infoClass={this.state.infoClass}
               onCheckboxChecked={this.handleCheckboxChange}
-              onInfoClicked={this.handleInfoClicked}/>
+              onInfoClicked={this.handleInfoClicked}
+              toggleThemeWhite={this.toggleThemeWhite}
+              toggleThemeBlack={this.toggleThemeBlack}/>
             <NavigationDial
               onInfoClicked={this.handleInfoClicked}
               onProjectsClicked={this.props.onProjectsClicked}/>

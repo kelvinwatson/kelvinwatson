@@ -235,7 +235,9 @@ class App extends Component {
         <IntroductionParallaxContainer
           ref="parallaxContainer0"
           scrollBackgroundClass={this.state.parallaxContainer0}
-          onProjectsClicked={this.handleProjectsClicked}/>
+          onProjectsClicked={this.handleProjectsClicked}
+          toggleThemeBlack={this.toggleThemeBlack}
+          toggleThemeWhite={this.toggleThemeWhite} />
 
         <ScrollSpyBar
           isFirstScrollSpyItemActive={this.state.isFirstScrollSpyItemActive}

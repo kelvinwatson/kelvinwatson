@@ -13,8 +13,6 @@
   }
 }
 
-
-/* For scrollspy */
 #scrollspy-menu {
   position: fixed;
   right: 16px;
@@ -23,39 +21,21 @@
   z-index: 10;
   border-right: 1px dotted white;
   padding-right: 2px;
-
   transform: translate(-50%, -50%);
-
-  /*display:table-cell;*/
-  /*vertical-align:middle;*/
-
   display: flex;
-   /* establish flex container */
-   flex-direction: column;
-   /* make main-axis vertical */
-   justify-content: center;
-   /* align items vertically, in this case */
-   align-items: center;
-   /* align items horizontally, in this case */
-   height: 50%;
-   /* for demo purposes */
-   /*border: 1px solid black;*/
-   /* for demo purposes */
-   /*background-color: #eee;*/
-   /* for demo purposes */
-
-
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
 }
 
 #scrollspy-menu ul {
   list-style: none;
-
   animation-name: moveUpAndDown;
   animation-duration: 5s;
   animation-timing-function: linear;
   animation-iteration-count: 1;
   animation-direction: normal;
-
   -webkit-animation-timing-function: linear;
 }
 

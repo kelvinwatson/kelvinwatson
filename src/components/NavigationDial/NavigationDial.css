@@ -186,7 +186,7 @@ ul#navigationDial:hover {
   border-width: 2px !important;
   border-style: dotted !important;
   /*box-shadow: 0px 0px 20px rgba(23, 246, 251, .5);*/
-  animation: navSpinBG2 25s infinite linear;
+  animation: navSpinBG2 22s infinite linear;
 }
 
 #rotator3 {
@@ -196,7 +196,7 @@ ul#navigationDial:hover {
   height: 296px;
   border-width: 2px !important;
   /*box-shadow: inset 0px 0px 25px rgba(23, 246, 251, .25);*/
-  animation: navSpinBG 35s infinite linear;
+  animation: navSpinBG 30s infinite linear;
 }
 
 #rotator4 {
