@@ -5,3 +5,7 @@
 .non-italic{
   font-style: normal;
 }
+
+.black-text{
+  color: black;
+}

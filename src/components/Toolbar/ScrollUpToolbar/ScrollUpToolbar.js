@@ -9,11 +9,11 @@ class ScrollUpToolbar extends Component {
       <Toolbar>
         <div className="toolbar-flex-item">
           <div className="info cancel-icon-container" onClick={this.props.simulateUpScroll}>
-            <div className="info-white cancel-icon non-italic"> ^ </div>
+            <div className={`info-${this.props.isTextBlack ? 'black':'white'} cancel-icon non-italic`}> ^ </div>
           </div>
         </div>
         <div className="toolbar-flex-item">
-          <h1 className="white-text title">{this.props.title}</h1>
+          <h1 className={`${this.props.isTextBlack ? 'black': 'white'}-text title`}>{this.props.title}</h1>
         </div>
         <div className="toolbar-flex-item color-toggle">
           <input type="hidden" />
