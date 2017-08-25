@@ -1,3 +1,6 @@
+.scrollable-override{
+  overflow-y: scroll;
+}
 
 .aspect-ratio {
     height: 0;
@@ -78,14 +81,6 @@
 
 .w-100 {
     width: 100%;
-}
-
-.black-90 {
-    color: rgba(0, 0, 0, .9);
-}
-
-.black-60 {
-    color: rgba(0, 0, 0, .6);
 }
 
 .pb3 {

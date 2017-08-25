@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ScrollUpToolbar from '../../Toolbar/ScrollUpToolbar/ScrollUpToolbar';
 import StaticParallaxContainer from '../StaticParallaxContainer';
 import './ProjectsParallaxContainer.css';
 
@@ -30,13 +31,13 @@ class ProjectsParallaxContainer extends Component {
 
     return (
         <StaticParallaxContainer>
-          <div className="scrollable">
+          <div className="scrollable-override">
 
-            <div className="info cancel-icon-container" onClick={this.props.simulateUpScroll}>
-              <div className="info-white cancel-icon"> x </div>
-            </div>
+          <ScrollUpToolbar
+            title="Projects"
+            simulateUpScroll={this.props.simulateUpScroll}/>
 
-            <h1 className="detail-title">ProjectsParallaxContainer</h1>
+
             {/* <ul className="projects-grid">
                {projectsList}
              </ul>
@@ -49,8 +50,8 @@ class ProjectsParallaxContainer extends Component {
                   <img className="db bg-center cover aspect-ratio--object" />
                 </div>
                 <a href="#0" className="ph2 ph0-ns pb3 link db">
-                  <h3 className="f5 f4-ns mb0 black-90">Title of piece</h3>
-                  <h3 className="f6 f5 fw4 mt2 black-60">Subtitle of piece</h3>
+                  <h3 className="f5 f4-ns mb0 white-text">Title of piece</h3>
+                  <h3 className="f6 f5 fw4 mt2 white-text">Subtitle of piece</h3>
                 </a>
               </article>
               <article className="fl w-100 w-50-m  w-25-ns pa2-ns">
@@ -58,8 +59,8 @@ class ProjectsParallaxContainer extends Component {
                   <img className="db bg-center cover aspect-ratio--object" />
                 </div>
                 <a href="#0" className="ph2 ph0-ns pb3 link db">
-                  <h3 className="f5 f4-ns mb0 black-90">Title of piece</h3>
-                  <h3 className="f6 f5 fw4 mt2 black-60">Subtitle of piece</h3>
+                  <h3 className="f5 f4-ns mb0 white-text">Title of piece</h3>
+                  <h3 className="f6 f5 fw4 mt2 white-text">Subtitle of piece</h3>
                 </a>
               </article>
               <article className="fl w-100 w-50-m  w-25-ns pa2-ns">
@@ -67,8 +68,8 @@ class ProjectsParallaxContainer extends Component {
                   <img className="db bg-center cover aspect-ratio--object" />
                 </div>
                 <a href="#0" className="ph2 ph0-ns pb3 link db">
-                  <h3 className="f5 f4-ns mb0 black-90">Title of piece</h3>
-                  <h3 className="f6 f5 fw4 mt2 black-60">Subtitle of piece</h3>
+                  <h3 className="f5 f4-ns mb0 white-text">Title of piece</h3>
+                  <h3 className="f6 f5 fw4 mt2 white-text">Subtitle of piece</h3>
                 </a>
               </article>
               <article className="fl w-100 w-50-m  w-25-ns pa2-ns">
@@ -76,8 +77,8 @@ class ProjectsParallaxContainer extends Component {
                   <img className="db bg-center cover aspect-ratio--object" />
                 </div>
                 <a href="#0" className="ph2 ph0-ns pb3 link db">
-                  <h3 className="f5 f4-ns mb0 black-90">Title of piece</h3>
-                  <h3 className="f6 f5 fw4 mt2 black-60">Subtitle of piece</h3>
+                  <h3 className="f5 f4-ns mb0 white-text">Title of piece</h3>
+                  <h3 className="f6 f5 fw4 mt2 white-text">Subtitle of piece</h3>
                 </a>
               </article>
               <article className="fl w-100 w-50-m  w-25-ns pa2-ns">

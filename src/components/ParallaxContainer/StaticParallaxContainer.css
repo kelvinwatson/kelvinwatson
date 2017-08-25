@@ -69,18 +69,18 @@
   align-items: center;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
   flex-flow: column nowrap;
   font-family: Montserrat;
-  transform: translateY(40vh);
+  /*transform: translateY(40vh);*/
   will-change: transform;
   backface-visibility: hidden;
   transition: all 1.7s cubic-bezier(0.22, 0.44, 0, 1);
 }
 .content-wrapper-override{
   transform: translateY(0vh) !important;
-  height: unset; /* remove the 100vh setting */
+  /*height: unset; remove the 100vh setting */
 }
 .content-title {
   font-size: 12vh;
@@ -104,7 +104,7 @@
   transform: translate3d(0, -130vh, 0);
 }
 .static-background.down-scroll .content-wrapper {
-  transform: translateY(40vh);
+  /*transform: translateY(40vh);*/
 }
 .static-background.down-scroll + .background:not(.down-scroll) {
   transform: translate3d(0, -15vh, 0);

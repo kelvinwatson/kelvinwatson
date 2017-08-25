@@ -87,8 +87,8 @@ class App extends Component {
         }
         this.slideDurationTimeout(this.state.slideDurationSetting);
       }
-      if (isSimulateUpScroll || delta >= this.state.scrollSensitivitySetting) {
-      // if (isSimulateUpScroll) {
+      // if (isSimulateUpScroll || delta >= this.state.scrollSensitivitySetting) {
+      if (isSimulateUpScroll) {
         //Up scroll
         console.log('got here!');
         this.setState({
@@ -195,6 +195,13 @@ class App extends Component {
   handleProjectsClicked(){
     this.setState({
       detailParallaxContainerToLoad: 'projects'
+    });
+    this.simulateDownScroll();
+  }
+
+  handleHireClicked(){
+    this.setState({
+      detailParallaxContainerToLoad: 'hire'
     });
     this.simulateDownScroll();
   }

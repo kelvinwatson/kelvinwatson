@@ -6,7 +6,7 @@ class StaticParallaxContainer extends Component {
     return (
       <section className={`static-background  ${this.props.backgroundClass} ${this.props.scrollBackgroundClass}`}>
 
-        <div className="content-wrapper content-wrapper-override scrollable">
+        <div className="content-wrapper content-wrapper-override">
           {this.props.children}
 
 
