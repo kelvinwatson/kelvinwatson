@@ -40,7 +40,8 @@ class App extends Component {
       parallaxContainer1: '',
       isFirstScrollSpyItemActive: true,
       isSecondScrollSpyItemActive: false,
-      detailParallaxContainerToLoad: 'tableOfContents'
+      detailParallaxContainerToLoad: 'tableOfContents',
+      isActivateDetailParallaxContainerBackgroundAnimation: false
     }
   }
 
@@ -86,6 +87,10 @@ class App extends Component {
           this.nextItem();
         }
         this.slideDurationTimeout(this.state.slideDurationSetting);
+
+        this.setState({
+          isActivateDetailParallaxContainerBackgroundAnimation: true
+        });
       }
       // if (isSimulateUpScroll || delta >= this.state.scrollSensitivitySetting) {
       if (isSimulateUpScroll) {
@@ -183,16 +188,23 @@ class App extends Component {
   simulateDownScroll(e){
     if (e)
       e.preventDefault();
+
     this.parallaxScroll(null, true, false);
   }
 
   simulateUpScroll(e){
     if (e)
       e.preventDefault();
+
+    this.setState({
+      isActivateDetailParallaxContainerBackgroundAnimation: false
+    });
+
     this.parallaxScroll(null, false, true);
   }
 
   handleProjectsClicked(){
+
     this.setState({
       detailParallaxContainerToLoad: 'projects'
     });
@@ -200,6 +212,7 @@ class App extends Component {
   }
 
   handleHireClicked(){
+
     this.setState({
       detailParallaxContainerToLoad: 'hire'
     });
@@ -216,7 +229,8 @@ class App extends Component {
           <TableOfContentsParallaxContainer
             ref="parallaxContainer1"
             scrollBackgroundClass={this.state.parallaxContainer1}
-            simulateUpScroll={this.simulateUpScroll}/>;
+            simulateUpScroll={this.simulateUpScroll}
+            isActivateDetailParallaxContainerBackgroundAnimation={this.state.isActivateDetailParallaxContainerBackgroundAnimation}/>;
         break;
       case 'projects':
         detailParallaxContainerToLoad =

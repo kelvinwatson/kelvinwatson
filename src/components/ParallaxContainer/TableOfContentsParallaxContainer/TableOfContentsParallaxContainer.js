@@ -40,12 +40,11 @@ class TableOfContentsParallaxContainer extends Component {
 
           <div className="toc-flex-container">
 
-            <div className="toc-flex-container-item toc-flex-container-item__left">
+            <div className={`toc-flex-container-item toc-flex-container-item__left ${this.props.isActivateDetailParallaxContainerBackgroundAnimation ? 'toc-flex-container-item__left--appear' : ''}`}>
               <div className="toc-flex-container-item__left--text-container">
                 <div>Software Engineer &lt;CODER&gt;.</div>
                 <div>Mobile Developer.</div>
                 <div>Web Developer.</div>
-                <div>Pharmacist.</div>
               </div>
             </div>
 
