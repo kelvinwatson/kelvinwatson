@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:300');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 
 @-webkit-keyframes animate {
     from { transform: translate(0, 0); }
@@ -132,4 +134,32 @@
 .designation{
   font-family: 'Roboto', sans-serif;
   letter-spacing: 0.17em;
+}
+
+.parallax-flex-parent{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+
+  transform: translate3D(0,0,0); /* doesn't seem necessary but placing here to be explicit */
+  -moz-transform: translate3D(0,0,0); /* doesn't seem necessary but placing here to be explicit */
+  -webkit-transform: translate3D(0,0,0);/* doesn't seem necessary but placing here to be explicit */
+
+  -moz-transition: all 1s ease; /*transition back to opacity 1*/
+  -webkit-transition: all 1s ease;
+}
+
+.parallax-flex-parent-slide-off{
+
+  opacity: 0;
+  transform: translate3D(50%,0,0); /* X value must be same as Nav width */
+  -moz-transform: translate3D(50%,0,0); /* X value must be same as Nav width */
+  -webkit-transform: translate3D(50%,0,0); /* X value must be same as Nav width */
+
+  -moz-transition: all .8s ease;
+  -webkit-transition: all .8s ease;
 }
