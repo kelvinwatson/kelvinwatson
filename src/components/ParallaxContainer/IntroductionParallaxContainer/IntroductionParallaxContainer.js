@@ -104,7 +104,9 @@ class IntroductionParallaxContainer extends Component {
               infoClass={this.state.infoClass}
               onCheckboxChecked={this.handleCheckboxChange}
               onInfoClicked={this.handleInfoClicked}/>
-            <NavigationDial />
+            <NavigationDial
+              onInfoClicked={this.handleInfoClicked}
+              onProjectsClicked={this.props.onProjectsClicked}/>
             <div className="kelvin-watson-logo">KELVIN WATSON</div>
             <div className="designation">Software Engineer  |  Web/Mobile Developer</div>
           </div>

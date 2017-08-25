@@ -3,15 +3,13 @@ import './StaticParallaxContainer.css'
 
 class StaticParallaxContainer extends Component {
   render(){
-    let backgroundClassName = 'static-background ' +
-    (this.props.backgroundClass || '') +
-    ' ' +
-    (this.props.scrollBackgroundClass || '');
     return (
-      <section className={backgroundClassName}>
+      <section className={`static-background  ${this.props.backgroundClass} ${this.props.scrollBackgroundClass}`}>
 
-        <div className="content-wrapper content-wrapper-override">
+        <div className="content-wrapper content-wrapper-override scrollable">
           {this.props.children}
+
+
 
           {/* <p className="content-title">Full Page Parallax Effect</p> */}
           {/* <p className="content-subtitle">Scroll down and up to see the effect!</p> */}

@@ -25,6 +25,7 @@ class App extends Component {
     this.parallaxScroll = this.parallaxScroll.bind(this);
     this.simulateUpScroll = this.simulateUpScroll.bind(this);
     this.simulateDownScroll = this.simulateDownScroll.bind(this);
+    this.handleProjectsClicked = this.handleProjectsClicked.bind(this);
     this.state = {
       projects: null,
       technologies: null,
@@ -38,7 +39,8 @@ class App extends Component {
       parallaxContainer0: '',
       parallaxContainer1: '',
       isFirstScrollSpyItemActive: true,
-      isSecondScrollSpyItemActive: false
+      isSecondScrollSpyItemActive: false,
+      detailParallaxContainerToLoad: 'tableOfContents'
     }
   }
 
@@ -95,7 +97,8 @@ class App extends Component {
         if (this.state.currentSlideNumber !== 0) {
           var currentSlideNumber = --this.state.currentSlideNumber;
           this.setState({
-            currentSlideNumber: currentSlideNumber
+            currentSlideNumber: currentSlideNumber,
+            detailParallaxContainerToLoad: 'tableOfContents'
           })
         }
         this.previousItem();
@@ -178,22 +181,54 @@ class App extends Component {
   }
 
   simulateDownScroll(e){
-    e.preventDefault();
-    console.log('simulate up scroll');
+    if (e)
+      e.preventDefault();
     this.parallaxScroll(null, true, false);
   }
 
   simulateUpScroll(e){
-    e.preventDefault();
+    if (e)
+      e.preventDefault();
     this.parallaxScroll(null, false, true);
   }
 
+  handleProjectsClicked(){
+    this.setState({
+      detailParallaxContainerToLoad: 'projects'
+    });
+    this.simulateDownScroll();
+  }
+
   render() {
+
+    let detailParallaxContainerToLoad;
+
+    switch (this.state.detailParallaxContainerToLoad){
+      case 'tableOfContents':
+        detailParallaxContainerToLoad =
+          <TableOfContentsParallaxContainer
+            ref="parallaxContainer1"
+            scrollBackgroundClass={this.state.parallaxContainer1}
+            simulateUpScroll={this.simulateUpScroll}/>;
+        break;
+      case 'projects':
+        detailParallaxContainerToLoad =
+          <ProjectsParallaxContainer
+            ref="parallaxContainer1"
+            scrollBackgroundClass={this.state.parallaxContainer1}
+            simulateUpScroll={this.simulateUpScroll}
+            data={this.state.projects}/>
+        break;
+    }
+
     return (
       <div className="App">
         {/* <Header /> */}
         {/*<ParallaxContainer ref="parallaxContainer0" backgroundClass={this.state.parallaxContainer0}/>*/}
-        <IntroductionParallaxContainer ref="parallaxContainer0" scrollBackgroundClass={this.state.parallaxContainer0}/>
+        <IntroductionParallaxContainer
+          ref="parallaxContainer0"
+          scrollBackgroundClass={this.state.parallaxContainer0}
+          onProjectsClicked={this.handleProjectsClicked}/>
 
         <ScrollSpyBar
           isFirstScrollSpyItemActive={this.state.isFirstScrollSpyItemActive}
@@ -201,16 +236,15 @@ class App extends Component {
           simulateDownScroll={this.simulateDownScroll}
           simulateUpScroll={this.simulateUpScroll}/>
 
-        <TableOfContentsParallaxContainer
-          ref="parallaxContainer1"
-          scrollBackgroundClass={this.state.parallaxContainer1}
-          simulateUpScroll={this.simulateUpScroll}/>
+        {detailParallaxContainerToLoad}
 
-        {/*<ProjectsParallaxContainer
+        {/*
+        <ProjectsParallaxContainer
           ref="parallaxContainer1"
           scrollBackgroundClass={this.state.parallaxContainer1}
           simulateUpScroll={this.simulateUpScroll}
-          data={this.state.projects}/>*/}
+          data={this.state.projects}/>
+        */}
 
         {/*
           <Introduction />

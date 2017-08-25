@@ -9,13 +9,13 @@ class NavigationDial extends Component {
           <div className="quadrant" id="quadrant1">
             <div className="quadrant-text quadrant-text-1">HIRE</div>
           </div>
-          <div className="quadrant" id="quadrant2">
+          <div className="quadrant" id="quadrant2" onClick={this.props.onProjectsClicked}>
             <div className="quadrant-text quadrant-text-2">PROJECTS</div>
           </div>
           <div className="quadrant" id="quadrant3">
             <div className="quadrant-text quadrant-text-3">STACK</div>
           </div>
-          <div className="quadrant" id="quadrant4">
+          <div className="quadrant" id="quadrant4" onClick={this.props.onInfoClicked}>
             <div className="quadrant-text quadrant-text-4">ME</div>
           </div>
           <li id="rotator1"></li>
