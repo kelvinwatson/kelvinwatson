@@ -10,14 +10,14 @@ class NavigationDial extends Component {
 
 
           <div className="quadrant" id="quadrant1"></div>
+          <div className="quadrant" id="quadrant2"></div>
+          <div className="quadrant" id="quadrant3"></div>
+          <div className="quadrant" id="quadrant4"></div>
           <li id="rotator1"></li>
           <li id="rotator2"></li>
           <li id="rotator3"></li>
           <li id="rotator4"></li>
           {/*<div className="quadrant" id="quadrant1"></div>*/}
-          <div className="quadrant" id="quadrant2"></div>
-          <div className="quadrant" id="quadrant3"></div>
-          <div className="quadrant" id="quadrant4"></div>
 
 
         </ul>
