@@ -4,12 +4,6 @@ import ScrollUpToolbar from '../../Toolbar/ScrollUpToolbar/ScrollUpToolbar';
 import './HireParallaxContainer.css';
 
 class HireParallaxContainer extends Component {
-
-  constructor(props){
-    super(props);
-  }
-
-
   render(){
     return (
         <DetailParallaxContainer

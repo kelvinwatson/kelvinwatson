@@ -5,10 +5,13 @@ import './InformationOverlay.css';
 class InformationOverlay extends Component {
   render(){
     return (
-      <div className={`information-overlay-container ${this.props.isOpenOverlay ? 'information-overlay-container-open information-overlay-container-animation' : ''}`}>
+      <div className={`information-overlay-container ${this.props.openOverlayFromRight ? 'information-overlay-container--open-from-right' : 'information-overlay-container--open-from-left'}
+          ${this.props.isOpenOverlay ? 'information-overlay-container-open information-overlay-container-animation' : ''}`}>
         <div className="information-overlay-content-wrapper">
 
-          <CancelToolbar
+        {this.props.children}
+
+{/*}          <CancelToolbar
             title="I am Kelvin Watson"
             onCloseInfoOverlayClicked={this.props.onCloseInfoOverlayClicked}/>
 
@@ -24,7 +27,7 @@ class InformationOverlay extends Component {
               <p>Please feel free to have a look around. I collaborate with my
               husband under the alias WatsonLogic. </p>
             </div>
-          </div>
+          </div>*/}
         </div>
       </div>
     );

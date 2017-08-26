@@ -1,0 +1,113 @@
+{
+  "careerTimeline" : [ {
+    "end" : 2007,
+    "image" : "pharmacy",
+    "label" : "BSc(Pharm)",
+    "milestone" : "Graduated from University of British Columbia with Bachelor of Science in Pharmaceutical Sciences. Worked as a hospital pharmacist for 7 years.",
+    "start" : 2003
+  }, null, null, {
+    "end" : 2016,
+    "image" : "coding",
+    "label" : "BCompSci",
+    "milestone" : "Graduated with Bachelor of Science in Computer Science from Oregon State University",
+    "start" : 2014
+  }, {
+    "end" : 2017,
+    "image" : "android",
+    "label" : "eBay",
+    "milestone" : "Android developer at eBay",
+    "start" : 2016
+  } ],
+  "projects" : {
+    "BearForce" : {
+      "details" : "One to many live streaming",
+      "imageName" : "bearforce",
+      "name" : "BearForce",
+      "technologies" : [ "Firebase", "Polymer", "WebRTC" ]
+    },
+    "Converge LGBT" : {
+      "details" : "Write articles and enable quick donations to LGBT causes/crises",
+      "imageName" : "convergelgbt",
+      "name" : "ConvergeLGBT.com",
+      "technologies" : [ "Firebase", "Google AMP (Accelerated Mobile Pages)" ],
+      "url" : "https://convergelgbt.com"
+    },
+    "Watson Logic Parallax" : {
+      "details" : "Resuable parallax scrolling effect web component made with Polymer 2.0.",
+      "github" : "https://github.com/watsonlogic-software/watsonlogic-parallax",
+      "imageName" : "watsonlogicparallax",
+      "name" : "Watson Logic Parallax",
+      "technologies" : [ "Polymer 2.0" ],
+      "url" : "https://www.webcomponents.org/element/watsonlogic-software/watsonlogic-parallax"
+    },
+    "Kelvin Watson (Personal Website)" : {
+      "details" : "Personal Website",
+      "imageName" : "kelvinwatson",
+      "name" : "Kelvin Watson",
+      "technologies" : [ "Firebase", "React" ]
+    }
+  },
+  "technologies" : {
+    "Android" : {
+      "category" : "Mobile",
+      "name" : "Android Development",
+      "proficiency" : 80
+    },
+    "Angular" : {
+      "category" : "Web",
+      "name" : "Angular",
+      "proficiency" : 10
+    },
+    "CSS" : {
+      "category" : "Web",
+      "name" : "CSS",
+      "proficiency" : 90
+    },
+    "Cordova" : {
+      "category" : "Mobile",
+      "name" : "Cordova",
+      "proficiency" : 60
+    },
+    "Espresso" : {
+      "category" : "Test Automation",
+      "name" : "Espresso testing (Android)",
+      "proficiency" : 90
+    },
+    "Firebase" : {
+      "category" : "Web",
+      "name" : "Firebase",
+      "proficiency" : 80
+    },
+    "HTML5" : {
+      "category" : "Web",
+      "name" : "HTML5",
+      "proficiency" : 95
+    },
+    "JMockit" : {
+      "category" : "Test Automation",
+      "name" : "JMockit",
+      "proficiency" : 60
+    },
+    "JUnit" : {
+      "category" : "Test Automation",
+      "name" : "JUnit",
+      "proficiency" : 90
+    },
+    "Javascript" : {
+      "category" : "Web",
+      "name" : "Javascript",
+      "proficiency" : 85
+    },
+    "Polymer" : {
+      "category" : "Web",
+      "name" : "Polymer",
+      "proficiency" : 80
+    },
+    "React" : 25,
+    "Robolectric" : {
+      "category" : "Test Automation",
+      "name" : "Robolectric",
+      "proficiency" : 60
+    }
+  }
+}

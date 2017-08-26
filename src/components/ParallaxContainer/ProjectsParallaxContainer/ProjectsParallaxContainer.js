@@ -1,9 +1,35 @@
 import React, { Component } from 'react';
 import ScrollUpToolbar from '../../Toolbar/ScrollUpToolbar/ScrollUpToolbar';
 import DetailParallaxContainer from '../DetailParallaxContainer';
+import ProjectInformationOverlay from '../../InformationOverlay/ProjectInformationOverlay/ProjectInformationOverlay';
 import './ProjectsParallaxContainer.css';
 
 class ProjectsParallaxContainer extends Component {
+
+
+  constructor(props){
+    super(props);
+    this.handleProjectImageClicked = this.handleProjectImageClicked.bind(this);
+    this.handleCloseInfoOverlayClicked = this.handleCloseInfoOverlayClicked.bind(this);
+    this.state = {
+      isOpenOverlay: false,
+      openOverlayFromRight: true
+    }
+  }
+
+  handleProjectImageClicked(project){
+    console.log('clicked',project);
+    this.setState({
+      isOpenOverlay: true
+    });
+  }
+
+  handleCloseInfoOverlayClicked(){
+    this.setState({
+      isOpenOverlay: false
+    });
+  }
+
 
   //https://codepen.io/kenjiroart/pen/NNgRXj
   render(){
@@ -29,105 +55,56 @@ class ProjectsParallaxContainer extends Component {
     //   );
     // }
 
+    let projectsList = this.props && this.props.data;
+    console.log('projectsList', projectsList);
+    if (projectsList){
+      projectsList = projectsList.map((project) =>
+        <article key={project.name} className="fl w-100 w-50-m  w-25-ns pa2-ns">
+          <div className="aspect-ratio aspect-ratio--1x1">
+            <img className={`db bg-center cover aspect-ratio--object img img-${project.imageName}`}
+              onClick={() => this.handleProjectImageClicked(project)}/>
+          </div>
+          <a href="#0" className="ph2 ph0-ns pb3 link db">
+            <h3 className="f5 f4-ns mb0 white-text roboto-condensed">{project.name}</h3>
+
+
+            {project.technologies &&
+                  project.technologies.map((tech, index)=>
+                      <span className="f6 f5 mt2 yellow-text roboto-condensed tech-list-item" key={index}>
+                        {index == (project.technologies.length - 1) ? tech : tech+','}
+                      </span>
+                  )
+            }
+
+            <h3 className="f6 f5 fw4 mt2 grey-text roboto">{project.details}</h3>
+
+
+          </a>
+        </article>
+
+
+
+      );
+    }
+
     return (
         <DetailParallaxContainer>
+
+        <ProjectInformationOverlay
+          isOpenOverlay={this.state.isOpenOverlay}
+          onCloseInfoOverlayClicked={this.handleCloseInfoOverlayClicked}
+          openOverlayFromRight={this.state.openOverlayFromRight}/>
+
           <div className="scrollable-override">
 
           <ScrollUpToolbar
             title="Projects"
             simulateUpScroll={this.props.simulateUpScroll}/>
 
-
-            {/* <ul className="projects-grid">
-               {projectsList}
-             </ul>
-            */}
-
             <section className="cf w-100 pa2-ns">
-
-              <article className="fl w-100 w-50-m  w-25-ns pa2-ns">
-                <div className="aspect-ratio aspect-ratio--1x1">
-                  <img className="db bg-center cover aspect-ratio--object" />
-                </div>
-                <a href="#0" className="ph2 ph0-ns pb3 link db">
-                  <h3 className="f5 f4-ns mb0 white-text">Title of piece</h3>
-                  <h3 className="f6 f5 fw4 mt2 white-text">Subtitle of piece</h3>
-                </a>
-              </article>
-              <article className="fl w-100 w-50-m  w-25-ns pa2-ns">
-                <div className="aspect-ratio aspect-ratio--1x1">
-                  <img className="db bg-center cover aspect-ratio--object" />
-                </div>
-                <a href="#0" className="ph2 ph0-ns pb3 link db">
-                  <h3 className="f5 f4-ns mb0 white-text">Title of piece</h3>
-                  <h3 className="f6 f5 fw4 mt2 white-text">Subtitle of piece</h3>
-                </a>
-              </article>
-              <article className="fl w-100 w-50-m  w-25-ns pa2-ns">
-                <div className="aspect-ratio aspect-ratio--1x1">
-                  <img className="db bg-center cover aspect-ratio--object" />
-                </div>
-                <a href="#0" className="ph2 ph0-ns pb3 link db">
-                  <h3 className="f5 f4-ns mb0 white-text">Title of piece</h3>
-                  <h3 className="f6 f5 fw4 mt2 white-text">Subtitle of piece</h3>
-                </a>
-              </article>
-              <article className="fl w-100 w-50-m  w-25-ns pa2-ns">
-                <div className="aspect-ratio aspect-ratio--1x1">
-                  <img className="db bg-center cover aspect-ratio--object" />
-                </div>
-                <a href="#0" className="ph2 ph0-ns pb3 link db">
-                  <h3 className="f5 f4-ns mb0 white-text">Title of piece</h3>
-                  <h3 className="f6 f5 fw4 mt2 white-text">Subtitle of piece</h3>
-                </a>
-              </article>
-              <article className="fl w-100 w-50-m  w-25-ns pa2-ns">
-                <div className="aspect-ratio aspect-ratio--1x1">
-                  <img className="db bg-center cover aspect-ratio--object" />
-                </div>
-                <a href="#0" className="ph2 ph0-ns pb3 link db">
-                  <h3 className="f5 f4-ns mb0 black-90">Title of piece</h3>
-                  <h3 className="f6 f5 fw4 mt2 black-60">Subtitle of piece</h3>
-                </a>
-              </article>
-              <article className="fl w-100 w-50-m  w-25-ns pa2-ns">
-                <div className="aspect-ratio aspect-ratio--1x1">
-                  <img className="db bg-center cover aspect-ratio--object" />
-                </div>
-                <a href="#0" className="ph2 ph0-ns pb3 link db">
-                  <h3 className="f5 f4-ns mb0 black-90">Title of piece</h3>
-                  <h3 className="f6 f5 fw4 mt2 black-60">Subtitle of piece</h3>
-                </a>
-              </article>
-              <article className="fl w-100 w-50-m  w-25-ns pa2-ns">
-                <div className="aspect-ratio aspect-ratio--1x1">
-                  <img className="db bg-center cover aspect-ratio--object" />
-                </div>
-                <a href="#0" className="ph2 ph0-ns pb3 link db">
-                  <h3 className="f5 f4-ns mb0 black-90">Title of piece</h3>
-                  <h3 className="f6 f5 fw4 mt2 black-60">Subtitle of piece</h3>
-                </a>
-              </article>
-              <article className="fl w-100 w-50-m  w-25-ns pa2-ns">
-                <div className="aspect-ratio aspect-ratio--1x1">
-                  <img className="db bg-center cover aspect-ratio--object" />
-                </div>
-                <a href="#0" className="ph2 ph0-ns pb3 link db">
-                  <h3 className="f5 f4-ns mb0 black-90">Title of piece</h3>
-                  <h3 className="f6 f5 fw4 mt2 black-60">Subtitle of piece</h3>
-                </a>
-              </article>
-              <article className="fl w-100 w-50-m  w-25-ns pa2-ns">
-                <div className="aspect-ratio aspect-ratio--1x1">
-                  <img className="db bg-center cover aspect-ratio--object" />
-                </div>
-                <a href="#0" className="ph2 ph0-ns pb3 link db">
-                  <h3 className="f5 f4-ns mb0 black-90">Title of piece</h3>
-                  <h3 className="f6 f5 fw4 mt2 black-60">Subtitle of piece</h3>
-                </a>
-              </article>
-
+              {projectsList}
             </section>
+
           </div>
         </DetailParallaxContainer>
     );

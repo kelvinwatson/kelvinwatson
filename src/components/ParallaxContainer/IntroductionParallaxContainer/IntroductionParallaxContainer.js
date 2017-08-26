@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AnimatedParallaxContainer from '../AnimatedParallaxContainer';
-import InformationOverlay from '../../InformationOverlay/InformationOverlay';
+import PersonalInformationOverlay from '../../InformationOverlay/PersonalInformationOverlay/PersonalInformationOverlay';
 import NavigationDial from '../../NavigationDial/NavigationDial';
 import IntroductionToolbar from '../../Toolbar/IntroductionToolbar/IntroductionToolbar';
 import './IntroductionParallaxContainer.css';
@@ -108,7 +108,7 @@ class IntroductionParallaxContainer extends Component {
   render(){
     return (
         <AnimatedParallaxContainer backgroundClass={this.state.backgroundClass}>
-        <InformationOverlay isOpenOverlay={this.state.isOpenOverlay} onCloseInfoOverlayClicked={this.handleCloseInfoOverlayClicked}/>
+        <PersonalInformationOverlay isOpenOverlay={this.state.isOpenOverlay} onCloseInfoOverlayClicked={this.handleCloseInfoOverlayClicked}/>
           <div className={`parallax-flex-parent ${this.state.isOpenOverlay ? 'parallax-flex-parent-slide-off' : ''}`}>
             <IntroductionToolbar
               shareIconColor={this.state.shareIconColor}

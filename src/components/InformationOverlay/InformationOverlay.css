@@ -34,15 +34,24 @@ h1{
   left: 0px;
   width: 100%;
 
-  /* close overlay */
-  transform: translateX(-100%);
-  -webkit-transform: translateX(-100%);
-  -webkit-transition: all .8s ease;
-
   display:flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.information-overlay-container--open-from-left{
+  /* close overlay */
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  -webkit-transition: all .8s ease;
+}
+
+.information-overlay-container--open-from-right{
+  /* close overlay */
+  transform: translateX(200%);
+  -webkit-transform: translateX(200%);
+  -webkit-transition: all .8s ease;
 }
 
 .information-overlay-container:before {

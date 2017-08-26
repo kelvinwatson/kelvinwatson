@@ -108,6 +108,58 @@
     font-size: .875rem;
 }
 
+.roboto-condensed{
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.roboto{
+  font-family: 'Roboto', sans-serif;
+}
+
+.img{
+  filter: brightness(50%);
+  transition: filter 0.5s linear;
+  z-index: 0;
+}
+.img-bearforce{
+  background-image:url(../../../images/bearforce.jpg);
+}
+
+.img-convergelgbt{
+  background-image:url(../../../images/convergelgbt.png);
+}
+
+.img-watsonlogicparallax{
+  background-image:url(../../../images/watsonlogicparallax.png);
+}
+
+.img-kelvinwatson{
+  background-image:url(../../../images/kelvinwatson.jpg);
+}
+
+.tech-list{
+  display:inline-block;
+  list-style: none;
+  text-decoration: none;
+}
+.tech-list-item{
+  display:inline;
+  padding-right: 2px;
+  text-align: left;
+}
+
+.img:hover{
+  filter: brightness(150%);
+}
+
+.grey-text{
+  color: #B0B0B0;
+}
+
+.yellow-text{
+  color: yellow;
+}
+
 @media screen and (min-width: 30em) {
     .w-25-ns {
         width: 25%;

@@ -8,7 +8,7 @@ class CancelToolbar extends Component {
       <Toolbar>
         <div className="toolbar-flex-item">
           <div className="info cancel-icon-container" onClick={this.props.onCloseInfoOverlayClicked}>
-            <div className="info-white cancel-icon"> x </div>
+            <div className="info-white cancel-icon"> {this.props.char || 'X'} </div>
           </div>
         </div>
         <div className="toolbar-flex-item">
