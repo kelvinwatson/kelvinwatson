@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import StaticParallaxContainer from '../StaticParallaxContainer';
+import DetailParallaxContainer from '../DetailParallaxContainer';
+import ScrollUpToolbar from '../../Toolbar/ScrollUpToolbar/ScrollUpToolbar';
 import './TechnologiesParallaxContainer.css';
 
 class TechnologiesParallaxContainer extends Component {
@@ -11,9 +12,14 @@ class TechnologiesParallaxContainer extends Component {
 
   render(){
     return (
-        <StaticParallaxContainer>
-          <h1 className="detail-title">TechnologiesParallaxContainer</h1>
-        </StaticParallaxContainer>
+        <DetailParallaxContainer
+          wallpaperClass={this.props.wallpaperClass}>
+
+          <ScrollUpToolbar
+            title="TechnologiesParallaxContainer"
+            simulateUpScroll={this.props.simulateUpScroll}/>
+
+        </DetailParallaxContainer>
     );
   }
 }

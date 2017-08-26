@@ -26,6 +26,7 @@ class App extends Component {
     this.simulateUpScroll = this.simulateUpScroll.bind(this);
     this.simulateDownScroll = this.simulateDownScroll.bind(this);
     this.handleHireClicked = this.handleHireClicked.bind(this);
+    this.handleTechnologiesClicked = this.handleTechnologiesClicked.bind(this);
     this.handleProjectsClicked = this.handleProjectsClicked.bind(this);
     this.state = {
       projects: null,
@@ -220,6 +221,14 @@ class App extends Component {
     this.simulateDownScroll();
   }
 
+  handleTechnologiesClicked(){
+
+    this.setState({
+      detailParallaxContainerToLoad: 'tech'
+    });
+    this.simulateDownScroll();
+  }
+
   render() {
 
     let detailParallaxContainerToLoad;
@@ -248,6 +257,15 @@ class App extends Component {
             scrollBackgroundClass={this.state.parallaxContainer1}
             simulateUpScroll={this.simulateUpScroll}
             wallpaperClass="hire"/>
+        break;
+      case 'tech':
+        detailParallaxContainerToLoad =
+          <TechnologiesParallaxContainer
+            ref="parallaxContainer1"
+            scrollBackgroundClass={this.state.parallaxContainer1}
+            simulateUpScroll={this.simulateUpScroll}
+            wallpaperClass="tech"/>
+        break;
     }
 
     return (
@@ -257,6 +275,7 @@ class App extends Component {
         <IntroductionParallaxContainer
           ref="parallaxContainer0"
           scrollBackgroundClass={this.state.parallaxContainer0}
+          onTechnologiesClicked={this.handleTechnologiesClicked}
           onHireClicked={this.handleHireClicked}
           onProjectsClicked={this.handleProjectsClicked}
           toggleThemeBlack={this.toggleThemeBlack}

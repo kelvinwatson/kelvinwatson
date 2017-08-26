@@ -1,1 +1,5 @@
-
+.static-parallax-container{
+  -webkit-transform: translateY(0vh);
+    -ms-transform: translateY(0vh);
+    transform: translateY(0vh)
+}
