@@ -30,13 +30,13 @@
 
 .detail-background-default{
   background:linear-gradient(to bottom,rgba(0,0,0,0.1),rgba(0,0,0,0.9)),
-    url(https://static.pexels.com/photos/316902/pexels-photo-316902.jpeg);
+    url(../../images/nightsky.jpg);
     background-size: cover;
 }
 
 .detail-background-hire{
-  background:linear-gradient(to bottom,rgba(0,0,0,0.1),rgba(0,0,0,0.9)),
-    url(https://static.pexels.com/photos/539432/pexels-photo-539432.jpeg);
+  background:linear-gradient(to right,rgba(0,0,30,0.8),rgba(0,0,0,0.2)),
+    url(../../images/coffee.jpg);
     background-size: cover;
 }
 
