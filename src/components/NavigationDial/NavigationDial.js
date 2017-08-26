@@ -6,7 +6,7 @@ class NavigationDial extends Component {
     return (
       <nav>
         <ul id="navigationDial">
-          <div className="quadrant" id="quadrant1">
+          <div className="quadrant" id="quadrant1" onClick={this.props.onHireClicked}>
             <div className="quadrant-text quadrant-text-1">HIRE</div>
           </div>
           <div className="quadrant" id="quadrant2" onClick={this.props.onProjectsClicked}>

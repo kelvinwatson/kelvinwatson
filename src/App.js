@@ -25,6 +25,7 @@ class App extends Component {
     this.parallaxScroll = this.parallaxScroll.bind(this);
     this.simulateUpScroll = this.simulateUpScroll.bind(this);
     this.simulateDownScroll = this.simulateDownScroll.bind(this);
+    this.handleHireClicked = this.handleHireClicked.bind(this);
     this.handleProjectsClicked = this.handleProjectsClicked.bind(this);
     this.state = {
       projects: null,
@@ -240,6 +241,13 @@ class App extends Component {
             simulateUpScroll={this.simulateUpScroll}
             data={this.state.projects}/>
         break;
+      case 'hire':
+        detailParallaxContainerToLoad =
+          <HireParallaxContainer
+            ref="parallaxContainer1"
+            scrollBackgroundClass={this.state.parallaxContainer1}
+            simulateUpScroll={this.simulateUpScroll}
+            wallpaperClass="hire"/>
     }
 
     return (
@@ -249,6 +257,7 @@ class App extends Component {
         <IntroductionParallaxContainer
           ref="parallaxContainer0"
           scrollBackgroundClass={this.state.parallaxContainer0}
+          onHireClicked={this.handleHireClicked}
           onProjectsClicked={this.handleProjectsClicked}
           toggleThemeBlack={this.toggleThemeBlack}
           toggleThemeWhite={this.toggleThemeWhite} />

@@ -150,14 +150,19 @@ ul#navigationDial:hover {
   transform: rotate(0deg)
 }
 
+.quadrant:hover > .quadrant-text {
+  color: black;
+  font-weight: bold;
+}
+
 #quadrant1:hover~#rotator1 {
   transform: rotate(135deg);
   border-left-color: #99ffff !important;
 }
 
-.quadrant:hover > .quadrant-text {
-  color: black;
-  font-weight: bold;
+#quadrant2:hover~#rotator1 {
+  transform: rotate(225deg);
+  border-left-color: #6BB2B2 !important;
 }
 
 #quadrant3:hover~#rotator1 {

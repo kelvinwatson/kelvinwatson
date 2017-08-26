@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ScrollUpToolbar from '../../Toolbar/ScrollUpToolbar/ScrollUpToolbar';
-import StaticParallaxContainer from '../StaticParallaxContainer';
+import DetailParallaxContainer from '../DetailParallaxContainer';
 import './ProjectsParallaxContainer.css';
 
 class ProjectsParallaxContainer extends Component {
@@ -30,7 +30,7 @@ class ProjectsParallaxContainer extends Component {
     // }
 
     return (
-        <StaticParallaxContainer>
+        <DetailParallaxContainer>
           <div className="scrollable-override">
 
           <ScrollUpToolbar
@@ -129,7 +129,7 @@ class ProjectsParallaxContainer extends Component {
 
             </section>
           </div>
-        </StaticParallaxContainer>
+        </DetailParallaxContainer>
     );
   }
 }

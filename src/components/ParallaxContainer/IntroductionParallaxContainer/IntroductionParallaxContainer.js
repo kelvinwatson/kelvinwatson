@@ -119,6 +119,7 @@ class IntroductionParallaxContainer extends Component {
               toggleThemeWhite={this.toggleThemeWhite}
               toggleThemeBlack={this.toggleThemeBlack}/>
             <NavigationDial
+              onHireClicked={this.props.onHireClicked}
               onInfoClicked={this.handleInfoClicked}
               onProjectsClicked={this.props.onProjectsClicked}/>
             <div className="kelvin-watson-logo">KELVIN WATSON</div>
