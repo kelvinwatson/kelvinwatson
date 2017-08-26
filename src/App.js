@@ -264,7 +264,8 @@ class App extends Component {
             ref="parallaxContainer1"
             scrollBackgroundClass={this.state.parallaxContainer1}
             simulateUpScroll={this.simulateUpScroll}
-            wallpaperClass="tech"/>
+            wallpaperClass="tech"
+            data={this.state.technologies}/>
         break;
     }
 

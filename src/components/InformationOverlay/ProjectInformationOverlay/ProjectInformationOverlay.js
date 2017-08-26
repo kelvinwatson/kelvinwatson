@@ -8,24 +8,32 @@ class ProjectInformationOverlay extends Component {
     return (
       <InformationOverlay
         isOpenOverlay={this.props.isOpenOverlay}
-        openOverlayFromRight={this.props.openOverlayFromRight}>
+        openOverlayFromRight={this.props.openOverlayFromRight}
+        wallpaper="white">
 
         <CancelToolbar
-          title="I am Kelvin Watson"
+          title={`Project: ${this.props.selectedProject ? this.props.selectedProject.name : ''}`}
           char="<"
           onCloseInfoOverlayClicked={this.props.onCloseInfoOverlayClicked}/>
 
         <div className="information-overlay-text-flex">
           <div className="information-overlay-text-flex-item information-overlay-text-flex-item-left">
-            <p>In my past life, I was a hospital pharmacist. Seven years later,
-            I realized that it was time to reinvent myself and was ready for
-            a new challenge, so I pursued a Computer Science degree. Now, I am
-            a software engineer, with a passion for sleek and sophisticated
-            user interfaces, without compromising simplicity in logic. </p>
+            <div className="aspect-ratio aspect-ratio--1x1">
+              <img className={`db bg-center cover aspect-ratio--object aspect-ratio--object-50 img ${this.props.selectedProject ? 'img-'+this.props.selectedProject.imageName : ''}`}/>
             </div>
+          </div>
           <div className="information-overlay-text-flex-item information-overlay-text-flex-item-right">
-            <p>Please feel free to have a look around. I collaborate with my
-            husband under the alias WatsonLogic. </p>
+            <h3>Project Description</h3>
+            <p>{this.props.selectedProject ? this.props.selectedProject.details : ''} </p>
+
+            <h3>Technologies</h3>
+            {this.props.selectedProject &&
+              this.props.selectedProject.technologies.map((tech, index)=>
+                  <span className="f6 f5 mt2 yellow-text roboto-condensed tech-list-item" key={index}>
+                    {index == (this.props.selectedProject.technologies.length - 1) ? tech : tech+','}
+                  </span>
+              )
+            }
           </div>
         </div>
 

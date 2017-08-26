@@ -63,11 +63,22 @@ h1{
   left: 0;
   right: 0;
   bottom: 0;
+  background: black;
+  background-position: -80px 0px;
+}
+
+.information-overlay-container-wallpaper-default:before{
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 59%, rgba(0, 0, 0, 0.8) 100%),
     url(../../images/night-min.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: -80px 0px;
+}
+
+.information-overlay-container-wallpaper-white:before{
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.3) 59%, rgba(0, 0, 0, 0.7) 100%),
+    url(../../images/whitepaint.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .information-overlay-container-animation:before{
@@ -103,6 +114,7 @@ h1{
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: 50%;
+  flex-wrap: wrap;
   line-height: 2em;
   font-size: 0.9em;
 }
@@ -117,9 +129,11 @@ h1{
 
 
 .information-overlay-content-wrapper{
-  -webkit-transform: translateY(4vh);
-  -ms-transform: translateY(40vh);
+  -webkit-transform: translateY(0vh);
+  -ms-transform: translateY(0vh);
   text-align: center;
+  width: 100%;
+  height:100%;
 }
 
 .cancel-icon-container{
@@ -131,4 +145,9 @@ h1{
   font-style: normal;
   font-family: serif;
   font-style: italic;
+}
+
+.aspect-ratio--object-50{
+  width:50% !important;
+  height:50% !important;
 }

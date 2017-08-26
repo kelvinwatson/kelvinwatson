@@ -160,6 +160,10 @@
   color: yellow;
 }
 
+.scrollable{
+  overflow-y: scroll
+}
+
 @media screen and (min-width: 30em) {
     .w-25-ns {
         width: 25%;

@@ -103,7 +103,11 @@
       "name" : "Polymer",
       "proficiency" : 80
     },
-    "React" : 25,
+    "React" : {
+      "category" : "Web Development",
+      "name" : "React",
+      "proficiency" : 25
+    },
     "Robolectric" : {
       "category" : "Test Automation",
       "name" : "Robolectric",

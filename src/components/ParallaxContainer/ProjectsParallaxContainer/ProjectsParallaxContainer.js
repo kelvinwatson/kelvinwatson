@@ -13,20 +13,23 @@ class ProjectsParallaxContainer extends Component {
     this.handleCloseInfoOverlayClicked = this.handleCloseInfoOverlayClicked.bind(this);
     this.state = {
       isOpenOverlay: false,
-      openOverlayFromRight: true
+      openOverlayFromRight: true,
+      selectedProject: null
     }
   }
 
   handleProjectImageClicked(project){
-    console.log('clicked',project);
+    console.log('!!!!!!CLICKED',project);
     this.setState({
-      isOpenOverlay: true
+      isOpenOverlay: true,
+      selectedProject: project
     });
   }
 
   handleCloseInfoOverlayClicked(){
     this.setState({
-      isOpenOverlay: false
+      isOpenOverlay: false,
+      selectedProject: null
     });
   }
 
@@ -93,7 +96,8 @@ class ProjectsParallaxContainer extends Component {
         <ProjectInformationOverlay
           isOpenOverlay={this.state.isOpenOverlay}
           onCloseInfoOverlayClicked={this.handleCloseInfoOverlayClicked}
-          openOverlayFromRight={this.state.openOverlayFromRight}/>
+          openOverlayFromRight={this.state.openOverlayFromRight}
+          selectedProject={this.state.selectedProject}/>
 
           <div className="scrollable-override">
 
