@@ -1,9 +1,10 @@
 .toolbar-flex-parent {
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0 64px;
+  padding: 0 32px;
   position: relative;
   width: 100%;
 }
@@ -22,29 +23,14 @@
   text-transform: lowercase;
   font-size: 1.5em;
   font-style: italic;
-  position: absolute;
 }
 
 .left-icon {
-  left: 64px;
-  margin-right: 8px;
   border: none;
+  margin-right: 32px;
 }
-
-
-/*button.left-icon{
-  font-family: serif;
-  background: none;
-  border: none;
-  width: 2.5em;
-}
-button.left-icon:focus {
-  outline:0;
-}*/
 
 .right-icon {
-  left: 64px;
-  margin-left: 8px;
   position: relative;
 }
 
@@ -76,6 +62,13 @@ button.left-icon:focus {
 .share-icons {
   display: none;
   position: absolute;
+  width: 150px;
+  margin-left: -12px;
+}
+
+.share-icons:hover{
+  display:block;
+  width: 150px;
 }
 
 .share-icon {
@@ -83,10 +76,12 @@ button.left-icon:focus {
   font-size: 1em;
 }
 
-.facebook {}
+.facebook {
+  margin-right: 32px;
+}
 
 .linkedin {
-  margin-top: 64px;
+  margin-top: 8px;
 }
 
 .info-black {
@@ -133,4 +128,57 @@ button.left-icon:focus {
 
 .title{
   font-weight:300;
+}
+
+@media(min-width: 768px) {
+  /* tablets and desktop */
+  .right-icon{
+    vertical-align: bottom;
+  }
+}
+
+@media(max-width: 767px) {
+    /* phones */
+    .left-icon {
+      display:none;
+    }
+    .linkedin{
+      margin-top:0;
+    }
+    .toolbar-flex-parent {
+      justify-content: center;
+    }
+    .share-icon-container{
+      display:inline;
+    }
+    .right-icon:hover>.share-icons{
+      display:inline;
+      margin-left: 16px;
+    }
+    .share-icons:hover{
+      display:inline;
+    }
+}
+
+@media(max-width: 767px) and (orientation: portrait) {
+    /* portrait phones */
+    .left-icon {
+      display:none;
+    }
+    .linkedin{
+      margin-top:0;
+    }
+    .toolbar-flex-parent {
+      justify-content: center;
+    }
+    .share-icon-container{
+      display:inline;
+    }
+    .right-icon:hover>.share-icons{
+      display:inline;
+      margin-left: 16px;
+    }
+    .share-icons:hover{
+      display:inline;
+    }
 }

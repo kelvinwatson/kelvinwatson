@@ -2,11 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:300');
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
-@-webkit-keyframes animate {
-    from { transform: translate(0, 0); }
-    to { transform: translate(-250px, -250px); }
-}
-
 .background {
   overflow: hidden;
   will-change: transform;
@@ -15,13 +10,10 @@
   position: fixed;
   width: 100%;
   transform: translateY(30vh);
-
   opacity: 1;
-
   transform: translate3D(0,0,0); /* default position, on screen */
   -moz-transform: translate3D(0,0,0);
   -webkit-transform: translate3D(0,0,0);
-
   transition: all 0.7s cubic-bezier(0.22, 0.44, 0, 1);
 }
 .background:before {
@@ -37,15 +29,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-
   background-size: cover;
-  /*background-color: rgba(0, 0, 0, 0.1);*/
-
-  -webkit-animation-name: animate;
-  -webkit-animation-duration: 70s;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
 }
 
 .background:first-child {
@@ -144,11 +128,10 @@
   height: 100%;
   width: 100%;
   opacity: 1;
-
+  overflow-x: hidden;
   transform: translate3D(0,0,0); /* doesn't seem necessary but placing here to be explicit */
   -moz-transform: translate3D(0,0,0); /* doesn't seem necessary but placing here to be explicit */
   -webkit-transform: translate3D(0,0,0);/* doesn't seem necessary but placing here to be explicit */
-
   -moz-transition: transform 1s ease; /*transition back to opacity 1*/
   -webkit-transition: transform 1s ease;
 }
@@ -162,4 +145,38 @@
 
   -moz-transition: all .8s ease;
   -webkit-transition: all .8s ease;
+}
+
+@media(min-width: 768px) {
+    /* tablets and desktop */
+    @-webkit-keyframes animate {
+        from { transform: translate(0, 0); }
+        to { transform: translate(-250px, -250px); }
+    }
+  .background:before{
+    -webkit-animation-name: animate;
+    -webkit-animation-duration: 70s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+  }
+}
+
+@media(max-width: 767px) {
+  /* phones */
+  .background:before{
+    background-position: bottom;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media(max-width: 767px) and (orientation: portrait) {
+    /* portrait phones */
+
+  .background:before{
+    background-position: center bottom;
+    height: 100%;
+    width: 100%;
+  }
 }

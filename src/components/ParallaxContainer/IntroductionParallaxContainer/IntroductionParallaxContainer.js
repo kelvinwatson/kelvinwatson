@@ -123,8 +123,10 @@ class IntroductionParallaxContainer extends Component {
               onHireClicked={this.props.onHireClicked}
               onInfoClicked={this.handleInfoClicked}
               onProjectsClicked={this.props.onProjectsClicked}/>
-            <div className="kelvin-watson-logo">KELVIN WATSON</div>
-            <div className="designation">Software Engineer  |  Web/Mobile Developer</div>
+            <div>
+              <div className="kelvin-watson-logo">KELVIN WATSON</div>
+              <div className="designation">Software Engineer  |  Web/Mobile Developer</div>
+            </div>
           </div>
         </AnimatedParallaxContainer>
     );

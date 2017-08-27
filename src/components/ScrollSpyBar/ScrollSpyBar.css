@@ -1,18 +1,3 @@
-@keyframes moveUpAndDown {
-  0% {
-    transform: translateY(0%);
-  }
-  45% {
-    transform: translateY(100%);
-  }
-  50% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
-}
-
 #scrollspy-menu {
   position: fixed;
   right: 16px;
@@ -31,12 +16,6 @@
 
 #scrollspy-menu ul {
   list-style: none;
-  animation-name: moveUpAndDown;
-  animation-duration: 5s;
-  animation-timing-function: linear;
-  animation-iteration-count: 1;
-  animation-direction: normal;
-  -webkit-animation-timing-function: linear;
 }
 
 #scrollspy-menu ul li {
@@ -58,13 +37,45 @@
 
 .scrollspy-menu__anchor--true {
   background: #000;
-  /*box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #E9ECF3 0 -1px 9px, #fff 0 2px 12px;*/
 }
 
 .scrollspy-menu__anchor--false {
   width: 12px;
   height: 12px;
   background: #fff;
-  /*box-shadow: 0 0 4px #1C1C17;*/
   transition: all .3s ease;
+}
+
+@media(min-width: 768px) {
+    /* tablets and desktop */
+    @keyframes moveUpAndDown {
+      0% {
+        transform: translateY(0%);
+      }
+      45% {
+        transform: translateY(100%);
+      }
+      50% {
+        transform: translateY(-100%);
+      }
+      100% {
+        transform: translateY(0%);
+      }
+    }
+    #scrollspy-menu ul {
+      animation-name: moveUpAndDown;
+      animation-duration: 5s;
+      animation-timing-function: linear;
+      animation-iteration-count: 1;
+      animation-direction: normal;
+      -webkit-animation-timing-function: linear;
+    }
+}
+
+@media(max-width: 767px) {
+    /* phones */
+}
+
+@media(max-width: 767px) and (orientation: portrait) {
+    /* portrait phones */
 }

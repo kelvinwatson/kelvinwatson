@@ -14,9 +14,7 @@
 
 h1{
   font-size: 2em;
-
   font-family: 'Raleway', sans-serif;
-  letter-spacing: 0.22em;
 }
 
 .information-overlay-container {
@@ -38,6 +36,8 @@ h1{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  overflow-x: hidden;
 }
 
 .information-overlay-container--open-from-left{
@@ -119,15 +119,6 @@ h1{
   font-size: 0.9em;
 }
 
-.information-overlay-text-flex-item-left{
-  padding-right: 16px;
-}
-
-.information-overlay-text-flex-item-right{
-  padding-left: 16px;
-}
-
-
 .information-overlay-content-wrapper{
   -webkit-transform: translateY(0vh);
   -ms-transform: translateY(0vh);
@@ -150,4 +141,45 @@ h1{
 .aspect-ratio--object-50{
   width:50% !important;
   height:50% !important;
+}
+
+@media(min-width: 768px) {
+  /* tablets and desktop */
+  h1{
+    letter-spacing: 0.21em;
+  }
+  .information-overlay-text-flex-item-left{
+    padding-right: 16px;
+  }
+  .information-overlay-text-flex-item-right{
+    padding-left: 16px;
+  }
+}
+
+@media(max-width: 767px) {
+  /* phones */
+  .information-overlay-container:before {
+    width: 100%;
+    height: 100%;
+  }
+  .toolbar-flex-item{
+    flex-basis: 100%;
+  }
+  .information-overlay-text-flex-item{
+    flex-basis: 100%;
+  }
+}
+
+@media(max-width: 767px) and (orientation: portrait) {
+    /* portrait phones */
+  .information-overlay-container:before {
+    width: 100%;
+    height: 100%;
+  }
+  .toolbar-flex-item{
+    flex-basis: 100%;
+  }
+  .information-overlay-text-flex-item{
+    flex-basis: 100%;
+  }
 }

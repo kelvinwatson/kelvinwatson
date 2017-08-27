@@ -12,7 +12,7 @@ class IntroductionToolbar extends Component {
             <div className={this.props.infoClass}>i</div>
           </div>
           <div className="info right-icon">
-            <div>
+            <div className="share-icon-container">
               <svg className={`share share-${this.props.shareIconColor}`} height="32" version="1.1" width="32" xmlns="http://www.w3.org/2000/svg">
                 <desc></desc>
                 <defs/>
