@@ -226,6 +226,7 @@ class App extends Component {
     this.setState({
       detailParallaxContainerToLoad: 'tech'
     });
+
     this.simulateDownScroll();
   }
 

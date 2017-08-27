@@ -5,52 +5,42 @@ class Knob extends Component {
 
   constructor(props){
     super(props);
+    var knobAngle = this.convertToAngle(this.props.percent);
     this.state = {
-      knobAngle: 0
-    }
+      knobAngle: knobAngle,
+      activeTicks: this.computeActiveTicks(knobAngle)
+    };
   }
 
-  componentDidMount(){
-    this.setAngle(this.convertToAngle(this.props.percent));
+  componentWillReceiveProps(nextProps) {
+    var knobAngle = this.convertToAngle(nextProps.percent);
+    this.setState({
+      knobAngle: this.convertToAngle(nextProps.percent),
+      activeTicks: this.computeActiveTicks(knobAngle)
+    });
   }
-
+  
   convertToAngle(percent){
     return percent * 2.7;
   }
 
-  setAngle(angle){
-    // var knob = document.getElementById('knob'+this.props.knobId)
-    // knob.style.rotate = angle + 'deg';
-
-    this.setState({
-      knobAngle: angle
-    });
-
-    // highlight ticks
+  computeActiveTicks(angle) {
     var activeTicks = (Math.round(angle / 10) + 1);
-
-    var ticksHtmlCollection = document.getElementsByClassName('tick-'+this.props.knobId);
-    for (var i = 0; i<ticksHtmlCollection.length; i++){
-      var tick = ticksHtmlCollection[i];
-      tick.classList.remove('activetick');
-    }
-
-    var arrTicks = Array.from(ticksHtmlCollection);
-
-    var sliced = arrTicks.slice(0,activeTicks);
-    for (var j = 0; j<sliced.length; j++){
-      sliced[j].classList.add('activetick');
-    }
+    return activeTicks;
   }
 
   render(){
-
+    let ticks = [];
     const knobStyle = {
       transform: +this.state.knobAngle ? 'rotate('+this.state.knobAngle+'deg)' : 'rotate(0deg)'
     };
 
-    console.log('knobStyle',knobStyle);
-
+    for(let i = 0; i < this.state.activeTicks; i += 1) {
+      ticks.push(<div className={`tick tick-${this.props.knobId} activetick`}></div>);
+    }
+    for(let i = 0, len=28-this.state.activeTicks; i < len; i += 1) {
+      ticks.push(<div className={`tick tick-${this.props.knobId}`}></div>);
+    }
     return (
       <div className="knob-parent">
         <div className="knob-surround">
@@ -60,34 +50,7 @@ class Knob extends Component {
           <span className="max">Max</span>
 
           <div className="ticks">
-            <div className={`tick tick-${this.props.knobId} activetick`}></div>
-            <div className={`tick tick-${this.props.knobId}`}></div>
-            <div className={`tick tick-${this.props.knobId}`}></div>
-            <div className={`tick tick-${this.props.knobId}`}></div>
-            <div className={`tick tick-${this.props.knobId}`}></div>
-            <div className={`tick tick-${this.props.knobId}`}></div>
-            <div className={`tick tick-${this.props.knobId}`}></div>
-            <div className={`tick tick-${this.props.knobId}`}></div>
-            <div className={`tick tick-${this.props.knobId}`}></div>
-            <div className={`tick tick-${this.props.knobId}`}></div>
-            <div className={`tick tick-${this.props.knobId}`}></div>
-            <div className={`tick tick-${this.props.knobId}`}></div>
-            <div className={`tick tick-${this.props.knobId}`}></div>
-            <div className={`tick tick-${this.props.knobId}`}></div>
-            <div className={`tick tick-${this.props.knobId}`}></div>
-            <div className={`tick tick-${this.props.knobId}`}></div>
-            <div className={`tick tick-${this.props.knobId}`}></div>
-            <div className={`tick tick-${this.props.knobId}`}></div>
-            <div className={`tick tick-${this.props.knobId}`}></div>
-            <div className={`tick tick-${this.props.knobId}`}></div>
-            <div className={`tick tick-${this.props.knobId}`}></div>
-            <div className={`tick tick-${this.props.knobId}`}></div>
-            <div className={`tick tick-${this.props.knobId}`}></div>
-            <div className={`tick tick-${this.props.knobId}`}></div>
-            <div className={`tick tick-${this.props.knobId}`}></div>
-            <div className={`tick tick-${this.props.knobId}`}></div>
-            <div className={`tick tick-${this.props.knobId}`}></div>
-            <div className={`tick tick-${this.props.knobId}`}></div>
+            {ticks}
           </div>
         </div>
         <div className="label-name">{this.props.label}</div>

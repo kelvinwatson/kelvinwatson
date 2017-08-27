@@ -5,23 +5,36 @@ import ScrollUpToolbar from '../../Toolbar/ScrollUpToolbar/ScrollUpToolbar';
 import './TechnologiesParallaxContainer.css';
 
 class TechnologiesParallaxContainer extends Component {
-  render(){
 
+  constructor(props){
+    super(props);
+
+    this.state = {
+      hasAnimationStarted: false
+    }
+
+    setTimeout(function() {
+      this.setState({
+        hasAnimationStarted: true
+      });
+    }.bind(this), 1000);
+  }
+
+
+
+  render(){
+    console.log('Rendering with:', this.state);
     let technologiesList = this.props && this.props.data;
     console.log('technologiesList', technologiesList);
     if (technologiesList){
       technologiesList = technologiesList.map((technology, index) =>
         <div className="technologies-grid-item">
-
-        <Knob
-          knobId={index}
-          percent={technology.proficiency}
-          label={technology.name}
-          />
+          <Knob
+            knobId={index}
+            percent={this.state.hasAnimationStarted ? technology.proficiency : 0}
+            label={technology.name}
+            />
         </div>
-
-
-
       );
     }
 
@@ -30,7 +43,7 @@ class TechnologiesParallaxContainer extends Component {
           wallpaperClass={this.props.wallpaperClass}>
 
           <ScrollUpToolbar
-            title="TechnologiesParallaxContainer"
+            title="My Technology Stack"
             simulateUpScroll={this.props.simulateUpScroll}/>
 
           <div className="technologies-grid scrollable">
