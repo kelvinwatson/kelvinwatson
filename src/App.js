@@ -43,7 +43,8 @@ class App extends Component {
       isFirstScrollSpyItemActive: true,
       isSecondScrollSpyItemActive: false,
       detailParallaxContainerToLoad: 'tableOfContents',
-      isActivateDetailParallaxContainerBackgroundAnimation: false
+      isActivateDetailParallaxContainerBackgroundAnimation: false,
+      isScrollSpyBarVisible: true
     }
   }
 
@@ -284,6 +285,7 @@ class App extends Component {
           toggleThemeWhite={this.toggleThemeWhite} />
 
         <ScrollSpyBar
+          isScrollSpyBarVisible={this.state.isScrollSpyBarVisible}
           isFirstScrollSpyItemActive={this.state.isFirstScrollSpyItemActive}
           isSecondScrollSpyItemActive={this.state.isSecondScrollSpyItemActive}
           simulateDownScroll={this.simulateDownScroll}
@@ -291,21 +293,6 @@ class App extends Component {
 
         {detailParallaxContainerToLoad}
 
-        {/*
-        <ProjectsParallaxContainer
-          ref="parallaxContainer1"
-          scrollBackgroundClass={this.state.parallaxContainer1}
-          simulateUpScroll={this.simulateUpScroll}
-          data={this.state.projects}/>
-        */}
-
-        {/*
-          <Introduction />
-          <Projects projects={this.state.projects}/>
-          <Technologies technologies={this.state.technologies}/>
-          <Hire handleSubmit={this.submitHireForm} />
-          <Footer />
-        */}
       </div>
     );
   }

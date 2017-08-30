@@ -3,15 +3,6 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 
-
-@-webkit-keyframes animatedBackground {
-  from {
-    background-position: 0px 0px; }
-
-  to {
-    background-position: -80px 0px; }
-}
-
 h1{
   font-size: 2em;
   font-family: 'Raleway', sans-serif;
@@ -81,20 +72,6 @@ h1{
   background-repeat: no-repeat;
 }
 
-.information-overlay-container-animation:before{
-  -webkit-animation-name: animatedBackground;
-  -webkit-animation-delay: 1s; /* Safari 4.0 - 8.0 */
-  -webkit-animation-duration: 5s;
-  -webkit-animation-timing-function: ease;
-  -webkit-animation-iteration-count: 1;
-
-  animation-name: animatedBackground;
-  animation-delay: 1s; /* Safari 4.0 - 8.0 */
-  animation-duration: 5s;
-  animation-timing-function: ease;
-  animation-iteration-count: 1;
-}
-
 .information-overlay-container-open {
   opacity: 1;
   -webkit-transition: all .8s ease;
@@ -122,6 +99,7 @@ h1{
 .information-overlay-content-wrapper{
   -webkit-transform: translateY(0vh);
   -ms-transform: translateY(0vh);
+  transform: translateY(0vh);
   text-align: center;
   width: 100%;
   height:100%;
@@ -145,6 +123,30 @@ h1{
 
 @media(min-width: 768px) {
   /* tablets and desktop */
+
+
+  @-webkit-keyframes animatedBackground {
+    from {
+      background-position: 0px 0px; }
+
+    to {
+      background-position: -80px 0px; }
+  }
+
+  .information-overlay-container-animation:before{
+    -webkit-animation-name: animatedBackground;
+    -webkit-animation-delay: 1s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 5s;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-iteration-count: 1;
+
+    animation-name: animatedBackground;
+    animation-delay: 1s; /* Safari 4.0 - 8.0 */
+    animation-duration: 5s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+  }
+
   h1{
     letter-spacing: 0.21em;
   }
@@ -162,11 +164,18 @@ h1{
     width: 100%;
     height: 100%;
   }
+  .toolbar-flex-parent{
+    width: unset;
+    padding:unset;
+  }
   .toolbar-flex-item{
     flex-basis: 100%;
   }
   .information-overlay-text-flex-item{
     flex-basis: 100%;
+  }
+  .information-overlay-content-wrapper{
+    width:unset;
   }
 }
 
@@ -176,10 +185,17 @@ h1{
     width: 100%;
     height: 100%;
   }
+  .toolbar-flex-parent{
+    padding:unset;
+    width: unset;
+  }
   .toolbar-flex-item{
     flex-basis: 100%;
   }
   .information-overlay-text-flex-item{
     flex-basis: 100%;
+  }
+  .information-overlay-content-wrapper{
+    width:unset;
   }
 }

@@ -50,8 +50,8 @@
   transition: all 0.1s ease;
   background-image: url(../../images/background-white.jpg);
 }
-.background:first-child .content-wrapper {
-  transform: translateY(15vh);
+.background:first-child .animated-content-wrapper {
+  transform: translateY(0vh);
 }
 .background:nth-child(2) {
   background-image: url(https://s8.postimg.org/ow4wgk4px/ugqti_Lg.jpg);
@@ -73,9 +73,9 @@
   z-index: 1;
 }
 
-.content-wrapper {
+.animated-content-wrapper {
   align-items: center;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: flex-start;
   text-align: center;
@@ -93,26 +93,26 @@
 .background.up-scroll {
   transform: translate3d(0, -15vh, 0);
 }
-.background.up-scroll .content-wrapper {
-  transform: translateY(15vh);
+.background.up-scroll .animated-content-wrapper {
+  transform: translateY(0vh);
 }
 .background.up-scroll + .background {
   transform: translate3d(0, 30vh, 0);
 }
-.background.up-scroll + .background .content-wrapper {
+.background.up-scroll + .background .animated-content-wrapper {
   transform: translateY(30vh);
 }
 
 .background.down-scroll {
   transform: translate3d(0, -130vh, 0);
 }
-.background.down-scroll .content-wrapper {
+.background.down-scroll .animated-content-wrapper {
   /*transform: translateY(40vh);*/
 }
 .background.down-scroll + .background:not(.down-scroll) {
   transform: translate3d(0, -15vh, 0);
 }
-.background.down-scroll + .background:not(.down-scroll) .content-wrapper {
+.background.down-scroll + .background:not(.down-scroll) .animated-content-wrapper {
   transform: translateY(15vh);
 }
 .designation{
@@ -124,7 +124,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   height: 100%;
   width: 100%;
   opacity: 1;

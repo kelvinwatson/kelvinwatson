@@ -108,7 +108,7 @@ class IntroductionParallaxContainer extends Component {
   render(){
     return (
         <AnimatedParallaxContainer backgroundClass={this.state.backgroundClass}>
-        <PersonalInformationOverlay isOpenOverlay={this.state.isOpenOverlay} onCloseInfoOverlayClicked={this.handleCloseInfoOverlayClicked}/>
+          <PersonalInformationOverlay isOpenOverlay={this.state.isOpenOverlay} onCloseInfoOverlayClicked={this.handleCloseInfoOverlayClicked}/>
           <div className={`parallax-flex-parent ${this.state.isOpenOverlay ? 'parallax-flex-parent-slide-off' : ''}`}>
             <IntroductionToolbar
               shareIconColor={this.state.shareIconColor}

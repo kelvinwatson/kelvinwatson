@@ -14,6 +14,14 @@
   height: 50%;
 }
 
+.scrollspy-menu-visible{
+  display:flex;
+}
+
+.scrollspy-menu-hidden{
+  display:none;
+}
+
 #scrollspy-menu ul {
   list-style: none;
 }

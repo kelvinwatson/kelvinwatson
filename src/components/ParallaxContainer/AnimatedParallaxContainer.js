@@ -19,7 +19,7 @@ class AnimatedParallaxContainer extends Component {
     return (
       <section className={backgroundClassName}>
 
-        <div className="content-wrapper">
+        <div className="animated-content-wrapper">
           {this.props.children}
 
           {/* <p className="content-title">Full Page Parallax Effect</p> */}
