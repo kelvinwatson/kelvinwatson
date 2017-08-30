@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Progress from '../../Progress/Progress';
 import ScrollUpToolbar from '../../Toolbar/ScrollUpToolbar/ScrollUpToolbar';
 import StaticParallaxContainer from '../StaticParallaxContainer';
 import './TableOfContentsParallaxContainer.css';

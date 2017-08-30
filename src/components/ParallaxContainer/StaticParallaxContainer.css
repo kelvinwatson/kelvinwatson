@@ -73,7 +73,7 @@
   transition: all 1.7s cubic-bezier(0.22, 0.44, 0, 1);
 }
 .static-content-wrapper-override{
-  transform: translateY(0vh) !important;
+  transform: translateY(5vh);
   /*height: unset; remove the 100vh setting */
 }
 .content-title {
@@ -106,7 +106,6 @@
 .static-background.down-scroll + .background:not(.down-scroll) .content-wrapper {
   transform: translateY(15vh);
 }
-
 
 .static-parallax-container{
   -webkit-transform: translateY(0vh);

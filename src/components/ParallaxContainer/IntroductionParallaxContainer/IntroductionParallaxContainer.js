@@ -36,10 +36,10 @@ class IntroductionParallaxContainer extends Component {
 
   componentWillReceiveProps(nextProps) {    //ensures child stays inSync with parent
     var backgroundClass = this.state.backgroundClass;
-    if (nextProps.scrollBackgroundClass == 'up-scroll'){
+    if (nextProps.scrollBackgroundClass === 'up-scroll'){
       backgroundClass = this._replaceIfExists(backgroundClass, 'down-scroll', 'up-scroll');
       backgroundClass = this._addIfNotExists(backgroundClass, 'up-scroll')
-    } else if (nextProps.scrollBackgroundClass == 'down-scroll'){
+    } else if (nextProps.scrollBackgroundClass === 'down-scroll'){
       backgroundClass = this._replaceIfExists(backgroundClass, 'up-scroll', 'down-scroll');
       backgroundClass = this._addIfNotExists(backgroundClass, 'down-scroll');
     }
@@ -94,7 +94,7 @@ class IntroductionParallaxContainer extends Component {
   }
 
   _replaceIfExists(str, find, replacement){
-    var newString = str && str.slice() || ''; //copy the string
+    var newString = str && (str.slice() || ''); //copy the string
 
     if (newString.includes(find)){
       // console.log('includes!');

@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
-import Header from './components/Header/Header'
-import Introduction from './components/Introduction/Introduction'
-import Projects from './components/Projects/Projects'
 import ScrollSpyBar from './components/ScrollSpyBar/ScrollSpyBar';
-import Technologies from './components/Technologies/Technologies'
-import Hire from './components/Hire/Hire'
-import Footer from './components/Footer/Footer'
 
 import IntroductionParallaxContainer from './components/ParallaxContainer/IntroductionParallaxContainer/IntroductionParallaxContainer'
 import TableOfContentsParallaxContainer from './components/ParallaxContainer/TableOfContentsParallaxContainer/TableOfContentsParallaxContainer'
@@ -51,10 +45,72 @@ class App extends Component {
   componentDidMount(){
     this.initFirebase();
     this.initParallax();
+    if (this.isMobileBrowser()){
+      this.setSwipeListener(this.handleSwipeUp);
+    }
   }
 
   componentWillUnmount(){
     this.removeParallax();
+  }
+
+  /**
+   * src: https://stackoverflow.com/a/24600597
+   */
+  isMobileBrowser(){
+    return /Mobi/.test(navigator.userAgent);
+  }
+
+  handleSwipeUp(){
+    this.simulateDownScroll();
+  }
+
+  /**
+   * src (adapted): https://codepen.io/ganmahmud/pen/RaoKZa?editors=0110
+   */
+  setSwipeListener(){
+    var swipedir,
+    startX, startY,
+    distX, distY,
+    threshold = 150, //required min distance traveled to be considered swipe
+    restraint = 100, // maximum distance allowed at the same time in perpendicular direction
+    allowedTime = 300, // maximum time allowed to travel that distance
+    elapsedTime, startTime,
+    swipeZone = document.getElementById('swipeZone');
+
+    swipeZone.addEventListener('touchstart', function(e){
+      var touchobj = e.changedTouches[0];
+      swipedir = 'none';
+      // distX = distY = 0;
+      startX = touchobj.pageX;
+      startY = touchobj.pageY;
+      startTime = new Date().getTime(); // record time when finger first makes contact with surface
+      e.preventDefault();
+    }, false);
+
+    swipeZone.addEventListener('touchmove', function(e){
+      e.preventDefault() // prevent scrolling when inside DIV
+    }, false);
+
+    var self = this;
+    swipeZone.addEventListener('touchend', function(e){
+      var touchobj = e.changedTouches[0];
+      distX = touchobj.pageX - startX; // get horizontal dist traveled by finger while in contact with surface
+      distY = touchobj.pageY - startY; // get vertical dist traveled by finger while in contact with surface
+      elapsedTime = new Date().getTime() - startTime; // get time elapsed
+      if (elapsedTime <= allowedTime){ // first condition for awipe met
+          if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){ // 2nd condition for horizontal swipe met
+              swipedir = (distX < 0)? 'left' : 'right'; // if dist traveled is negative, it indicates left swipe
+          }
+          else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint){ // 2nd condition for vertical swipe met
+              swipedir = (distY < 0)? 'up' : 'down'; // if dist traveled is negative, it indicates up swipe
+          }
+      }
+      if (swipedir === 'up'){ //only handle the swipe up direction
+        self.handleSwipeUp()
+      }
+      e.preventDefault()
+    }, false);
   }
 
   /**
@@ -76,14 +132,15 @@ class App extends Component {
       }
     }
 
-    if (this.state.ticking != true) {
+    var currentSlideNumber;
+    if (this.state.ticking !== true) {
       if (isSimulateDownScroll || delta <= -this.state.scrollSensitivitySetting) {
         //Down scroll
         this.setState({
           ticking: true
         });
         if (this.state.currentSlideNumber !== this.state.totalSlideNumber - 1) {
-          var currentSlideNumber = ++this.state.currentSlideNumber;
+          currentSlideNumber = ++this.state.currentSlideNumber;
           this.setState({
             currentSlideNumber: currentSlideNumber
           });
@@ -103,7 +160,7 @@ class App extends Component {
           ticking: true
         });
         if (this.state.currentSlideNumber !== 0) {
-          var currentSlideNumber = --this.state.currentSlideNumber;
+          currentSlideNumber = --this.state.currentSlideNumber;
           this.setState({
             currentSlideNumber: currentSlideNumber,
             detailParallaxContainerToLoad: 'tableOfContents'
@@ -268,6 +325,8 @@ class App extends Component {
             simulateUpScroll={this.simulateUpScroll}
             wallpaperClass="tech"
             data={this.state.technologies}/>
+        break;
+      default:
         break;
     }
 

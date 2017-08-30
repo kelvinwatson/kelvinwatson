@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import CancelToolbar from '../Toolbar/CancelToolbar/CancelToolbar';
 import './InformationOverlay.css';
 
 class InformationOverlay extends Component {

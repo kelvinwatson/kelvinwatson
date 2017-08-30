@@ -17,7 +17,7 @@ class AnimatedParallaxContainer extends Component {
     }
 
     return (
-      <section className={backgroundClassName}>
+      <section id="swipeZone" className={backgroundClassName}>
 
         <div className="animated-content-wrapper">
           {this.props.children}

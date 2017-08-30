@@ -153,8 +153,6 @@
   font-size: 2em;
   font-weight: 300;
   text-align: left;
-  /*letter-spacing: 1px;*/
-  line-height: 1.05em;
   display: table-cell;
   vertical-align: middle;
 }
@@ -189,6 +187,9 @@
   }
   .f4-ns {
     font-size: 1.25rem;
+  }
+  .toc-flex-container-item__left--text-container {
+    line-height: 1.05em;
   }
 }
 
