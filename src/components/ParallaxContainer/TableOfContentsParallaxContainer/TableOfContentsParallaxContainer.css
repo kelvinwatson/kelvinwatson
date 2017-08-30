@@ -171,7 +171,21 @@
 }
 
 .toc-flex-container-item__right {
-  color: white;
+  color: black;
+  display: table;
+
+  /* TRANSISITION */
+  transition: opacity 3s ease-in-out;
+  -webkit-transition: opacity 3s ease-in-out;
+  -moz-transition: opacity 3s ease-in-out;
+  -o-transition: opacity 3s ease-in-out;
+}
+
+.toc-flex-container-item__right--text-container{
+  text-align: left;
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
 }
 
 @media screen and (min-width: 30em) {

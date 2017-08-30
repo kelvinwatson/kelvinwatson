@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+
 import AnimatedParallaxContainer from '../AnimatedParallaxContainer';
 import PersonalInformationOverlay from '../../InformationOverlay/PersonalInformationOverlay/PersonalInformationOverlay';
 import NavigationDial from '../../NavigationDial/NavigationDial';
 import IntroductionToolbar from '../../Toolbar/IntroductionToolbar/IntroductionToolbar';
+
 import './IntroductionParallaxContainer.css';
 
 class IntroductionParallaxContainer extends Component {
@@ -53,10 +55,6 @@ class IntroductionParallaxContainer extends Component {
     return str.includes(test) ? str : str + ' ' + test;
   }
 
-  // handleCheckboxChange(e){
-  //   this.setBackgroundColorClass(e.target.checked ? 'background-black' : 'background-white');
-  // }
-
   toggleThemeBlack(){
     this.setBackgroundColorClass('background-black');
   }
@@ -67,7 +65,6 @@ class IntroductionParallaxContainer extends Component {
 
   setBackgroundColorClass(bgColorClass){
     var backgroundClass = this.state.backgroundClass;
-    // if (!backgroundClass) return;
     var infoClass, svgFillColor, shareIconColor;
     if (bgColorClass === 'background-black') {
       //replace white with black
@@ -97,10 +94,8 @@ class IntroductionParallaxContainer extends Component {
     var newString = str && (str.slice() || ''); //copy the string
 
     if (newString.includes(find)){
-      // console.log('includes!');
       return newString.replace(new RegExp(find, 'g'), replacement);
     } else {
-      // console.log('not includes!');
       return str;
     }
   }
@@ -109,7 +104,7 @@ class IntroductionParallaxContainer extends Component {
     return (
         <AnimatedParallaxContainer backgroundClass={this.state.backgroundClass}>
           <PersonalInformationOverlay isOpenOverlay={this.state.isOpenOverlay} onCloseInfoOverlayClicked={this.handleCloseInfoOverlayClicked}/>
-          <div className={`parallax-flex-parent ${this.state.isOpenOverlay ? 'parallax-flex-parent-slide-off' : ''}`}>
+          <div id="swipeZone" className={`parallax-flex-parent ${this.state.isOpenOverlay ? 'parallax-flex-parent-slide-off' : ''}`}>
             <IntroductionToolbar
               shareIconColor={this.state.shareIconColor}
               svgFillColor={this.state.svgFillColor}

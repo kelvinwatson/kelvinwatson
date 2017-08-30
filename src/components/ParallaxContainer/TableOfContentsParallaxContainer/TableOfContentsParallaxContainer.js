@@ -5,35 +5,13 @@ import './TableOfContentsParallaxContainer.css';
 
 class TableOfContentsParallaxContainer extends Component {
 
-  //https://codepen.io/kenjiroart/pen/NNgRXj
+  //src: https://codepen.io/kenjiroart/pen/NNgRXj
   render(){
-
-    // let projectsList = this.props && this.props.data;
-    // console.log('projectsList', projectsList);
-    // if (projectsList){
-    //   projectsList = projectsList.map((project) =>
-    //     <li key={project.name} className="projects-grid-item">
-    //       {project.name}: {project.details}
-    //       if (project.technologies){
-    //         <ul>
-    //           {
-    //             project.technologies.map((tech, index)=>
-    //               <li key={index}>
-    //                 {tech}
-    //               </li>
-    //             )
-    //           }
-    //         </ul>
-    //       }
-    //     </li>
-    //   );
-    // }
-
     return (
         <StaticParallaxContainer>
 
           <ScrollUpToolbar
-            title="My Work"
+            title="Welcome to my personal website"
             simulateUpScroll={this.props.simulateUpScroll}
             isTextBlack="true" />
 
@@ -47,7 +25,13 @@ class TableOfContentsParallaxContainer extends Component {
               </div>
             </div>
 
-            <div className="toc-flex-container-item toc-flex-container-item__right">right</div>
+            <div className="toc-flex-container-item toc-flex-container-item__right">
+              <div className="toc-flex-container-item__right--text-container">
+                <div onClick={this.props.onProjectsClicked}>Projects</div>
+                <div onClick={this.props.onTechnologiesClicked}>Technologies</div>
+                <div onClick={this.props.onHireClicked}>Hire Me</div>
+              </div>
+            </div>
 
 
           </div>

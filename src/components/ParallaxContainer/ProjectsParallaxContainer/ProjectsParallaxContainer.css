@@ -188,3 +188,37 @@
         width: 50%;
     }
 }
+
+
+@media(min-width: 768px) {
+    /* tablets and desktop */
+    .project-name{
+      font-size: 1rem;
+    }
+}
+
+@media(max-width: 767px) {
+  /* phones */
+  .project-name{
+    font-size: 1.75em;
+  }
+  .project-technologies{
+    font-size: 1.3rem;
+  }
+  .project-details{
+    font-size: 1rem;
+  }
+}
+
+@media(max-width: 767px) and (orientation: portrait) {
+    /* portrait phones */
+    .project-name{
+      font-size: 1.75em;
+    }
+    .project-technologies{
+      font-size: 1.25rem;
+    }
+    .project-details{
+      font-size: 1rem;
+    }
+}

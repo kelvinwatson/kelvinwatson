@@ -138,47 +138,53 @@
 }
 
 @media(max-width: 767px) {
-    /* phones */
-    .left-icon {
-      display:none;
-    }
-    .linkedin{
-      margin-top:0;
-    }
-    .toolbar-flex-parent {
-      justify-content: center;
-    }
-    .share-icon-container{
-      display:inline;
-    }
-    .right-icon:hover>.share-icons{
-      display:inline;
-      margin-left: 16px;
-    }
-    .share-icons:hover{
-      display:inline;
-    }
+  /* phones */
+  .left-icon {
+    display:none;
+  }
+  .linkedin{
+    margin-top:0;
+  }
+  .toolbar-flex-parent {
+    justify-content: center;
+  }
+  .share-icon-container{
+    display:inline;
+  }
+  .right-icon:hover>.share-icons{
+    display:inline;
+    margin-left: 8px;
+  }
+  .share-icons:hover{
+    display:inline;
+  }
+  .facebook {
+    margin-right: 16px;
+  }
 }
 
 @media(max-width: 767px) and (orientation: portrait) {
-    /* portrait phones */
-    .left-icon {
-      display:none;
-    }
-    .linkedin{
-      margin-top:0;
-    }
-    .toolbar-flex-parent {
-      justify-content: center;
-    }
-    .share-icon-container{
-      display:inline;
-    }
-    .right-icon:hover>.share-icons{
-      display:inline;
-      margin-left: 16px;
-    }
-    .share-icons:hover{
-      display:inline;
-    }
+  /* portrait phones */
+  .left-icon {
+    display:none;
+  }
+  .linkedin{
+    margin-top:0;
+  }
+  .toolbar-flex-parent {
+    justify-content: center;
+  }
+  .share-icon-container{
+    display:inline;
+  }
+  .right-icon:hover>.share-icons{
+    display:inline;
+    margin-left: 8px;
+  }
+  .share-icons:hover{
+    display:inline;
+  }
+  .facebook {
+    margin-right: 16px;
+  }
 }

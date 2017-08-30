@@ -1,19 +1,19 @@
-import React, { Component } from 'react';
-import ScrollSpyBar from './components/ScrollSpyBar/ScrollSpyBar';
+/*global FB*/
 
+import React, { Component } from 'react';
+
+import ScrollSpyBar from './components/ScrollSpyBar/ScrollSpyBar';
 import IntroductionParallaxContainer from './components/ParallaxContainer/IntroductionParallaxContainer/IntroductionParallaxContainer'
 import TableOfContentsParallaxContainer from './components/ParallaxContainer/TableOfContentsParallaxContainer/TableOfContentsParallaxContainer'
-
 import HireParallaxContainer from './components/ParallaxContainer/HireParallaxContainer/HireParallaxContainer'
 import ProjectsParallaxContainer from './components/ParallaxContainer/ProjectsParallaxContainer/ProjectsParallaxContainer';
 import TechnologiesParallaxContainer from './components/ParallaxContainer/TechnologiesParallaxContainer/TechnologiesParallaxContainer'
 
-import './App.css';
-
 import * as firebase from 'firebase';
 
-class App extends Component {
+import './App.css';
 
+class App extends Component {
   constructor(){
     super();
     this.parallaxScroll = this.parallaxScroll.bind(this);
@@ -27,7 +27,7 @@ class App extends Component {
       technologies: null,
       ticking: false,
       isFirefox: /Firefox/i.test(navigator.userAgent),
-      isIe: (/MSIE/i.test(navigator.userAgent)) || (/Trident.*rv\:11\./i.test(navigator.userAgent)),
+      isIe: (/MSIE/i.test(navigator.userAgent)) || (/Trident.*rv:11\./i.test(navigator.userAgent)),
       scrollSensitivitySetting: 0,
       slideDurationSetting: 600,
       currentSlideNumber: 0,
@@ -45,9 +45,30 @@ class App extends Component {
   componentDidMount(){
     this.initFirebase();
     this.initParallax();
+    this.initFacebookSdk();
     if (this.isMobileBrowser()){
       this.setSwipeListener(this.handleSwipeUp);
     }
+  }
+
+  initFacebookSdk(){
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId            : '1890104247975761',
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v2.10'
+      });
+      FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
   }
 
   componentWillUnmount(){
@@ -71,7 +92,6 @@ class App extends Component {
   setSwipeListener(){
     var swipedir,
     startX, startY,
-    distX, distY,
     threshold = 150, //required min distance traveled to be considered swipe
     restraint = 100, // maximum distance allowed at the same time in perpendicular direction
     allowedTime = 300, // maximum time allowed to travel that distance
@@ -81,11 +101,10 @@ class App extends Component {
     swipeZone.addEventListener('touchstart', function(e){
       var touchobj = e.changedTouches[0];
       swipedir = 'none';
-      // distX = distY = 0;
       startX = touchobj.pageX;
       startY = touchobj.pageY;
       startTime = new Date().getTime(); // record time when finger first makes contact with surface
-      e.preventDefault();
+      // e.preventDefault();
     }, false);
 
     swipeZone.addEventListener('touchmove', function(e){
@@ -95,8 +114,8 @@ class App extends Component {
     var self = this;
     swipeZone.addEventListener('touchend', function(e){
       var touchobj = e.changedTouches[0];
-      distX = touchobj.pageX - startX; // get horizontal dist traveled by finger while in contact with surface
-      distY = touchobj.pageY - startY; // get vertical dist traveled by finger while in contact with surface
+      var distX = touchobj.pageX - startX; // get horizontal dist traveled by finger while in contact with surface
+      var distY = touchobj.pageY - startY; // get vertical dist traveled by finger while in contact with surface
       elapsedTime = new Date().getTime() - startTime; // get time elapsed
       if (elapsedTime <= allowedTime){ // first condition for awipe met
           if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){ // 2nd condition for horizontal swipe met
@@ -109,7 +128,7 @@ class App extends Component {
       if (swipedir === 'up'){ //only handle the swipe up direction
         self.handleSwipeUp()
       }
-      e.preventDefault()
+      // e.preventDefault()
     }, false);
   }
 
@@ -214,15 +233,12 @@ class App extends Component {
     firebase.initializeApp(config);
 
     firebase.database().ref('technologies').once('value').then((snap) => {
-      console.log('technologies', snap.val());
-
       this.setState({
         technologies: Object.values(snap.val())
       });
     });
 
     firebase.database().ref('projects').once('value').then((snap) => {
-      console.log('projects', snap.val());
       this.setState({
         projects: Object.values(snap.val())
       });
@@ -264,7 +280,7 @@ class App extends Component {
   }
 
   handleProjectsClicked(){
-
+    console.log('projects clicked');
     this.setState({
       detailParallaxContainerToLoad: 'projects'
     });
@@ -299,7 +315,10 @@ class App extends Component {
             ref="parallaxContainer1"
             scrollBackgroundClass={this.state.parallaxContainer1}
             simulateUpScroll={this.simulateUpScroll}
-            isActivateDetailParallaxContainerBackgroundAnimation={this.state.isActivateDetailParallaxContainerBackgroundAnimation}/>;
+            isActivateDetailParallaxContainerBackgroundAnimation={this.state.isActivateDetailParallaxContainerBackgroundAnimation}
+            onTechnologiesClicked={this.handleTechnologiesClicked}
+            onHireClicked={this.handleHireClicked}
+            onProjectsClicked={this.handleProjectsClicked}/>;
         break;
       case 'projects':
         detailParallaxContainerToLoad =
@@ -332,8 +351,6 @@ class App extends Component {
 
     return (
       <div className="App">
-        {/* <Header /> */}
-        {/*<ParallaxContainer ref="parallaxContainer0" backgroundClass={this.state.parallaxContainer0}/>*/}
         <IntroductionParallaxContainer
           ref="parallaxContainer0"
           scrollBackgroundClass={this.state.parallaxContainer0}

@@ -20,7 +20,7 @@ class ProjectInformationOverlay extends Component {
           <div className="information-overlay-text-flex-item information-overlay-text-flex-item-left">
             <div className="aspect-ratio aspect-ratio--1x1">
               <img className={`db bg-center cover aspect-ratio--object aspect-ratio--object-50 img ${this.props.selectedProject ? 'img-'+this.props.selectedProject.imageName : ''}`}
-                alt={this.props.selectedProject.name}/>
+                alt={`${this.props.selectedProject ? this.props.selectedProject.name : ''}`}/>
             </div>
           </div>
           <div className="information-overlay-text-flex-item information-overlay-text-flex-item-right">

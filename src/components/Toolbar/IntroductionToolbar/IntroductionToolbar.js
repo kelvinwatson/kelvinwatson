@@ -1,9 +1,32 @@
+/*global FB*/
 import React, { Component } from 'react';
 import ThemeToggleBar from '../../ThemeToggleBar/ThemeToggleBar'
 import Toolbar from '../Toolbar'
 import '../Toolbar.css'
 
 class IntroductionToolbar extends Component {
+
+  constructor(props){
+    super(props);
+
+    this.handleFacebookClicked = this.handleFacebookClicked.bind(this);
+    this.handleLinkedInClicked = this.handleLinkedInClicked.bind(this);
+  }
+
+  handleFacebookClicked(){
+    FB.ui({
+      method: 'share',
+      href: 'https://kelvinwatson-53204.firebaseapp.com',
+    }, function(response){});
+  }
+
+  handleLinkedInClicked(){
+    window.open(
+      "https://www.linkedin.com/shareArticle?mini=true&url=https://kelvinwatson-53204.firebaseapp.com&title=Kelvin Watson&summary=Kelvin Watson - Software Engineer",
+      'mywin',
+      'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'
+    );
+  }
   render(){
     return (
       <Toolbar>
@@ -23,10 +46,10 @@ class IntroductionToolbar extends Component {
             </div>
 
             <div className="share-icons">
-              <div className="info share-icon facebook">
+              <div className="info share-icon facebook" onClick={this.handleFacebookClicked}>
                 <div className={this.props.infoClass}>f</div>
               </div>
-              <div className="info share-icon linkedin">
+              <div className="info share-icon linkedin" onClick={this.handleLinkedInClicked}>
                 <div className={this.props.infoClass}>L</div>
               </div>
             </div>
@@ -34,7 +57,6 @@ class IntroductionToolbar extends Component {
 
         </div>
         <div className="toolbar-flex-item color-toggle">
-          {/* <input type="checkbox" onChange={this.props.onCheckboxChecked} /> */}
 
           <ThemeToggleBar
             toggleThemeWhite={this.props.toggleThemeWhite}

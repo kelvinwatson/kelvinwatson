@@ -6,7 +6,6 @@ import './ProjectsParallaxContainer.css';
 
 class ProjectsParallaxContainer extends Component {
 
-
   constructor(props){
     super(props);
     this.handleProjectImageClicked = this.handleProjectImageClicked.bind(this);
@@ -19,7 +18,6 @@ class ProjectsParallaxContainer extends Component {
   }
 
   handleProjectImageClicked(project){
-    console.log('!!!!!!CLICKED',project);
     this.setState({
       isOpenOverlay: true,
       selectedProject: project
@@ -36,30 +34,7 @@ class ProjectsParallaxContainer extends Component {
 
   //https://codepen.io/kenjiroart/pen/NNgRXj
   render(){
-
-    // let projectsList = this.props && this.props.data;
-    // console.log('projectsList', projectsList);
-    // if (projectsList){
-    //   projectsList = projectsList.map((project) =>
-    //     <li key={project.name} className="projects-grid-item">
-    //       {project.name}: {project.details}
-    //       if (project.technologies){
-    //         <ul>
-    //           {
-    //             project.technologies.map((tech, index)=>
-    //               <li key={index}>
-    //                 {tech}
-    //               </li>
-    //             )
-    //           }
-    //         </ul>
-    //       }
-    //     </li>
-    //   );
-    // }
-
     let projectsList = this.props && this.props.data;
-    console.log('projectsList', projectsList);
     if (projectsList){
       projectsList = projectsList.map((project) =>
         <article key={project.name} className="fl w-100 w-50-m  w-25-ns pa2-ns">
@@ -68,25 +43,19 @@ class ProjectsParallaxContainer extends Component {
               onClick={() => this.handleProjectImageClicked(project)}/>
           </div>
           <a href="#0" className="ph2 ph0-ns pb3 link db">
-            <h3 className="f5 f4-ns mb0 white-text roboto-condensed">{project.name}</h3>
-
+            <h3 className="f5 f4-ns mb0 white-text roboto-condensed project-name">{project.name}</h3>
 
             {project.technologies &&
                   project.technologies.map((tech, index)=>
-                      <span className="f6 f5 mt2 yellow-text roboto-condensed tech-list-item" key={index}>
+                      <span className="f6 f5 mt2 yellow-text roboto-condensed tech-list-item project-technologies" key={index}>
                         {index === (project.technologies.length - 1) ? tech : tech+','}
                       </span>
                   )
             }
 
-            <h3 className="f6 f5 fw4 mt2 grey-text roboto">{project.details}</h3>
-
-
+            <h3 className="f6 f5 fw4 mt2 grey-text roboto project-details">{project.details}</h3>
           </a>
         </article>
-
-
-
       );
     }
 

@@ -1,7 +1,5 @@
-//https://codepen.io/micjamking/pen/neldj?page=3
-
+//src: https://codepen.io/micjamking/pen/neldj?page=3
 import React, { Component } from 'react';
-
 import './Progress.css';
 
 function Progress(){
