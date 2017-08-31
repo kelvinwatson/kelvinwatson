@@ -16,7 +16,7 @@ class IntroductionParallaxContainer extends Component {
     this.handleInfoClicked = this.handleInfoClicked.bind(this);
     this.handleCloseInfoOverlayClicked = this.handleCloseInfoOverlayClicked.bind(this);
     this.state = {
-      backgroundClass: (props.backgroundClass || '') + ' ' + (props.scrollBackgroundClass || ''),
+      backgroundClass: 'background-black ' + (props.scrollBackgroundClass || ''),
       infoClass: 'info-black',
       isOpenOverlay: false,
       svgFillColor: 'black',

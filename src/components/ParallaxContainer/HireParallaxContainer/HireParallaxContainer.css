@@ -1,11 +1,5 @@
-/*@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');*/
-
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:300');
-
-/*@import url('https://fonts.googleapis.com/css?family=Muli:300');*/
-
 @import url('https://fonts.googleapis.com/css?family=Raleway');
-
 .static-parallax-container {
   -webkit-transform: translateY(0vh);
   -ms-transform: translateY(0vh);
@@ -164,7 +158,7 @@
 
 .f4 {
   font-size: 1.25rem;
-  font-weight:300;
+  font-weight: 300;
 }
 
 .f6 {
@@ -215,5 +209,6 @@
 }
 
 textarea {
-  resize: vertical; /* user can resize vertically, but width is fixed */
+  resize: vertical;
+  /* user can resize vertically, but width is fixed */
 }

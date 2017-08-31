@@ -19,7 +19,7 @@
 }
 
 .scrollspy-menu-hidden{
-  display:none;
+  display: none !important;
 }
 
 #scrollspy-menu ul {

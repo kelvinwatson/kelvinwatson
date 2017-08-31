@@ -5,7 +5,7 @@ import './AnimatedParallaxContainer.css'
 class AnimatedParallaxContainer extends Component {
   render(){
     let backgroundClassName = 'background ' +
-      (this.props.backgroundClass || '') +
+      (this.props.backgroundClass || 'background-white') +
       ' ' +
       (this.props.scrollBackgroundClass || '');
 

@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300');
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:300');
 @import url('https://fonts.googleapis.com/css?family=Raleway');
-
 .background {
   overflow: hidden;
   will-change: transform;
@@ -11,11 +10,13 @@
   width: 100%;
   transform: translateY(30vh);
   opacity: 1;
-  transform: translate3D(0,0,0); /* default position, on screen */
-  -moz-transform: translate3D(0,0,0);
-  -webkit-transform: translate3D(0,0,0);
+  transform: translate3D(0, 0, 0);
+  /* default position, on screen */
+  -moz-transform: translate3D(0, 0, 0);
+  -webkit-transform: translate3D(0, 0, 0);
   transition: all 0.7s cubic-bezier(0.22, 0.44, 0, 1);
 }
+
 .background:before {
   content: "";
   position: absolute;
@@ -35,32 +36,32 @@
 .background:first-child {
   transform: translateY(-15vh);
 }
-.background-black{
+
+.background-black {
   color: white;
 }
+
 .background-black:before {
   transition: all 0.1s ease;
   background-image: url(../../images/background-black-min.jpg);
 }
-.background-white{
+
+.background-white {
   color: black;
 }
+
 .background-white:before {
-  /*color: black;*/
   transition: all 0.1s ease;
-  background-image: url(../../images/background-white.jpg);
+  background-image: url(../../images/background-white-min.jpg);
 }
+
 .background:first-child .animated-content-wrapper {
   transform: translateY(0vh);
 }
-.background:nth-child(2) {
-  background-image: url(https://s8.postimg.org/ow4wgk4px/ugqti_Lg.jpg);
-}
-.background:nth-child(3) {
-  background-image: url(https://s8.postimg.org/grwsbtiat/x_ZMOBTj.jpg);
-}
+
 
 /* Set stacking context of slides */
+
 .background:nth-child(1) {
   z-index: 3;
 }
@@ -85,6 +86,7 @@
   backface-visibility: hidden;
   transition: all 0.1s linear;
 }
+
 .content-title {
   font-size: 12vh;
   line-height: 1.4;
@@ -93,34 +95,41 @@
 .background.up-scroll {
   transform: translate3d(0, -15vh, 0);
 }
+
 .background.up-scroll .animated-content-wrapper {
   transform: translateY(0vh);
 }
-.background.up-scroll + .background {
+
+.background.up-scroll+.background {
   transform: translate3d(0, 30vh, 0);
 }
-.background.up-scroll + .background .animated-content-wrapper {
+
+.background.up-scroll+.background .animated-content-wrapper {
   transform: translateY(30vh);
 }
 
 .background.down-scroll {
   transform: translate3d(0, -130vh, 0);
 }
+
 .background.down-scroll .animated-content-wrapper {
   /*transform: translateY(40vh);*/
 }
-.background.down-scroll + .background:not(.down-scroll) {
+
+.background.down-scroll+.background:not(.down-scroll) {
   transform: translate3d(0, -15vh, 0);
 }
-.background.down-scroll + .background:not(.down-scroll) .animated-content-wrapper {
+
+.background.down-scroll+.background:not(.down-scroll) .animated-content-wrapper {
   transform: translateY(15vh);
 }
-.designation{
+
+.designation {
   font-family: 'Roboto', sans-serif;
   letter-spacing: 0.17em;
 }
 
-.parallax-flex-parent{
+.parallax-flex-parent {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -129,31 +138,40 @@
   width: 100%;
   opacity: 1;
   overflow-x: hidden;
-  transform: translate3D(0,0,0); /* doesn't seem necessary but placing here to be explicit */
-  -moz-transform: translate3D(0,0,0); /* doesn't seem necessary but placing here to be explicit */
-  -webkit-transform: translate3D(0,0,0);/* doesn't seem necessary but placing here to be explicit */
-  -moz-transition: transform 1s ease; /*transition back to opacity 1*/
+  transform: translate3D(0, 0, 0);
+  /* doesn't seem necessary but placing here to be explicit */
+  -moz-transform: translate3D(0, 0, 0);
+  /* doesn't seem necessary but placing here to be explicit */
+  -webkit-transform: translate3D(0, 0, 0);
+  /* doesn't seem necessary but placing here to be explicit */
+  -moz-transition: transform 1s ease;
+  /*transition back to opacity 1*/
   -webkit-transition: transform 1s ease;
 }
 
-.parallax-flex-parent-slide-off{
-
+.parallax-flex-parent-slide-off {
   opacity: 0;
-  transform: translate3D(50%,0,0); /* X value must be same as Nav width */
-  -moz-transform: translate3D(50%,0,0); /* X value must be same as Nav width */
-  -webkit-transform: translate3D(50%,0,0); /* X value must be same as Nav width */
-
+  transform: translate3D(50%, 0, 0);
+  /* X value must be same as Nav width */
+  -moz-transform: translate3D(50%, 0, 0);
+  /* X value must be same as Nav width */
+  -webkit-transform: translate3D(50%, 0, 0);
+  /* X value must be same as Nav width */
   -moz-transition: all .8s ease;
   -webkit-transition: all .8s ease;
 }
 
 @media(min-width: 768px) {
-    /* tablets and desktop */
-    @-webkit-keyframes animate {
-        from { transform: translate(0, 0); }
-        to { transform: translate(-250px, -250px); }
+  /* tablets and desktop */
+  @-webkit-keyframes animate {
+    from {
+      transform: translate(0, 0);
     }
-  .background:before{
+    to {
+      transform: translate(-250px, -250px);
+    }
+  }
+  .background:before {
     -webkit-animation-name: animate;
     -webkit-animation-duration: 70s;
     -webkit-animation-timing-function: linear;
@@ -164,7 +182,7 @@
 
 @media(max-width: 767px) {
   /* phones */
-  .background:before{
+  .background:before {
     background-position: bottom;
     height: 100%;
     width: 100%;
@@ -172,9 +190,8 @@
 }
 
 @media(max-width: 767px) and (orientation: portrait) {
-    /* portrait phones */
-
-  .background:before{
+  /* portrait phones */
+  .background:before {
     background-position: center bottom;
     height: 100%;
     width: 100%;

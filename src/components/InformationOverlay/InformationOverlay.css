@@ -65,13 +65,6 @@ h1{
   background-repeat: no-repeat;
 }
 
-.information-overlay-container-wallpaper-white:before{
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.3) 59%, rgba(0, 0, 0, 0.7) 100%),
-    url(../../images/whitepaint.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
 .information-overlay-container-open {
   opacity: 1;
   -webkit-transition: all .8s ease;
@@ -83,7 +76,7 @@ h1{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 64px;
+  margin: 32px;
   text-align: left;
 }
 
@@ -176,9 +169,9 @@ h1{
   }
   .information-overlay-content-wrapper{
     width:unset;
-    -webkit-transform: translateY(20vh);
-    -ms-transform: translateY(20vh);
-    transform: translateY(20vh);
+  }
+  .information-overlay-text-flex-item-right{
+    z-index: 100;
   }
 }
 
@@ -200,7 +193,8 @@ h1{
   }
   .information-overlay-content-wrapper{
     width:unset;
-    -webkit-transform: translateY(20vh);
-    -ms-transform: translateY(20vh);
-    transform: translateY(20vh);  }
+  }
+  .information-overlay-text-flex-item-right{
+    z-index: 100;
+  }
 }

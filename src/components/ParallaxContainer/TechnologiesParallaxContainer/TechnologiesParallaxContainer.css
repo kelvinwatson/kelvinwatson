@@ -27,3 +27,22 @@
   height: 150px;
   margin-bottom: 32px;
 }
+
+@media(min-width: 768px) {
+  /* tablets and desktop */
+
+}
+
+@media(max-width: 767px) {
+  /* phones */
+  .technologies-grid-item{
+    flex-basis: 33%;
+  }
+}
+
+@media(max-width: 767px) and (orientation: portrait) {
+  /* portrait phones */
+  .technologies-grid-item{
+    flex-basis: 33%;
+  }
+}

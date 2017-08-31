@@ -9,7 +9,7 @@ class InformationOverlay extends Component {
           ${this.props.isOpenOverlay ? 'information-overlay-container-open information-overlay-container-animation' : ''}
           ${this.props.wallpaper ? 'information-overlay-container-wallpaper-'+this.props.wallpaper :'information-overlay-container-wallpaper-default'}
           `}>
-        <div className="information-overlay-content-wrapper">
+        <div className={`information-overlay-content-wrapper ${this.props.isProjectInformationOverlay ? 'project-information-overlay-content-wrapper' : ''}`}>
           {this.props.children}
         </div>
       </div>

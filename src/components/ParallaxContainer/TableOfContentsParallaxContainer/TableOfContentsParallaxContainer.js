@@ -32,8 +32,6 @@ class TableOfContentsParallaxContainer extends Component {
                 <div onClick={this.props.onHireClicked}>Hire Me</div>
               </div>
             </div>
-
-
           </div>
         </StaticParallaxContainer>
     );

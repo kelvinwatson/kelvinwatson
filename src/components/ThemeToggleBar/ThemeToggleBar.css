@@ -1,6 +1,12 @@
 #theme-toggle {
   position:relative;
 }
+.theme-toggle-bar-visible{
+  display: block;
+}
+.theme-toggle-bar-invisible{
+  display:none;
+}
 
 .dotted-white-line {
   border-bottom: 1px dotted white;

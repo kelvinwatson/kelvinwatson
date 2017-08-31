@@ -7,6 +7,7 @@
   width: 100%;
   transition: all 0.8s cubic-bezier(0.22, 0.44, 0, 1);
 }
+
 .static-background:before {
   content: "";
   position: absolute;
@@ -16,37 +17,23 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background:linear-gradient(0deg,rgba(0,0,0,0.1),rgba(255,255,255,0.8)),
-    url(../../images/skyline.jpg);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.8)), url(../../images/skyline.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
-  /*background-color: rgba(0, 0, 0, 0.1);*/
 }
 
 .static-background:first-child {
   transform: translateY(-15vh);
 }
-.static-background-black{
-  color: white;
-}
-.static-background-black:before {
-  transition: all 0.8s cubic-bezier(0.22, 0.44, 0, 1);
-  background-image: url(../../images/background-black.jpg);
-}
-.static-background-white{
-  color: black;
-}
-.static-background-white:before {
-  color: black;
-  transition: all 0.8s cubic-bezier(0.22, 0.44, 0, 1);
-  background-image: url(../../images/background-white.jpg);
-}
+
 .static-background:first-child .content-wrapper {
   transform: translateY(15vh);
 }
 
+
 /* Set stacking context of slides */
+
 .static-background:nth-child(1) {
   z-index: 3;
 }
@@ -66,16 +53,15 @@
   justify-content: flex-start;
   text-align: center;
   flex-flow: column nowrap;
-  font-family: Montserrat;
-  /*transform: translateY(40vh);*/
   will-change: transform;
   backface-visibility: hidden;
   transition: all 1.7s cubic-bezier(0.22, 0.44, 0, 1);
 }
-.static-content-wrapper-override{
+
+.static-content-wrapper-override {
   transform: translateY(5vh);
-  /*height: unset; remove the 100vh setting */
 }
+
 .content-title {
   font-size: 12vh;
   line-height: 1.4;
@@ -84,33 +70,35 @@
 .static-background.up-scroll {
   transform: translate3d(0, -15vh, 0);
 }
+
 .static-background.up-scroll .content-wrapper {
   transform: translateY(15vh);
 }
-.static-background.up-scroll + .background {
+
+.static-background.up-scroll+.background {
   transform: translate3d(0, 30vh, 0);
 }
-.static-background.up-scroll + .background .content-wrapper {
+
+.static-background.up-scroll+.background .content-wrapper {
   transform: translateY(30vh);
 }
 
 .static-background.down-scroll {
   transform: translate3d(0, -130vh, 0);
 }
-.static-background.down-scroll .content-wrapper {
-  /*transform: translateY(40vh);*/
-}
-.static-background.down-scroll + .background:not(.down-scroll) {
+
+.static-background.down-scroll+.background:not(.down-scroll) {
   transform: translate3d(0, -15vh, 0);
 }
-.static-background.down-scroll + .background:not(.down-scroll) .content-wrapper {
+
+.static-background.down-scroll+.background:not(.down-scroll) .content-wrapper {
   transform: translateY(15vh);
 }
 
-.static-parallax-container{
+.static-parallax-container {
   -webkit-transform: translateY(0vh);
-    -ms-transform: translateY(0vh);
-    transform: translateY(0vh)
+  -ms-transform: translateY(0vh);
+  transform: translateY(0vh)
 }
 
 .detail-title {
