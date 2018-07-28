@@ -10,7 +10,7 @@ class HireParallaxContainer extends Component {
           wallpaperClass={this.props.wallpaperClass}>
 
           <ScrollUpToolbar
-            title="Hire Me"
+            title="Contact me"
             simulateUpScroll={this.props.simulateUpScroll}/>
 
             <main className="pa4 black-80">

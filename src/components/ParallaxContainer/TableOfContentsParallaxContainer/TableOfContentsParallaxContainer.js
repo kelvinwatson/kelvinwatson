@@ -29,7 +29,7 @@ class TableOfContentsParallaxContainer extends Component {
               <div className="toc-flex-container-item__right--text-container">
                 <div onClick={this.props.onProjectsClicked}>Projects</div>
                 <div onClick={this.props.onTechnologiesClicked}>Technologies</div>
-                <div onClick={this.props.onHireClicked}>Hire Me</div>
+                <div></div>
               </div>
             </div>
           </div>

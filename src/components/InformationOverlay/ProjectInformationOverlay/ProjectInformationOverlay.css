@@ -1,0 +1,5 @@
+.project-information-overlay-content-wrapper{
+  -webkit-transform: translateY(5vh);
+  -ms-transform: translateY(5vh);
+  transform: translateY(5vh);
+}

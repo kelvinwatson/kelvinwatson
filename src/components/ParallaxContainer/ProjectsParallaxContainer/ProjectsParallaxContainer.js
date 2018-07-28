@@ -39,8 +39,8 @@ class ProjectsParallaxContainer extends Component {
       projectsList = projectsList.map((project) =>
         <article key={project.name} className="fl w-100 w-50-m  w-25-ns pa2-ns">
           <div className="aspect-ratio aspect-ratio--1x1">
-            <img className={`db bg-center cover aspect-ratio--object img img-${project.imageName}`} alt={project.name}
-              onClick={() => this.handleProjectImageClicked(project)}/>
+            <img className={`db bg-center cover aspect-ratio--object img img-${project.imageName}`} alt={project.name} />
+              {/*onClick={() => this.handleProjectImageClicked(project)}/>*/}
           </div>
           <a href="#0" className="ph2 ph0-ns pb3 link db">
             <h3 className="f5 f4-ns mb0 white-text roboto-condensed project-name">{project.name}</h3>
